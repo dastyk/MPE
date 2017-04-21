@@ -3,7 +3,7 @@
 #pragma once
 #include <stdint.h>
 
-/* The basic tags used during message passing(user can specify new tags)*/
+/** The basic tags used during message passing.*/
 struct Tag
 {
 	static const uint32_t Any = 0;
