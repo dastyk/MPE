@@ -18,43 +18,33 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="DataManager.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="Manager.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\Includes\EntitySystem\DataManager.h" />
-    <ClInclude Include="..\Includes\EntitySystem\Entity.h" />
-    <ClInclude Include="..\Includes\EntitySystem\Manager.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{67975378-8F41-4B08-8D12-8192B2EC4A20}</ProjectGuid>
-    <RootNamespace>EntitySystem</RootNamespace>
+    <ProjectGuid>{5F337FA4-FCE1-437F-BCC3-F7F19B97A1F2}</ProjectGuid>
+    <RootNamespace>TestBench1</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -78,30 +68,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)..\Build\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
-    <IncludePath>$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)..\Build\$(Platform);$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)..\Build\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
-    <IncludePath>$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)..\Build\$(Platform);$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)..\Build\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
-    <IncludePath>$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)..\Build\$(Platform);$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)..\Build\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
-    <IncludePath>$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)..\Build\$(Platform);$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -142,6 +109,8 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

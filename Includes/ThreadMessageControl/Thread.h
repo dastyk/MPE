@@ -14,6 +14,10 @@ namespace MPE
 	protected:
 		Thread();
 		virtual ~Thread();
+
+	public:
+		//! The main entry point for the thread.
+		virtual const void Start() = 0;
 	};
 }
 #endif
