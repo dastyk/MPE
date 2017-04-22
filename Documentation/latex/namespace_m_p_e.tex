@@ -1,0 +1,82 @@
+\hypertarget{namespace_m_p_e}{}\section{M\+PE Namespace Reference}
+\label{namespace_m_p_e}\index{M\+PE@{M\+PE}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_m_p_e_1_1_tag}{Tag}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_m_p_e_1_1_base_manager_entity_entry_block}{Base\+Manager\+Entity\+Entry\+Block}
+\begin{DoxyCompactList}\small\item\em The memory where the data for each entity entry is held. \end{DoxyCompactList}\item 
+class \hyperlink{class_m_p_e_1_1_data_manager}{Data\+Manager}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_m_p_e_1_1_data_manager}{Data\+Manager} is used to associate basic datatypes to an entity. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_m_p_e_1_1_entity}{Entity}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_m_p_e_1_1_entity}{Entity} is essentially an id. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_m_p_e_1_1_entity_hasher}{Entity\+Hasher}
+\item 
+class \hyperlink{class_m_p_e_1_1_manager}{Manager}
+\begin{DoxyCompactList}\small\item\em The manager base class. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_m_p_e_1_1_msg}{Msg}
+\item 
+struct \hyperlink{struct_m_p_e_1_1_msg_comp}{Msg\+Comp}
+\item 
+class \hyperlink{class_m_p_e_1_1_thread}{Thread}
+\begin{DoxyCompactList}\small\item\em The thread base class. \end{DoxyCompactList}\item 
+class \hyperlink{class_m_p_e_1_1_thread_message_controller}{Thread\+Message\+Controller}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_m_p_e_1_1_thread_message_controller}{Thread\+Message\+Controller} initiates threads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \hyperlink{namespace_m_p_e_a16447295e3105bd2ba2a9ea303566175}{thread\+Identifier}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void \hyperlink{namespace_m_p_e_a9485a8e81a058e9f485fa13c60c6d1ef}{Thread\+Entry} (\hyperlink{class_m_p_e_1_1_thread}{Thread} $\ast$thread)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\+\_\+t \hyperlink{namespace_m_p_e_a6874547713c4758aae159fa87c365d8e}{Src\+\_\+\+Thread\+Message\+Controller} = 0
+\item 
+static uint32\+\_\+t \hyperlink{namespace_m_p_e_a0a698f47d1ab10c44a414685c36494f1}{Msg\+\_\+\+Any\+\_\+\+Src} = U\+I\+N\+T32\+\_\+\+M\+AX
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The basic tags used during message passing. 
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespace_m_p_e_a16447295e3105bd2ba2a9ea303566175}\label{namespace_m_p_e_a16447295e3105bd2ba2a9ea303566175}} 
+\index{M\+PE@{M\+PE}!thread\+Identifier@{thread\+Identifier}}
+\index{thread\+Identifier@{thread\+Identifier}!M\+PE@{M\+PE}}
+\subsubsection{\texorpdfstring{thread\+Identifier}{threadIdentifier}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \hyperlink{namespace_m_p_e_a16447295e3105bd2ba2a9ea303566175}{M\+P\+E\+::thread\+Identifier}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespace_m_p_e_a9485a8e81a058e9f485fa13c60c6d1ef}\label{namespace_m_p_e_a9485a8e81a058e9f485fa13c60c6d1ef}} 
+\index{M\+PE@{M\+PE}!Thread\+Entry@{Thread\+Entry}}
+\index{Thread\+Entry@{Thread\+Entry}!M\+PE@{M\+PE}}
+\subsubsection{\texorpdfstring{Thread\+Entry()}{ThreadEntry()}}
+{\footnotesize\ttfamily const void M\+P\+E\+::\+Thread\+Entry (\begin{DoxyParamCaption}\item[{\hyperlink{class_m_p_e_1_1_thread}{Thread} $\ast$}]{thread }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespace_m_p_e_a0a698f47d1ab10c44a414685c36494f1}\label{namespace_m_p_e_a0a698f47d1ab10c44a414685c36494f1}} 
+\index{M\+PE@{M\+PE}!Msg\+\_\+\+Any\+\_\+\+Src@{Msg\+\_\+\+Any\+\_\+\+Src}}
+\index{Msg\+\_\+\+Any\+\_\+\+Src@{Msg\+\_\+\+Any\+\_\+\+Src}!M\+PE@{M\+PE}}
+\subsubsection{\texorpdfstring{Msg\+\_\+\+Any\+\_\+\+Src}{Msg\_Any\_Src}}
+{\footnotesize\ttfamily uint32\+\_\+t M\+P\+E\+::\+Msg\+\_\+\+Any\+\_\+\+Src = U\+I\+N\+T32\+\_\+\+M\+AX\hspace{0.3cm}{\ttfamily [static]}}
+
+Specify to allow messages from any source. \mbox{\Hypertarget{namespace_m_p_e_a6874547713c4758aae159fa87c365d8e}\label{namespace_m_p_e_a6874547713c4758aae159fa87c365d8e}} 
+\index{M\+PE@{M\+PE}!Src\+\_\+\+Thread\+Message\+Controller@{Src\+\_\+\+Thread\+Message\+Controller}}
+\index{Src\+\_\+\+Thread\+Message\+Controller@{Src\+\_\+\+Thread\+Message\+Controller}!M\+PE@{M\+PE}}
+\subsubsection{\texorpdfstring{Src\+\_\+\+Thread\+Message\+Controller}{Src\_ThreadMessageController}}
+{\footnotesize\ttfamily uint32\+\_\+t M\+P\+E\+::\+Src\+\_\+\+Thread\+Message\+Controller = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+Soruce 0 is reserved for \hyperlink{class_m_p_e_1_1_thread_message_controller}{Thread\+Message\+Controller}. 

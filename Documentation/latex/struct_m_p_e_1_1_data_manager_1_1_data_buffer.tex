@@ -1,0 +1,117 @@
+\hypertarget{struct_m_p_e_1_1_data_manager_1_1_data_buffer}{}\section{M\+PE\+:\+:Data\+Manager\+:\+:Data\+Buffer Struct Reference}
+\label{struct_m_p_e_1_1_data_manager_1_1_data_buffer}\index{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}}
+
+
+Struct for keeping track of the data entries an \hyperlink{struct_m_p_e_1_1_entity}{Entity} has been given.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_m_p_e_1_1_data_manager_1_1_data_buffer_a85b5e0404f7e7bd6a2e8553e4977fcf6}{Data\+Buffer} ()
+\item 
+\hyperlink{struct_m_p_e_1_1_data_manager_1_1_data_buffer_ab733041fb29f94e89140b54f20771d4d}{$\sim$\+Data\+Buffer} ()
+\item 
+const void \hyperlink{struct_m_p_e_1_1_data_manager_1_1_data_buffer_ad69fcbc429f31ea23b2fdb4cf3f1db47}{Allocate} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Grow the entry buffer. \end{DoxyCompactList}\item 
+const void \hyperlink{struct_m_p_e_1_1_data_manager_1_1_data_buffer_a89e5af3756f1359588936a3adc5c4b03}{Allocate\+And\+Resize\+Header} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Grow the entry buffer and copy the header immediately. \end{DoxyCompactList}\item 
+const void \hyperlink{struct_m_p_e_1_1_data_manager_1_1_data_buffer_aa0c025d4f28747a2168748f8a492928f}{Header\+Resize} ()
+\begin{DoxyCompactList}\small\item\em Grow the header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{struct_m_p_e_1_1_data_manager_1_1_data_buffer_afc54918e931e50e7b6491deb34aaad42}{data}
+\item 
+size\+\_\+t \hyperlink{struct_m_p_e_1_1_data_manager_1_1_data_buffer_ae239cb6309b020933fb4d158e7237a66}{capacity}
+\item 
+\hyperlink{struct_m_p_e_1_1_data_manager_1_1_entry_header}{Entry\+Header} \hyperlink{struct_m_p_e_1_1_data_manager_1_1_data_buffer_a392083d42f4f007a4c58dc2dd722d7f4}{header}
+\item 
+\hyperlink{struct_m_p_e_1_1_data_manager_1_1_value___buffer}{Value\+\_\+\+Buffer} \hyperlink{struct_m_p_e_1_1_data_manager_1_1_data_buffer_a27dfc55c4ae7fa07df7011e6232b982a}{v\+\_\+buffer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Struct for keeping track of the data entries an \hyperlink{struct_m_p_e_1_1_entity}{Entity} has been given. 
+
+The databuffer stores the header on the left side and the value\+\_\+buffer on the right side. When the buffers meet the size is increased. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_data_buffer_a85b5e0404f7e7bd6a2e8553e4977fcf6}\label{struct_m_p_e_1_1_data_manager_1_1_data_buffer_a85b5e0404f7e7bd6a2e8553e4977fcf6}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}!Data\+Buffer@{Data\+Buffer}}
+\index{Data\+Buffer@{Data\+Buffer}!M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}}
+\subsubsection{\texorpdfstring{Data\+Buffer()}{DataBuffer()}}
+{\footnotesize\ttfamily M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer\+::\+Data\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_data_buffer_ab733041fb29f94e89140b54f20771d4d}\label{struct_m_p_e_1_1_data_manager_1_1_data_buffer_ab733041fb29f94e89140b54f20771d4d}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}!````~Data\+Buffer@{$\sim$\+Data\+Buffer}}
+\index{````~Data\+Buffer@{$\sim$\+Data\+Buffer}!M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}}
+\subsubsection{\texorpdfstring{$\sim$\+Data\+Buffer()}{~DataBuffer()}}
+{\footnotesize\ttfamily M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer\+::$\sim$\+Data\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_data_buffer_ad69fcbc429f31ea23b2fdb4cf3f1db47}\label{struct_m_p_e_1_1_data_manager_1_1_data_buffer_ad69fcbc429f31ea23b2fdb4cf3f1db47}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}!Allocate@{Allocate}}
+\index{Allocate@{Allocate}!M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}}
+\subsubsection{\texorpdfstring{Allocate()}{Allocate()}}
+{\footnotesize\ttfamily const void M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer\+::\+Allocate (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Grow the entry buffer. 
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_data_buffer_a89e5af3756f1359588936a3adc5c4b03}\label{struct_m_p_e_1_1_data_manager_1_1_data_buffer_a89e5af3756f1359588936a3adc5c4b03}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}!Allocate\+And\+Resize\+Header@{Allocate\+And\+Resize\+Header}}
+\index{Allocate\+And\+Resize\+Header@{Allocate\+And\+Resize\+Header}!M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}}
+\subsubsection{\texorpdfstring{Allocate\+And\+Resize\+Header()}{AllocateAndResizeHeader()}}
+{\footnotesize\ttfamily const void M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer\+::\+Allocate\+And\+Resize\+Header (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Grow the entry buffer and copy the header immediately. 
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_data_buffer_aa0c025d4f28747a2168748f8a492928f}\label{struct_m_p_e_1_1_data_manager_1_1_data_buffer_aa0c025d4f28747a2168748f8a492928f}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}!Header\+Resize@{Header\+Resize}}
+\index{Header\+Resize@{Header\+Resize}!M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}}
+\subsubsection{\texorpdfstring{Header\+Resize()}{HeaderResize()}}
+{\footnotesize\ttfamily const void M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer\+::\+Header\+Resize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Grow the header. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_data_buffer_ae239cb6309b020933fb4d158e7237a66}\label{struct_m_p_e_1_1_data_manager_1_1_data_buffer_ae239cb6309b020933fb4d158e7237a66}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}!capacity@{capacity}}
+\index{capacity@{capacity}!M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}}
+\subsubsection{\texorpdfstring{capacity}{capacity}}
+{\footnotesize\ttfamily size\+\_\+t M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer\+::capacity}
+
+This capacity is in bytes!!! \mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_data_buffer_afc54918e931e50e7b6491deb34aaad42}\label{struct_m_p_e_1_1_data_manager_1_1_data_buffer_afc54918e931e50e7b6491deb34aaad42}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}!data@{data}}
+\index{data@{data}!M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily void$\ast$ M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer\+::data}
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_data_buffer_a392083d42f4f007a4c58dc2dd722d7f4}\label{struct_m_p_e_1_1_data_manager_1_1_data_buffer_a392083d42f4f007a4c58dc2dd722d7f4}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}!header@{header}}
+\index{header@{header}!M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}}
+\subsubsection{\texorpdfstring{header}{header}}
+{\footnotesize\ttfamily \hyperlink{struct_m_p_e_1_1_data_manager_1_1_entry_header}{Entry\+Header} M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer\+::header}
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_data_buffer_a27dfc55c4ae7fa07df7011e6232b982a}\label{struct_m_p_e_1_1_data_manager_1_1_data_buffer_a27dfc55c4ae7fa07df7011e6232b982a}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}!v\+\_\+buffer@{v\+\_\+buffer}}
+\index{v\+\_\+buffer@{v\+\_\+buffer}!M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer@{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer}}
+\subsubsection{\texorpdfstring{v\+\_\+buffer}{v\_buffer}}
+{\footnotesize\ttfamily \hyperlink{struct_m_p_e_1_1_data_manager_1_1_value___buffer}{Value\+\_\+\+Buffer} M\+P\+E\+::\+Data\+Manager\+::\+Data\+Buffer\+::v\+\_\+buffer}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_data_manager_8h}{Data\+Manager.\+h}\item 
+\hyperlink{_data_manager_8cpp}{Data\+Manager.\+cpp}\end{DoxyCompactItemize}

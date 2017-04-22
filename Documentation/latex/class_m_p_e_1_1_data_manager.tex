@@ -1,0 +1,178 @@
+\hypertarget{class_m_p_e_1_1_data_manager}{}\section{M\+PE\+:\+:Data\+Manager Class Reference}
+\label{class_m_p_e_1_1_data_manager}\index{M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}}
+
+
+The \hyperlink{class_m_p_e_1_1_data_manager}{Data\+Manager} is used to associate basic datatypes to an entity.  
+
+
+
+
+{\ttfamily \#include $<$Data\+Manager.\+h$>$}
+
+Inheritance diagram for M\+PE\+:\+:Data\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_m_p_e_1_1_data_manager}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_m_p_e_1_1_data_manager_1_1_data}{Data}
+\begin{DoxyCompactList}\small\item\em Used for indexing the strings and other growing datatypes in the value\+\_\+buffer. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_m_p_e_1_1_data_manager_1_1_data_buffer}{Data\+Buffer}
+\begin{DoxyCompactList}\small\item\em Struct for keeping track of the data entries an \hyperlink{struct_m_p_e_1_1_entity}{Entity} has been given. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_m_p_e_1_1_data_manager_1_1_entity_data}{Entity\+Data}
+\begin{DoxyCompactList}\small\item\em The managers \hyperlink{struct_m_p_e_1_1_entity}{Entity} entry block. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_m_p_e_1_1_data_manager_1_1_entry_header}{Entry\+Header}
+\begin{DoxyCompactList}\small\item\em The header struct, used for keeping track of the data entries an \hyperlink{struct_m_p_e_1_1_entity}{Entity} has. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_m_p_e_1_1_data_manager_1_1_value}{Value}
+\begin{DoxyCompactList}\small\item\em The value struct, this is where the data is stored. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_m_p_e_1_1_data_manager_1_1_value___buffer}{Value\+\_\+\+Buffer}
+\begin{DoxyCompactList}\small\item\em Points to the next free spot in the value\+\_\+buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_p_e_1_1_data_manager_a1af39853286eeaf8850b9e326ea24205}{Data\+Manager} (\hyperlink{namespace_m_p_e_a16447295e3105bd2ba2a9ea303566175}{thread\+Identifier} identifier, uint8\+\_\+t frame\+Sync\+Time=16)
+\item 
+\hyperlink{class_m_p_e_1_1_data_manager_ab6bdecd89d27d69d790a864175f8cf52}{$\sim$\+Data\+Manager} ()
+\item 
+const void \hyperlink{class_m_p_e_1_1_data_manager_aa8d6f1ef687afb532d968a3c1a42f324}{Start} ()
+\begin{DoxyCompactList}\small\item\em The main entry point for the thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5f}{Data\+Type} \+: uint8\+\_\+t \{ \hyperlink{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5faa97b2c144243b2b9d2c593ec268b62f5}{Data\+Type\+::\+B\+O\+OL}, 
+\hyperlink{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5fae738c26bf4ce1037fa81b039a915cbf6}{Data\+Type\+::\+F\+L\+O\+AT}, 
+\hyperlink{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5fa63b588d5559f64f89a416e656880b949}{Data\+Type\+::\+S\+T\+R\+I\+NG}
+ \}\begin{DoxyCompactList}\small\item\em For the kinds of data that can be stored as an entry. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void \hyperlink{class_m_p_e_1_1_data_manager_ad164b9613a36a5bbb70bb8aac700416a}{\+\_\+\+Create\+Data} (const \hyperlink{struct_m_p_e_1_1_entity}{Entity} \&entity)
+\begin{DoxyCompactList}\small\item\em Register an \hyperlink{struct_m_p_e_1_1_entity}{Entity} entry. \end{DoxyCompactList}\item 
+const void \hyperlink{class_m_p_e_1_1_data_manager_acfb97e38f7c66cb59769835554c43e82}{\+\_\+\+Allocate} (uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Allocate more memory. \end{DoxyCompactList}\item 
+const void \hyperlink{class_m_p_e_1_1_data_manager_aac128f82ae3d0e37ce8afc46f493dc4b}{\+\_\+\+Destroy} (uint32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Delete an entry in the memory block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_m_p_e_1_1_data_manager_1_1_entity_data}{Entity\+Data} \hyperlink{class_m_p_e_1_1_data_manager_a7c31d54443c2ff3dc77e2bf392de09ef}{\+\_\+entity\+Entires}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_m_p_e_1_1_data_manager}{Data\+Manager} is used to associate basic datatypes to an entity. 
+
+By sending a message to the data manager you can add one or more data entries to an entity. Each entry contains one \hyperlink{struct_m_p_e_1_1_data_manager_1_1_data_buffer}{Data\+Buffer}. In the beginning of the \hyperlink{struct_m_p_e_1_1_data_manager_1_1_data_buffer}{Data\+Buffer} the \hyperlink{struct_m_p_e_1_1_data_manager_1_1_entry_header}{Entry\+Header} is located(which contains the \hyperlink{struct_m_p_e_1_1_data_manager_1_1_value}{Value} for each Data\+Type entry. The strings are stored at the end of the \hyperlink{struct_m_p_e_1_1_data_manager_1_1_data_buffer}{Data\+Buffer}. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5f}{Data\+Type} 
+
+\hyperlink{namespace_m_p_e_1_1_tag_1_1_data_manager}{Tag\+::\+Data\+Manager} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5f}\label{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5f}} 
+\index{M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}!Data\+Type@{Data\+Type}}
+\index{Data\+Type@{Data\+Type}!M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}}
+\subsubsection{\texorpdfstring{Data\+Type}{DataType}}
+{\footnotesize\ttfamily enum \hyperlink{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5f}{M\+P\+E\+::\+Data\+Manager\+::\+Data\+Type} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}, {\ttfamily [private]}}
+
+
+
+For the kinds of data that can be stored as an entry. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+O\+OL@{B\+O\+OL}!M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}}\index{M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}!B\+O\+OL@{B\+O\+OL}}}\mbox{\Hypertarget{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5faa97b2c144243b2b9d2c593ec268b62f5}\label{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5faa97b2c144243b2b9d2c593ec268b62f5}} 
+B\+O\+OL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+L\+O\+AT@{F\+L\+O\+AT}!M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}}\index{M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}!F\+L\+O\+AT@{F\+L\+O\+AT}}}\mbox{\Hypertarget{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5fae738c26bf4ce1037fa81b039a915cbf6}\label{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5fae738c26bf4ce1037fa81b039a915cbf6}} 
+F\+L\+O\+AT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+R\+I\+NG@{S\+T\+R\+I\+NG}!M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}}\index{M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}!S\+T\+R\+I\+NG@{S\+T\+R\+I\+NG}}}\mbox{\Hypertarget{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5fa63b588d5559f64f89a416e656880b949}\label{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5fa63b588d5559f64f89a416e656880b949}} 
+S\+T\+R\+I\+NG&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_m_p_e_1_1_data_manager_a1af39853286eeaf8850b9e326ea24205}\label{class_m_p_e_1_1_data_manager_a1af39853286eeaf8850b9e326ea24205}} 
+\index{M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}!Data\+Manager@{Data\+Manager}}
+\index{Data\+Manager@{Data\+Manager}!M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}}
+\subsubsection{\texorpdfstring{Data\+Manager()}{DataManager()}}
+{\footnotesize\ttfamily M\+P\+E\+::\+Data\+Manager\+::\+Data\+Manager (\begin{DoxyParamCaption}\item[{\hyperlink{namespace_m_p_e_a16447295e3105bd2ba2a9ea303566175}{thread\+Identifier}}]{identifier,  }\item[{uint8\+\_\+t}]{frame\+Sync\+Time = {\ttfamily 16} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_m_p_e_1_1_data_manager_ab6bdecd89d27d69d790a864175f8cf52}\label{class_m_p_e_1_1_data_manager_ab6bdecd89d27d69d790a864175f8cf52}} 
+\index{M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}!````~Data\+Manager@{$\sim$\+Data\+Manager}}
+\index{````~Data\+Manager@{$\sim$\+Data\+Manager}!M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Data\+Manager()}{~DataManager()}}
+{\footnotesize\ttfamily M\+P\+E\+::\+Data\+Manager\+::$\sim$\+Data\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_m_p_e_1_1_data_manager_acfb97e38f7c66cb59769835554c43e82}\label{class_m_p_e_1_1_data_manager_acfb97e38f7c66cb59769835554c43e82}} 
+\index{M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}!\+\_\+\+Allocate@{\+\_\+\+Allocate}}
+\index{\+\_\+\+Allocate@{\+\_\+\+Allocate}!M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+Allocate()}{\_Allocate()}}
+{\footnotesize\ttfamily const void M\+P\+E\+::\+Data\+Manager\+::\+\_\+\+Allocate (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Allocate more memory. 
+
+\mbox{\Hypertarget{class_m_p_e_1_1_data_manager_ad164b9613a36a5bbb70bb8aac700416a}\label{class_m_p_e_1_1_data_manager_ad164b9613a36a5bbb70bb8aac700416a}} 
+\index{M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}!\+\_\+\+Create\+Data@{\+\_\+\+Create\+Data}}
+\index{\+\_\+\+Create\+Data@{\+\_\+\+Create\+Data}!M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+Create\+Data()}{\_CreateData()}}
+{\footnotesize\ttfamily const void M\+P\+E\+::\+Data\+Manager\+::\+\_\+\+Create\+Data (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_m_p_e_1_1_entity}{Entity} \&}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Register an \hyperlink{struct_m_p_e_1_1_entity}{Entity} entry. 
+
+An \hyperlink{struct_m_p_e_1_1_entity}{Entity} need to be registered before any data can be associated with the \hyperlink{struct_m_p_e_1_1_entity}{Entity}. \mbox{\Hypertarget{class_m_p_e_1_1_data_manager_aac128f82ae3d0e37ce8afc46f493dc4b}\label{class_m_p_e_1_1_data_manager_aac128f82ae3d0e37ce8afc46f493dc4b}} 
+\index{M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}!\+\_\+\+Destroy@{\+\_\+\+Destroy}}
+\index{\+\_\+\+Destroy@{\+\_\+\+Destroy}!M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+Destroy()}{\_Destroy()}}
+{\footnotesize\ttfamily const void M\+P\+E\+::\+Data\+Manager\+::\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Delete an entry in the memory block. 
+
+The deleted entry is replaced by the last in the block. \mbox{\Hypertarget{class_m_p_e_1_1_data_manager_aa8d6f1ef687afb532d968a3c1a42f324}\label{class_m_p_e_1_1_data_manager_aa8d6f1ef687afb532d968a3c1a42f324}} 
+\index{M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}!Start@{Start}}
+\index{Start@{Start}!M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily const void M\+P\+E\+::\+Data\+Manager\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The main entry point for the thread. 
+
+
+
+Implements \hyperlink{class_m_p_e_1_1_thread_a1bd133a96ec27c868b6bb758e11c0691}{M\+P\+E\+::\+Thread}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_m_p_e_1_1_data_manager_a7c31d54443c2ff3dc77e2bf392de09ef}\label{class_m_p_e_1_1_data_manager_a7c31d54443c2ff3dc77e2bf392de09ef}} 
+\index{M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}!\+\_\+entity\+Entires@{\+\_\+entity\+Entires}}
+\index{\+\_\+entity\+Entires@{\+\_\+entity\+Entires}!M\+P\+E\+::\+Data\+Manager@{M\+P\+E\+::\+Data\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+entity\+Entires}{\_entityEntires}}
+{\footnotesize\ttfamily \hyperlink{struct_m_p_e_1_1_data_manager_1_1_entity_data}{Entity\+Data} M\+P\+E\+::\+Data\+Manager\+::\+\_\+entity\+Entires\hspace{0.3cm}{\ttfamily [private]}}
+
+A reference pointer to avoid having to cast the basic datapointer all the time. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_data_manager_8h}{Data\+Manager.\+h}\item 
+\hyperlink{_data_manager_8cpp}{Data\+Manager.\+cpp}\end{DoxyCompactItemize}

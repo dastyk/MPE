@@ -38,7 +38,6 @@ namespace MPE
 		/*!
 		  This is a non-blocking command 
 		 \param data: Data to be sent 
-		 \param size: size of data 
 		 \param src: From where the message is sent.
 		 \param dest: Intended destination 
 		 \param tag: An identifier for the recviever.
@@ -50,7 +49,6 @@ namespace MPE
 		/*!
 		  This is a non-blocking command 
 		\param  data: Data to be sent 
-		\param size: size of data 
 		\param src: From where the message is sent.
 		\param  tag: An identifier for the recviever. 
 		\param prio: Priority of the message, 0 is lowest.

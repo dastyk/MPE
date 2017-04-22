@@ -1,0 +1,106 @@
+\hypertarget{struct_profiler_1_1_data}{}\section{Profiler\+:\+:Data Struct Reference}
+\label{struct_profiler_1_1_data}\index{Profiler\+::\+Data@{Profiler\+::\+Data}}
+
+
+{\ttfamily \#include $<$Profiler.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_profiler_1_1_data_a948384dc5a585b604993a336227946d3}{Data} ()
+\item 
+\hyperlink{struct_profiler_1_1_data_a67dd48e639f8837ce3837180997f1fb5}{Data} (\hyperlink{struct_profiler_1_1_data}{Data} $\ast$\hyperlink{struct_profiler_1_1_data_a03fc44b9847c501d013edd119e9e2883}{parent}, const char $\ast$\hyperlink{struct_profiler_1_1_data_a7ba86ce73c788e68ac563f5dd2b7cf0e}{function\+Name})
+\item 
+\hyperlink{struct_profiler_1_1_data_a37cc05a58760958fe799a8bca8557c3f}{$\sim$\+Data} ()
+\item 
+const void \hyperlink{struct_profiler_1_1_data_af9bd89654595106b06b37bdfb1fd918f}{dump} (std\+::stringstream \&out)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_profiler_1_1_data}{Data} $\ast$ \hyperlink{struct_profiler_1_1_data_a03fc44b9847c501d013edd119e9e2883}{parent}
+\item 
+std\+::string \hyperlink{struct_profiler_1_1_data_a7ba86ce73c788e68ac563f5dd2b7cf0e}{function\+Name}
+\item 
+uint64\+\_\+t \hyperlink{struct_profiler_1_1_data_a0b2089e9dd5738281e01baa681b4e542}{times\+Called}
+\item 
+double \hyperlink{struct_profiler_1_1_data_a19d4cb0603046e7463c6dee9db916194}{time\+Spent}
+\item 
+std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \hyperlink{struct_profiler_1_1_data_afbbb2195e44ec620890e389db3963afc}{time\+Start}
+\item 
+std\+::map$<$ uint64\+\_\+t, \hyperlink{struct_profiler_1_1_data}{Data} $\ast$ $>$ \hyperlink{struct_profiler_1_1_data_a5ca61fdcbac716347974f8dd71f95625}{children}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_profiler_1_1_data_a948384dc5a585b604993a336227946d3}\label{struct_profiler_1_1_data_a948384dc5a585b604993a336227946d3}} 
+\index{Profiler\+::\+Data@{Profiler\+::\+Data}!Data@{Data}}
+\index{Data@{Data}!Profiler\+::\+Data@{Profiler\+::\+Data}}
+\subsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Profiler\+::\+Data\+::\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_profiler_1_1_data_a67dd48e639f8837ce3837180997f1fb5}\label{struct_profiler_1_1_data_a67dd48e639f8837ce3837180997f1fb5}} 
+\index{Profiler\+::\+Data@{Profiler\+::\+Data}!Data@{Data}}
+\index{Data@{Data}!Profiler\+::\+Data@{Profiler\+::\+Data}}
+\subsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Profiler\+::\+Data\+::\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{struct_profiler_1_1_data}{Data} $\ast$}]{parent,  }\item[{const char $\ast$}]{function\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_profiler_1_1_data_a37cc05a58760958fe799a8bca8557c3f}\label{struct_profiler_1_1_data_a37cc05a58760958fe799a8bca8557c3f}} 
+\index{Profiler\+::\+Data@{Profiler\+::\+Data}!````~Data@{$\sim$\+Data}}
+\index{````~Data@{$\sim$\+Data}!Profiler\+::\+Data@{Profiler\+::\+Data}}
+\subsubsection{\texorpdfstring{$\sim$\+Data()}{~Data()}}
+{\footnotesize\ttfamily Profiler\+::\+Data\+::$\sim$\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_profiler_1_1_data_af9bd89654595106b06b37bdfb1fd918f}\label{struct_profiler_1_1_data_af9bd89654595106b06b37bdfb1fd918f}} 
+\index{Profiler\+::\+Data@{Profiler\+::\+Data}!dump@{dump}}
+\index{dump@{dump}!Profiler\+::\+Data@{Profiler\+::\+Data}}
+\subsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily const void Profiler\+::\+Data\+::dump (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{out }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_profiler_1_1_data_a5ca61fdcbac716347974f8dd71f95625}\label{struct_profiler_1_1_data_a5ca61fdcbac716347974f8dd71f95625}} 
+\index{Profiler\+::\+Data@{Profiler\+::\+Data}!children@{children}}
+\index{children@{children}!Profiler\+::\+Data@{Profiler\+::\+Data}}
+\subsubsection{\texorpdfstring{children}{children}}
+{\footnotesize\ttfamily std\+::map$<$uint64\+\_\+t, \hyperlink{struct_profiler_1_1_data}{Data}$\ast$$>$ Profiler\+::\+Data\+::children}
+
+\mbox{\Hypertarget{struct_profiler_1_1_data_a7ba86ce73c788e68ac563f5dd2b7cf0e}\label{struct_profiler_1_1_data_a7ba86ce73c788e68ac563f5dd2b7cf0e}} 
+\index{Profiler\+::\+Data@{Profiler\+::\+Data}!function\+Name@{function\+Name}}
+\index{function\+Name@{function\+Name}!Profiler\+::\+Data@{Profiler\+::\+Data}}
+\subsubsection{\texorpdfstring{function\+Name}{functionName}}
+{\footnotesize\ttfamily std\+::string Profiler\+::\+Data\+::function\+Name}
+
+\mbox{\Hypertarget{struct_profiler_1_1_data_a03fc44b9847c501d013edd119e9e2883}\label{struct_profiler_1_1_data_a03fc44b9847c501d013edd119e9e2883}} 
+\index{Profiler\+::\+Data@{Profiler\+::\+Data}!parent@{parent}}
+\index{parent@{parent}!Profiler\+::\+Data@{Profiler\+::\+Data}}
+\subsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \hyperlink{struct_profiler_1_1_data}{Data}$\ast$ Profiler\+::\+Data\+::parent}
+
+\mbox{\Hypertarget{struct_profiler_1_1_data_a0b2089e9dd5738281e01baa681b4e542}\label{struct_profiler_1_1_data_a0b2089e9dd5738281e01baa681b4e542}} 
+\index{Profiler\+::\+Data@{Profiler\+::\+Data}!times\+Called@{times\+Called}}
+\index{times\+Called@{times\+Called}!Profiler\+::\+Data@{Profiler\+::\+Data}}
+\subsubsection{\texorpdfstring{times\+Called}{timesCalled}}
+{\footnotesize\ttfamily uint64\+\_\+t Profiler\+::\+Data\+::times\+Called}
+
+\mbox{\Hypertarget{struct_profiler_1_1_data_a19d4cb0603046e7463c6dee9db916194}\label{struct_profiler_1_1_data_a19d4cb0603046e7463c6dee9db916194}} 
+\index{Profiler\+::\+Data@{Profiler\+::\+Data}!time\+Spent@{time\+Spent}}
+\index{time\+Spent@{time\+Spent}!Profiler\+::\+Data@{Profiler\+::\+Data}}
+\subsubsection{\texorpdfstring{time\+Spent}{timeSpent}}
+{\footnotesize\ttfamily double Profiler\+::\+Data\+::time\+Spent}
+
+\mbox{\Hypertarget{struct_profiler_1_1_data_afbbb2195e44ec620890e389db3963afc}\label{struct_profiler_1_1_data_afbbb2195e44ec620890e389db3963afc}} 
+\index{Profiler\+::\+Data@{Profiler\+::\+Data}!time\+Start@{time\+Start}}
+\index{time\+Start@{time\+Start}!Profiler\+::\+Data@{Profiler\+::\+Data}}
+\subsubsection{\texorpdfstring{time\+Start}{timeStart}}
+{\footnotesize\ttfamily std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point Profiler\+::\+Data\+::time\+Start}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_profiler_8h}{Profiler.\+h}\end{DoxyCompactItemize}

@@ -2,37 +2,71 @@
 \label{class_m_p_e_1_1_thread_message_controller}\index{M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}}
 
 
-The \hyperlink{class_m_p_e_1_1_thread_message_controller}{Thread\+Message\+Controller} initiates threads and handles the communication between them.  
+The \hyperlink{class_m_p_e_1_1_thread_message_controller}{Thread\+Message\+Controller} initiates threads.  
 
 
 
 
 {\ttfamily \#include $<$Thread\+Message\+Controller.\+h$>$}
 
-\subsection*{Public Member Functions}
+\subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-const void \hyperlink{class_m_p_e_1_1_thread_message_controller_a08663e963b8ac560e0678527a6f0cd86}{Start\+Thread} (\hyperlink{class_m_p_e_1_1_thread}{Thread} $\ast$thread, double frame\+Sync\+Time)
+static const void \hyperlink{class_m_p_e_1_1_thread_message_controller_a74948fc34511a9c393994be2ebd8316e}{Init} ()
+\item 
+static const void \hyperlink{class_m_p_e_1_1_thread_message_controller_a40d05ce8e2ec218e549ea01b42c7b0bd}{Shutdown} ()
+\item 
+static const void \hyperlink{class_m_p_e_1_1_thread_message_controller_a614845d564c92a28b148d66a2008755e}{Start\+Thread} (\hyperlink{class_m_p_e_1_1_thread}{Thread} $\ast$thread)
 \begin{DoxyCompactList}\small\item\em Starts a new thread. \end{DoxyCompactList}\item 
-const void \hyperlink{class_m_p_e_1_1_thread_message_controller_ad4fdb8a09a50306d1002fd3fb5bae5e3}{Send} (void $\ast$data, size\+\_\+t size, uint32\+\_\+t dest, uint32\+\_\+t tag)
+static const void \hyperlink{class_m_p_e_1_1_thread_message_controller_afcc8f572cd1355df9e6a0ef8e2d0f710}{Send} (void $\ast$data, uint32\+\_\+t src, uint32\+\_\+t dest, uint32\+\_\+t tag, uint8\+\_\+t prio=0)
 \begin{DoxyCompactList}\small\item\em Send a message. \end{DoxyCompactList}\item 
-const void \hyperlink{class_m_p_e_1_1_thread_message_controller_a76ce2d05dfedd82e6d522151d42880f6}{BroadC} (void $\ast$data, size\+\_\+t, uint32\+\_\+t tag)
-\begin{DoxyCompactList}\small\item\em Send a Broadcast to all threads. \end{DoxyCompactList}\item 
-const void \hyperlink{class_m_p_e_1_1_thread_message_controller_ab55fff1fb40f1456efb7e029fa1ddb89}{Recv} (void $\ast$$\ast$data, size\+\_\+t \&size, uint32\+\_\+t src, uint32\+\_\+t tag)
-\begin{DoxyCompactList}\small\item\em Recvieve a message. \end{DoxyCompactList}\item 
-const uint32\+\_\+t \hyperlink{class_m_p_e_1_1_thread_message_controller_abfa4aaad59117d2b4f83cf7504d55cb7}{Peek\+Msg} (void $\ast$$\ast$data, size\+\_\+t \&size, uint32\+\_\+t src, uint32\+\_\+t tag)
-\begin{DoxyCompactList}\small\item\em Peek message queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static const void \hyperlink{class_m_p_e_1_1_thread_message_controller_a3585e277495c8eec3926d455b433e99c}{BroadC} (void $\ast$data, uint32\+\_\+t src, uint32\+\_\+t tag, uint8\+\_\+t prio=U\+I\+N\+T8\+\_\+\+M\+AX)
+\begin{DoxyCompactList}\small\item\em Send a Broadcast to all threads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_p_e_1_1_thread_message_controller_a6b8fea7b68af1cf62b5e3b9c40f7bb8e}{Thread\+Message\+Controller} ()
+\item 
+\hyperlink{class_m_p_e_1_1_thread_message_controller_a4886e82640bad9363f5fcf9914b66789}{$\sim$\+Thread\+Message\+Controller} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::thread $>$ \hyperlink{class_m_p_e_1_1_thread_message_controller_a23b7a7dc72ced66080f70165359ea3b4}{\+\_\+std\+Threads}
+\item 
+std\+::unordered\+\_\+map$<$ \hyperlink{namespace_m_p_e_a16447295e3105bd2ba2a9ea303566175}{thread\+Identifier}, \hyperlink{class_m_p_e_1_1_thread}{Thread} $\ast$ $>$ \hyperlink{class_m_p_e_1_1_thread_message_controller_ac93b25a09aeba30cfb4bbad12967f799}{\+\_\+threads}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_m_p_e_1_1_thread_message_controller}{Thread\+Message\+Controller} $\ast$ \hyperlink{class_m_p_e_1_1_thread_message_controller_adcb1e8be3a49290adaf51d71b4eee0fc}{\+\_\+instance} = nullptr
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-The \hyperlink{class_m_p_e_1_1_thread_message_controller}{Thread\+Message\+Controller} initiates threads and handles the communication between them. 
+The \hyperlink{class_m_p_e_1_1_thread_message_controller}{Thread\+Message\+Controller} initiates threads. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_a6b8fea7b68af1cf62b5e3b9c40f7bb8e}\label{class_m_p_e_1_1_thread_message_controller_a6b8fea7b68af1cf62b5e3b9c40f7bb8e}} 
+\index{M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}!Thread\+Message\+Controller@{Thread\+Message\+Controller}}
+\index{Thread\+Message\+Controller@{Thread\+Message\+Controller}!M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}}
+\subsubsection{\texorpdfstring{Thread\+Message\+Controller()}{ThreadMessageController()}}
+{\footnotesize\ttfamily M\+P\+E\+::\+Thread\+Message\+Controller\+::\+Thread\+Message\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_a4886e82640bad9363f5fcf9914b66789}\label{class_m_p_e_1_1_thread_message_controller_a4886e82640bad9363f5fcf9914b66789}} 
+\index{M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}!````~Thread\+Message\+Controller@{$\sim$\+Thread\+Message\+Controller}}
+\index{````~Thread\+Message\+Controller@{$\sim$\+Thread\+Message\+Controller}!M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}}
+\subsubsection{\texorpdfstring{$\sim$\+Thread\+Message\+Controller()}{~ThreadMessageController()}}
+{\footnotesize\ttfamily M\+P\+E\+::\+Thread\+Message\+Controller\+::$\sim$\+Thread\+Message\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_a76ce2d05dfedd82e6d522151d42880f6}\label{class_m_p_e_1_1_thread_message_controller_a76ce2d05dfedd82e6d522151d42880f6}} 
+\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_a3585e277495c8eec3926d455b433e99c}\label{class_m_p_e_1_1_thread_message_controller_a3585e277495c8eec3926d455b433e99c}} 
 \index{M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}!BroadC@{BroadC}}
 \index{BroadC@{BroadC}!M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}}
 \subsubsection{\texorpdfstring{Broad\+C()}{BroadC()}}
-{\footnotesize\ttfamily const void M\+P\+E\+::\+Thread\+Message\+Controller\+::\+BroadC (\begin{DoxyParamCaption}\item[{void $\ast$}]{data,  }\item[{size\+\_\+t}]{,  }\item[{uint32\+\_\+t}]{tag }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const void M\+P\+E\+::\+Thread\+Message\+Controller\+::\+BroadC (\begin{DoxyParamCaption}\item[{void $\ast$}]{data,  }\item[{uint32\+\_\+t}]{src,  }\item[{uint32\+\_\+t}]{tag,  }\item[{uint8\+\_\+t}]{prio = {\ttfamily UINT8\+\_\+MAX} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -42,70 +76,27 @@ This is a non-\/blocking command
 \begin{DoxyParams}{Parameters}
 {\em data} & Data to be sent \\
 \hline
-{\em size} & size of data \\
+{\em src} & From where the message is sent. \\
 \hline
 {\em tag} & An identifier for the recviever. \\
 \hline
-\end{DoxyParams}
-\begin{DoxySeeAlso}{See also}
-\hyperlink{struct_tag}{Tag} 
-\end{DoxySeeAlso}
-\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_abfa4aaad59117d2b4f83cf7504d55cb7}\label{class_m_p_e_1_1_thread_message_controller_abfa4aaad59117d2b4f83cf7504d55cb7}} 
-\index{M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}!Peek\+Msg@{Peek\+Msg}}
-\index{Peek\+Msg@{Peek\+Msg}!M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}}
-\subsubsection{\texorpdfstring{Peek\+Msg()}{PeekMsg()}}
-{\footnotesize\ttfamily const uint32\+\_\+t M\+P\+E\+::\+Thread\+Message\+Controller\+::\+Peek\+Msg (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{data,  }\item[{size\+\_\+t \&}]{size,  }\item[{uint32\+\_\+t}]{src,  }\item[{uint32\+\_\+t}]{tag }\end{DoxyParamCaption})}
-
-
-
-Peek message queue. 
-
-This is a non-\/blocking command 
-\begin{DoxyParams}{Parameters}
-{\em data} & Data will be initialized and filled with recvieved data \\
-\hline
-{\em size} & size of data \\
-\hline
-{\em Src} & Intended destination. Specify M\+P\+E\+::\+Any\+Src to accept message from any source \\
-\hline
-{\em tag} & An identifier for the recviever, tags are found in M\+P\+E\+::\+Tag, or any user defined tags \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Returns 0 if no messages in queue, non-\/zero otherwise. 
-\end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\hyperlink{struct_tag}{Tag} 
-\end{DoxySeeAlso}
-\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_ab55fff1fb40f1456efb7e029fa1ddb89}\label{class_m_p_e_1_1_thread_message_controller_ab55fff1fb40f1456efb7e029fa1ddb89}} 
-\index{M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}!Recv@{Recv}}
-\index{Recv@{Recv}!M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}}
-\subsubsection{\texorpdfstring{Recv()}{Recv()}}
-{\footnotesize\ttfamily const void M\+P\+E\+::\+Thread\+Message\+Controller\+::\+Recv (\begin{DoxyParamCaption}\item[{void $\ast$$\ast$}]{data,  }\item[{size\+\_\+t \&}]{size,  }\item[{uint32\+\_\+t}]{src,  }\item[{uint32\+\_\+t}]{tag }\end{DoxyParamCaption})}
-
-
-
-Recvieve a message. 
-
-This is a blocking command 
-\begin{DoxyParams}{Parameters}
-{\em data} & Data will be initialized and filled with recvieved data \\
-\hline
-{\em size} & size of data \\
-\hline
-{\em Src} & Intended destination. Specify M\+P\+E\+::\+Any\+Src to accept message from any source \\
-\hline
-{\em tag} & An identifier for the recviever. \\
+{\em prio} & Priority of the message, 0 is lowest. \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{struct_tag}{Tag} 
+\hyperlink{namespace_m_p_e_1_1_tag}{Tag} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_ad4fdb8a09a50306d1002fd3fb5bae5e3}\label{class_m_p_e_1_1_thread_message_controller_ad4fdb8a09a50306d1002fd3fb5bae5e3}} 
+\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_a74948fc34511a9c393994be2ebd8316e}\label{class_m_p_e_1_1_thread_message_controller_a74948fc34511a9c393994be2ebd8316e}} 
+\index{M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}!Init@{Init}}
+\index{Init@{Init}!M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily const void M\+P\+E\+::\+Thread\+Message\+Controller\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_afcc8f572cd1355df9e6a0ef8e2d0f710}\label{class_m_p_e_1_1_thread_message_controller_afcc8f572cd1355df9e6a0ef8e2d0f710}} 
 \index{M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}!Send@{Send}}
 \index{Send@{Send}!M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}}
 \subsubsection{\texorpdfstring{Send()}{Send()}}
-{\footnotesize\ttfamily const void M\+P\+E\+::\+Thread\+Message\+Controller\+::\+Send (\begin{DoxyParamCaption}\item[{void $\ast$}]{data,  }\item[{size\+\_\+t}]{size,  }\item[{uint32\+\_\+t}]{dest,  }\item[{uint32\+\_\+t}]{tag }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const void M\+P\+E\+::\+Thread\+Message\+Controller\+::\+Send (\begin{DoxyParamCaption}\item[{void $\ast$}]{data,  }\item[{uint32\+\_\+t}]{src,  }\item[{uint32\+\_\+t}]{dest,  }\item[{uint32\+\_\+t}]{tag,  }\item[{uint8\+\_\+t}]{prio = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -115,7 +106,7 @@ This is a non-\/blocking command
 \begin{DoxyParams}{Parameters}
 {\em data} & Data to be sent \\
 \hline
-{\em size} & size of data \\
+{\em src} & From where the message is sent. \\
 \hline
 {\em dest} & Intended destination \\
 \hline
@@ -123,13 +114,19 @@ This is a non-\/blocking command
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{struct_tag}{Tag} 
+\hyperlink{namespace_m_p_e_1_1_tag}{Tag} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_a08663e963b8ac560e0678527a6f0cd86}\label{class_m_p_e_1_1_thread_message_controller_a08663e963b8ac560e0678527a6f0cd86}} 
+\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_a40d05ce8e2ec218e549ea01b42c7b0bd}\label{class_m_p_e_1_1_thread_message_controller_a40d05ce8e2ec218e549ea01b42c7b0bd}} 
+\index{M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}}
+\subsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily const void M\+P\+E\+::\+Thread\+Message\+Controller\+::\+Shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_a614845d564c92a28b148d66a2008755e}\label{class_m_p_e_1_1_thread_message_controller_a614845d564c92a28b148d66a2008755e}} 
 \index{M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}!Start\+Thread@{Start\+Thread}}
 \index{Start\+Thread@{Start\+Thread}!M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}}
 \subsubsection{\texorpdfstring{Start\+Thread()}{StartThread()}}
-{\footnotesize\ttfamily const void M\+P\+E\+::\+Thread\+Message\+Controller\+::\+Start\+Thread (\begin{DoxyParamCaption}\item[{\hyperlink{class_m_p_e_1_1_thread}{Thread} $\ast$}]{thread,  }\item[{double}]{frame\+Sync\+Time }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const void M\+P\+E\+::\+Thread\+Message\+Controller\+::\+Start\+Thread (\begin{DoxyParamCaption}\item[{\hyperlink{class_m_p_e_1_1_thread}{Thread} $\ast$}]{thread }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -139,15 +136,34 @@ Starts a new thread.
 \begin{DoxyParams}{Parameters}
 {\em thread} & Pointer to the class which should occupy the thread \\
 \hline
-{\em frame\+Sync\+Time} & Limit the thread\textquotesingle{}s frametime to a specific time. \\
-\hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
 \hyperlink{class_m_p_e_1_1_thread}{Thread} 
 \end{DoxySeeAlso}
 
 
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_adcb1e8be3a49290adaf51d71b4eee0fc}\label{class_m_p_e_1_1_thread_message_controller_adcb1e8be3a49290adaf51d71b4eee0fc}} 
+\index{M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}!\+\_\+instance@{\+\_\+instance}}
+\index{\+\_\+instance@{\+\_\+instance}!M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}}
+\subsubsection{\texorpdfstring{\+\_\+instance}{\_instance}}
+{\footnotesize\ttfamily \hyperlink{class_m_p_e_1_1_thread_message_controller}{Thread\+Message\+Controller} $\ast$ M\+P\+E\+::\+Thread\+Message\+Controller\+::\+\_\+instance = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_a23b7a7dc72ced66080f70165359ea3b4}\label{class_m_p_e_1_1_thread_message_controller_a23b7a7dc72ced66080f70165359ea3b4}} 
+\index{M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}!\+\_\+std\+Threads@{\+\_\+std\+Threads}}
+\index{\+\_\+std\+Threads@{\+\_\+std\+Threads}!M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}}
+\subsubsection{\texorpdfstring{\+\_\+std\+Threads}{\_stdThreads}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::thread$>$ M\+P\+E\+::\+Thread\+Message\+Controller\+::\+\_\+std\+Threads\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_m_p_e_1_1_thread_message_controller_ac93b25a09aeba30cfb4bbad12967f799}\label{class_m_p_e_1_1_thread_message_controller_ac93b25a09aeba30cfb4bbad12967f799}} 
+\index{M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}!\+\_\+threads@{\+\_\+threads}}
+\index{\+\_\+threads@{\+\_\+threads}!M\+P\+E\+::\+Thread\+Message\+Controller@{M\+P\+E\+::\+Thread\+Message\+Controller}}
+\subsubsection{\texorpdfstring{\+\_\+threads}{\_threads}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$\hyperlink{namespace_m_p_e_a16447295e3105bd2ba2a9ea303566175}{thread\+Identifier}, \hyperlink{class_m_p_e_1_1_thread}{Thread}$\ast$$>$ M\+P\+E\+::\+Thread\+Message\+Controller\+::\+\_\+threads\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Thread\+Message\+Controller.\+h\item 
-Thread\+Message\+Controller.\+cpp\end{DoxyCompactItemize}
+\hyperlink{_thread_message_controller_8h}{Thread\+Message\+Controller.\+h}\item 
+\hyperlink{_thread_message_controller_8cpp}{Thread\+Message\+Controller.\+cpp}\end{DoxyCompactItemize}

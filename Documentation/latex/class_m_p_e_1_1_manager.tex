@@ -1,0 +1,76 @@
+\hypertarget{class_m_p_e_1_1_manager}{}\section{M\+PE\+:\+:Manager Class Reference}
+\label{class_m_p_e_1_1_manager}\index{M\+P\+E\+::\+Manager@{M\+P\+E\+::\+Manager}}
+
+
+The manager base class.  
+
+
+
+
+{\ttfamily \#include $<$Manager.\+h$>$}
+
+Inheritance diagram for M\+PE\+:\+:Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_m_p_e_1_1_manager}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_p_e_1_1_manager_a16591d627df08536ce27b7d791347269}{Manager} (\hyperlink{struct_m_p_e_1_1_base_manager_entity_entry_block}{Base\+Manager\+Entity\+Entry\+Block} $\ast$entires, \hyperlink{namespace_m_p_e_a16447295e3105bd2ba2a9ea303566175}{thread\+Identifier} identifier, uint8\+\_\+t frame\+Sync\+Time=16)
+\item 
+virtual \hyperlink{class_m_p_e_1_1_manager_a6bf168edb75ff564f1dee7a9869798f0}{$\sim$\+Manager} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ \hyperlink{struct_m_p_e_1_1_entity}{Entity}, uint32\+\_\+t, \hyperlink{struct_m_p_e_1_1_entity_hasher}{Entity\+Hasher} $>$ \hyperlink{class_m_p_e_1_1_manager_a142d48cdd0daf0b9ad667ea599de586a}{\+\_\+entity\+To\+Index}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_m_p_e_1_1_base_manager_entity_entry_block}{Base\+Manager\+Entity\+Entry\+Block} $\ast$ \hyperlink{class_m_p_e_1_1_manager_a5d8d764913aecc8a92ad83790570df86}{\+\_\+base\+Entity\+Entires}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The manager base class. 
+
+This is a virtual class and is intended to be inherited by classes are to be used as component managers for entities. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_m_p_e_1_1_manager_a16591d627df08536ce27b7d791347269}\label{class_m_p_e_1_1_manager_a16591d627df08536ce27b7d791347269}} 
+\index{M\+P\+E\+::\+Manager@{M\+P\+E\+::\+Manager}!Manager@{Manager}}
+\index{Manager@{Manager}!M\+P\+E\+::\+Manager@{M\+P\+E\+::\+Manager}}
+\subsubsection{\texorpdfstring{Manager()}{Manager()}}
+{\footnotesize\ttfamily M\+P\+E\+::\+Manager\+::\+Manager (\begin{DoxyParamCaption}\item[{\hyperlink{struct_m_p_e_1_1_base_manager_entity_entry_block}{Base\+Manager\+Entity\+Entry\+Block} $\ast$}]{entires,  }\item[{\hyperlink{namespace_m_p_e_a16447295e3105bd2ba2a9ea303566175}{thread\+Identifier}}]{identifier,  }\item[{uint8\+\_\+t}]{frame\+Sync\+Time = {\ttfamily 16} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_m_p_e_1_1_manager_a6bf168edb75ff564f1dee7a9869798f0}\label{class_m_p_e_1_1_manager_a6bf168edb75ff564f1dee7a9869798f0}} 
+\index{M\+P\+E\+::\+Manager@{M\+P\+E\+::\+Manager}!````~Manager@{$\sim$\+Manager}}
+\index{````~Manager@{$\sim$\+Manager}!M\+P\+E\+::\+Manager@{M\+P\+E\+::\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Manager()}{~Manager()}}
+{\footnotesize\ttfamily M\+P\+E\+::\+Manager\+::$\sim$\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_m_p_e_1_1_manager_a5d8d764913aecc8a92ad83790570df86}\label{class_m_p_e_1_1_manager_a5d8d764913aecc8a92ad83790570df86}} 
+\index{M\+P\+E\+::\+Manager@{M\+P\+E\+::\+Manager}!\+\_\+base\+Entity\+Entires@{\+\_\+base\+Entity\+Entires}}
+\index{\+\_\+base\+Entity\+Entires@{\+\_\+base\+Entity\+Entires}!M\+P\+E\+::\+Manager@{M\+P\+E\+::\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+base\+Entity\+Entires}{\_baseEntityEntires}}
+{\footnotesize\ttfamily \hyperlink{struct_m_p_e_1_1_base_manager_entity_entry_block}{Base\+Manager\+Entity\+Entry\+Block}$\ast$ M\+P\+E\+::\+Manager\+::\+\_\+base\+Entity\+Entires\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_m_p_e_1_1_manager_a142d48cdd0daf0b9ad667ea599de586a}\label{class_m_p_e_1_1_manager_a142d48cdd0daf0b9ad667ea599de586a}} 
+\index{M\+P\+E\+::\+Manager@{M\+P\+E\+::\+Manager}!\+\_\+entity\+To\+Index@{\+\_\+entity\+To\+Index}}
+\index{\+\_\+entity\+To\+Index@{\+\_\+entity\+To\+Index}!M\+P\+E\+::\+Manager@{M\+P\+E\+::\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+entity\+To\+Index}{\_entityToIndex}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$\hyperlink{struct_m_p_e_1_1_entity}{Entity}, uint32\+\_\+t, \hyperlink{struct_m_p_e_1_1_entity_hasher}{Entity\+Hasher}$>$ M\+P\+E\+::\+Manager\+::\+\_\+entity\+To\+Index\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_manager_8h}{Manager.\+h}\item 
+\hyperlink{_manager_8cpp}{Manager.\+cpp}\end{DoxyCompactItemize}

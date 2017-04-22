@@ -1,0 +1,114 @@
+\hypertarget{struct_m_p_e_1_1_entity}{}\section{M\+PE\+:\+:Entity Struct Reference}
+\label{struct_m_p_e_1_1_entity}\index{M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}}
+
+
+\hyperlink{struct_m_p_e_1_1_entity}{Entity} is essentially an id.  
+
+
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_m_p_e_1_1_entity_a7a748d33b99ad088cd933578ad4533f6}{Entity} ()
+\begin{DoxyCompactList}\small\item\em Creates the entity. \end{DoxyCompactList}\item 
+\hyperlink{struct_m_p_e_1_1_entity_acf0e7947c1814f2984de87590963360d}{Entity} (const uint64\+\_\+t \hyperlink{struct_m_p_e_1_1_entity_a04ff49ec80c37388b0e6a75cec860ceb}{ID})
+\begin{DoxyCompactList}\small\item\em Creates the entity with a specified ID. \end{DoxyCompactList}\item 
+\hyperlink{struct_m_p_e_1_1_entity_a985a1dae08ed4ab82e4a0ae2263cb4a7}{operator const uint64\+\_\+t} () const
+\begin{DoxyCompactList}\small\item\em Conversion to uint64\+\_\+t. \end{DoxyCompactList}\item 
+const \hyperlink{struct_m_p_e_1_1_entity}{Entity} \& \hyperlink{struct_m_p_e_1_1_entity_aa48771c026e87c391bff9e75d179b538}{operator=} (const uint64\+\_\+t \&other)
+\item 
+const \hyperlink{struct_m_p_e_1_1_entity}{Entity} \& \hyperlink{struct_m_p_e_1_1_entity_ad356d6b8c3df7cbd8dcc24dd1a3d718d}{operator=} (const \hyperlink{struct_m_p_e_1_1_entity}{Entity} \&other)
+\item 
+const bool \hyperlink{struct_m_p_e_1_1_entity_a587d74654df3a9be46403264c9bb016a}{operator==} (const \hyperlink{struct_m_p_e_1_1_entity}{Entity} \&other) const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \hyperlink{struct_m_p_e_1_1_entity_a04ff49ec80c37388b0e6a75cec860ceb}{ID}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const uint64\+\_\+t \hyperlink{struct_m_p_e_1_1_entity_a629768de1229b78f58ef62534fe74663}{Generate\+ID} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{struct_m_p_e_1_1_entity}{Entity} is essentially an id. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_m_p_e_1_1_entity_a7a748d33b99ad088cd933578ad4533f6}\label{struct_m_p_e_1_1_entity_a7a748d33b99ad088cd933578ad4533f6}} 
+\index{M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}}
+\subsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily M\+P\+E\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates the entity. 
+
+A random 64bit integer is generated as ID. It is highly unlikely we will get the same ID. \mbox{\Hypertarget{struct_m_p_e_1_1_entity_acf0e7947c1814f2984de87590963360d}\label{struct_m_p_e_1_1_entity_acf0e7947c1814f2984de87590963360d}} 
+\index{M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}}
+\subsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily M\+P\+E\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{const uint64\+\_\+t}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates the entity with a specified ID. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_m_p_e_1_1_entity_a629768de1229b78f58ef62534fe74663}\label{struct_m_p_e_1_1_entity_a629768de1229b78f58ef62534fe74663}} 
+\index{M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}!Generate\+ID@{Generate\+ID}}
+\index{Generate\+ID@{Generate\+ID}!M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}}
+\subsubsection{\texorpdfstring{Generate\+I\+D()}{GenerateID()}}
+{\footnotesize\ttfamily const uint64\+\_\+t M\+P\+E\+::\+Entity\+::\+Generate\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_entity_a985a1dae08ed4ab82e4a0ae2263cb4a7}\label{struct_m_p_e_1_1_entity_a985a1dae08ed4ab82e4a0ae2263cb4a7}} 
+\index{M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}!operator const uint64\+\_\+t@{operator const uint64\+\_\+t}}
+\index{operator const uint64\+\_\+t@{operator const uint64\+\_\+t}!M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}}
+\subsubsection{\texorpdfstring{operator const uint64\+\_\+t()}{operator const uint64\_t()}}
+{\footnotesize\ttfamily M\+P\+E\+::\+Entity\+::operator const uint64\+\_\+t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Conversion to uint64\+\_\+t. 
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_entity_aa48771c026e87c391bff9e75d179b538}\label{struct_m_p_e_1_1_entity_aa48771c026e87c391bff9e75d179b538}} 
+\index{M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}!operator=@{operator=}}
+\index{operator=@{operator=}!M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{struct_m_p_e_1_1_entity}{Entity}\& M\+P\+E\+::\+Entity\+::operator= (\begin{DoxyParamCaption}\item[{const uint64\+\_\+t \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_entity_ad356d6b8c3df7cbd8dcc24dd1a3d718d}\label{struct_m_p_e_1_1_entity_ad356d6b8c3df7cbd8dcc24dd1a3d718d}} 
+\index{M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}!operator=@{operator=}}
+\index{operator=@{operator=}!M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{struct_m_p_e_1_1_entity}{Entity}\& M\+P\+E\+::\+Entity\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_m_p_e_1_1_entity}{Entity} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_entity_a587d74654df3a9be46403264c9bb016a}\label{struct_m_p_e_1_1_entity_a587d74654df3a9be46403264c9bb016a}} 
+\index{M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}!operator==@{operator==}}
+\index{operator==@{operator==}!M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily const bool M\+P\+E\+::\+Entity\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_m_p_e_1_1_entity}{Entity} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_m_p_e_1_1_entity_a04ff49ec80c37388b0e6a75cec860ceb}\label{struct_m_p_e_1_1_entity_a04ff49ec80c37388b0e6a75cec860ceb}} 
+\index{M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}!ID@{ID}}
+\index{ID@{ID}!M\+P\+E\+::\+Entity@{M\+P\+E\+::\+Entity}}
+\subsubsection{\texorpdfstring{ID}{ID}}
+{\footnotesize\ttfamily uint64\+\_\+t M\+P\+E\+::\+Entity\+::\+ID}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_entity_8h}{Entity.\+h}\item 
+\hyperlink{_entity_8cpp}{Entity.\+cpp}\end{DoxyCompactItemize}

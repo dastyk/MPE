@@ -1,0 +1,59 @@
+\hypertarget{_profiler_8h}{}\section{Profiler.\+h File Reference}
+\label{_profiler_8h}\index{Profiler.\+h@{Profiler.\+h}}
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_profiler}{Profiler}
+\item 
+struct \hyperlink{struct_profiler_1_1_data}{Profiler\+::\+Data}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_profiler_8h_a21589759e76a451f5fd59830330ef100}{Start\+Profile}
+\item 
+\#define \hyperlink{_profiler_8h_a0d067f46e47b345c6622c2e8f484afb9}{Stop\+Profile}
+\item 
+\#define \hyperlink{_profiler_8h_a3959f4f0823f1d496d18694014575125}{Profile\+Return\+Void}~\{return;\}
+\item 
+\#define \hyperlink{_profiler_8h_a17b96315f0a2ebc9eb61f7c23c8297a6}{Profile\+Return\+Const}(x)~\{return x;\}
+\item 
+\#define \hyperlink{_profiler_8h_a19f1f9629ab4359c1bada77a471157e1}{Profile\+Return}(x)~\{return x;\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_profiler_8h_a19f1f9629ab4359c1bada77a471157e1}\label{_profiler_8h_a19f1f9629ab4359c1bada77a471157e1}} 
+\index{Profiler.\+h@{Profiler.\+h}!Profile\+Return@{Profile\+Return}}
+\index{Profile\+Return@{Profile\+Return}!Profiler.\+h@{Profiler.\+h}}
+\subsubsection{\texorpdfstring{Profile\+Return}{ProfileReturn}}
+{\footnotesize\ttfamily \#define Profile\+Return(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\{return x;\}}
+
+\mbox{\Hypertarget{_profiler_8h_a17b96315f0a2ebc9eb61f7c23c8297a6}\label{_profiler_8h_a17b96315f0a2ebc9eb61f7c23c8297a6}} 
+\index{Profiler.\+h@{Profiler.\+h}!Profile\+Return\+Const@{Profile\+Return\+Const}}
+\index{Profile\+Return\+Const@{Profile\+Return\+Const}!Profiler.\+h@{Profiler.\+h}}
+\subsubsection{\texorpdfstring{Profile\+Return\+Const}{ProfileReturnConst}}
+{\footnotesize\ttfamily \#define Profile\+Return\+Const(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\{return x;\}}
+
+\mbox{\Hypertarget{_profiler_8h_a3959f4f0823f1d496d18694014575125}\label{_profiler_8h_a3959f4f0823f1d496d18694014575125}} 
+\index{Profiler.\+h@{Profiler.\+h}!Profile\+Return\+Void@{Profile\+Return\+Void}}
+\index{Profile\+Return\+Void@{Profile\+Return\+Void}!Profiler.\+h@{Profiler.\+h}}
+\subsubsection{\texorpdfstring{Profile\+Return\+Void}{ProfileReturnVoid}}
+{\footnotesize\ttfamily \#define Profile\+Return\+Void~\{return;\}}
+
+\mbox{\Hypertarget{_profiler_8h_a21589759e76a451f5fd59830330ef100}\label{_profiler_8h_a21589759e76a451f5fd59830330ef100}} 
+\index{Profiler.\+h@{Profiler.\+h}!Start\+Profile@{Start\+Profile}}
+\index{Start\+Profile@{Start\+Profile}!Profiler.\+h@{Profiler.\+h}}
+\subsubsection{\texorpdfstring{Start\+Profile}{StartProfile}}
+{\footnotesize\ttfamily \#define Start\+Profile}
+
+\mbox{\Hypertarget{_profiler_8h_a0d067f46e47b345c6622c2e8f484afb9}\label{_profiler_8h_a0d067f46e47b345c6622c2e8f484afb9}} 
+\index{Profiler.\+h@{Profiler.\+h}!Stop\+Profile@{Stop\+Profile}}
+\index{Stop\+Profile@{Stop\+Profile}!Profiler.\+h@{Profiler.\+h}}
+\subsubsection{\texorpdfstring{Stop\+Profile}{StopProfile}}
+{\footnotesize\ttfamily \#define Stop\+Profile}
+

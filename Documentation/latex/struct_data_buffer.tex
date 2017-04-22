@@ -1,0 +1,56 @@
+\hypertarget{struct_data_buffer}{}\section{Data\+Buffer Struct Reference}
+\label{struct_data_buffer}\index{Data\+Buffer@{Data\+Buffer}}
+
+
+Struct for keeping track of the data entries an entity has been given.  
+
+
+
+
+{\ttfamily \#include $<$Data\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_data_buffer_a7a43566e9225aac2d8d0fd5cba9d048e}\label{struct_data_buffer_a7a43566e9225aac2d8d0fd5cba9d048e}} 
+const void \hyperlink{struct_data_buffer_a7a43566e9225aac2d8d0fd5cba9d048e}{Allocate} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Grow the entry buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_data_buffer_a7be60ad0927d8a2188d02cc1307e452b}\label{struct_data_buffer_a7be60ad0927d8a2188d02cc1307e452b}} 
+const void \hyperlink{struct_data_buffer_a7be60ad0927d8a2188d02cc1307e452b}{Allocate\+And\+Resize\+Header} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Grow the entry buffer and copy the header immediately. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_data_buffer_a3678452dd076f51251237a021a264c75}\label{struct_data_buffer_a3678452dd076f51251237a021a264c75}} 
+const void \hyperlink{struct_data_buffer_a3678452dd076f51251237a021a264c75}{Header\+Resize} ()
+\begin{DoxyCompactList}\small\item\em Grow the header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_data_buffer_a2208d18584208dec2bffd37503e8f190}\label{struct_data_buffer_a2208d18584208dec2bffd37503e8f190}} 
+void $\ast$ {\bfseries data}
+\item 
+size\+\_\+t \hyperlink{struct_data_buffer_adc799c19e2e48c7648f0dbdbe49e7981}{capacity}
+\item 
+\mbox{\Hypertarget{struct_data_buffer_a709487cec6935f6695e466b5dfc9bc41}\label{struct_data_buffer_a709487cec6935f6695e466b5dfc9bc41}} 
+\hyperlink{struct_entry_header}{Entry\+Header} {\bfseries header}
+\item 
+\mbox{\Hypertarget{struct_data_buffer_ad7c49b83960cbfabc57ded2432151a5d}\label{struct_data_buffer_ad7c49b83960cbfabc57ded2432151a5d}} 
+\hyperlink{struct_value___buffer}{Value\+\_\+\+Buffer} {\bfseries v\+\_\+buffer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Struct for keeping track of the data entries an entity has been given. 
+
+The databuffer stores the header on the left side and the value\+\_\+buffer on the right side. When the buffers meet the size is increased. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_data_buffer_adc799c19e2e48c7648f0dbdbe49e7981}\label{struct_data_buffer_adc799c19e2e48c7648f0dbdbe49e7981}} 
+\index{Data\+Buffer@{Data\+Buffer}!capacity@{capacity}}
+\index{capacity@{capacity}!Data\+Buffer@{Data\+Buffer}}
+\subsubsection{\texorpdfstring{capacity}{capacity}}
+{\footnotesize\ttfamily size\+\_\+t Data\+Buffer\+::capacity}
+
+This capacity is in bytes!!! 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Data\+Manager.\+h\end{DoxyCompactItemize}

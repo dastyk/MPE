@@ -1,0 +1,102 @@
+\hypertarget{class_profiler}{}\section{Profiler Class Reference}
+\label{class_profiler}\index{Profiler@{Profiler}}
+
+
+{\ttfamily \#include $<$Profiler.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_profiler_1_1_data}{Data}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$uint64\+\_\+t function\+Hash$>$ }\\const void \hyperlink{class_profiler_a1d9623c49b247e4b8374dd991d489f45}{Start\+ProfileF} (const char $\ast$func\+Name)
+\item 
+const void \hyperlink{class_profiler_a6f9e7815c9d08f33ec89f3aedbb85694}{Stop\+ProfileF} (uint32\+\_\+t threadid)
+\item 
+const void \hyperlink{class_profiler_af6216cfe94749776e49a0886fa91b96c}{\+\_\+dump\+To\+File} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_profiler}{Profiler} \& \hyperlink{class_profiler_af260850db5b9767c969973090c845ab4}{Get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_profiler_a675ebc9207b9aeace1d967c085abeacf}{Profiler} ()
+\item 
+\hyperlink{class_profiler_a1e6dd8f6cfb15cd5237b971d8f49c749}{$\sim$\+Profiler} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_profiler_1_1_data}{Data} $\ast$ \hyperlink{class_profiler_a862fb21ca07c94f5f657c7cd1a053a33}{\+\_\+profile} = nullptr
+\item 
+\hyperlink{struct_profiler_1_1_data}{Data} $\ast$ \hyperlink{class_profiler_a2d8b680e39756a8451e49ae51696d010}{\+\_\+current} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_profiler_a675ebc9207b9aeace1d967c085abeacf}\label{class_profiler_a675ebc9207b9aeace1d967c085abeacf}} 
+\index{Profiler@{Profiler}!Profiler@{Profiler}}
+\index{Profiler@{Profiler}!Profiler@{Profiler}}
+\subsubsection{\texorpdfstring{Profiler()}{Profiler()}}
+{\footnotesize\ttfamily Profiler\+::\+Profiler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_profiler_a1e6dd8f6cfb15cd5237b971d8f49c749}\label{class_profiler_a1e6dd8f6cfb15cd5237b971d8f49c749}} 
+\index{Profiler@{Profiler}!````~Profiler@{$\sim$\+Profiler}}
+\index{````~Profiler@{$\sim$\+Profiler}!Profiler@{Profiler}}
+\subsubsection{\texorpdfstring{$\sim$\+Profiler()}{~Profiler()}}
+{\footnotesize\ttfamily Profiler\+::$\sim$\+Profiler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_profiler_af6216cfe94749776e49a0886fa91b96c}\label{class_profiler_af6216cfe94749776e49a0886fa91b96c}} 
+\index{Profiler@{Profiler}!\+\_\+dump\+To\+File@{\+\_\+dump\+To\+File}}
+\index{\+\_\+dump\+To\+File@{\+\_\+dump\+To\+File}!Profiler@{Profiler}}
+\subsubsection{\texorpdfstring{\+\_\+dump\+To\+File()}{\_dumpToFile()}}
+{\footnotesize\ttfamily const void Profiler\+::\+\_\+dump\+To\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_profiler_af260850db5b9767c969973090c845ab4}\label{class_profiler_af260850db5b9767c969973090c845ab4}} 
+\index{Profiler@{Profiler}!Get\+Instance@{Get\+Instance}}
+\index{Get\+Instance@{Get\+Instance}!Profiler@{Profiler}}
+\subsubsection{\texorpdfstring{Get\+Instance()}{GetInstance()}}
+{\footnotesize\ttfamily static \hyperlink{class_profiler}{Profiler}\& Profiler\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_profiler_a1d9623c49b247e4b8374dd991d489f45}\label{class_profiler_a1d9623c49b247e4b8374dd991d489f45}} 
+\index{Profiler@{Profiler}!Start\+ProfileF@{Start\+ProfileF}}
+\index{Start\+ProfileF@{Start\+ProfileF}!Profiler@{Profiler}}
+\subsubsection{\texorpdfstring{Start\+Profile\+F()}{StartProfileF()}}
+{\footnotesize\ttfamily template$<$uint64\+\_\+t function\+Hash$>$ \\
+const void Profiler\+::\+Start\+ProfileF (\begin{DoxyParamCaption}\item[{const char $\ast$}]{func\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_profiler_a6f9e7815c9d08f33ec89f3aedbb85694}\label{class_profiler_a6f9e7815c9d08f33ec89f3aedbb85694}} 
+\index{Profiler@{Profiler}!Stop\+ProfileF@{Stop\+ProfileF}}
+\index{Stop\+ProfileF@{Stop\+ProfileF}!Profiler@{Profiler}}
+\subsubsection{\texorpdfstring{Stop\+Profile\+F()}{StopProfileF()}}
+{\footnotesize\ttfamily const void Profiler\+::\+Stop\+ProfileF (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{threadid }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_profiler_a2d8b680e39756a8451e49ae51696d010}\label{class_profiler_a2d8b680e39756a8451e49ae51696d010}} 
+\index{Profiler@{Profiler}!\+\_\+current@{\+\_\+current}}
+\index{\+\_\+current@{\+\_\+current}!Profiler@{Profiler}}
+\subsubsection{\texorpdfstring{\+\_\+current}{\_current}}
+{\footnotesize\ttfamily \hyperlink{struct_profiler_1_1_data}{Data}$\ast$ Profiler\+::\+\_\+current = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_profiler_a862fb21ca07c94f5f657c7cd1a053a33}\label{class_profiler_a862fb21ca07c94f5f657c7cd1a053a33}} 
+\index{Profiler@{Profiler}!\+\_\+profile@{\+\_\+profile}}
+\index{\+\_\+profile@{\+\_\+profile}!Profiler@{Profiler}}
+\subsubsection{\texorpdfstring{\+\_\+profile}{\_profile}}
+{\footnotesize\ttfamily \hyperlink{struct_profiler_1_1_data}{Data}$\ast$ Profiler\+::\+\_\+profile = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_profiler_8h}{Profiler.\+h}\end{DoxyCompactItemize}

@@ -69,7 +69,6 @@ namespace MPE
 		This is a non-blocking command, will continue without wait for message to be delivered.
 		This is called by other threads, not itself. For sending messages see ThreadMessageController::Send.
 		\param data: Data to be sent
-		\param size: size of data
 		\param src: Source
 		\param tag: An identifier for the recviever.
 		\param prio: Priority of the message, 0 is lowest.

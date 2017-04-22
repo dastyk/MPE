@@ -1,0 +1,43 @@
+\hypertarget{struct_entry_header}{}\section{Entry\+Header Struct Reference}
+\label{struct_entry_header}\index{Entry\+Header@{Entry\+Header}}
+
+
+The header struct, used for keeping track of the data entries an entity has.  
+
+
+
+
+{\ttfamily \#include $<$Data\+Manager.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_entry_header_acfcb10ed50b0d15f505190e7d910cf69}\label{struct_entry_header_acfcb10ed50b0d15f505190e7d910cf69}} 
+uint8\+\_\+t {\bfseries capacity} = 0
+\item 
+\mbox{\Hypertarget{struct_entry_header_a56d4ff58e67c102bc4b8118d86e6e504}\label{struct_entry_header_a56d4ff58e67c102bc4b8118d86e6e504}} 
+uint8\+\_\+t {\bfseries entry\+Count} = 0
+\item 
+\mbox{\Hypertarget{struct_entry_header_a7620d0e6d0cb2afd97b9a1fde91bb654}\label{struct_entry_header_a7620d0e6d0cb2afd97b9a1fde91bb654}} 
+uint32\+\_\+t $\ast$ {\bfseries keys}
+\item 
+\mbox{\Hypertarget{struct_entry_header_aa276141bf2d7f7c713dd83b74fa383ba}\label{struct_entry_header_aa276141bf2d7f7c713dd83b74fa383ba}} 
+Data\+Type $\ast$ {\bfseries type}
+\item 
+\mbox{\Hypertarget{struct_entry_header_a317420953c3218c807ead512aca65eb2}\label{struct_entry_header_a317420953c3218c807ead512aca65eb2}} 
+\hyperlink{struct_value}{Value} $\ast$ {\bfseries value}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_entry_header_a91cc6cc53461d67b73284bf499767e07}\label{struct_entry_header_a91cc6cc53461d67b73284bf499767e07}} 
+static const uint8\+\_\+t {\bfseries entry\+Size} = sizeof(uint32\+\_\+t) + sizeof(Data\+Type) + sizeof(\hyperlink{struct_value}{Value})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The header struct, used for keeping track of the data entries an entity has. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Data\+Manager.\+h\end{DoxyCompactItemize}

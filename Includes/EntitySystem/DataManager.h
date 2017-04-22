@@ -5,7 +5,13 @@
 
 namespace MPE
 {
-
+	//! The DataManager is used to associate basic datatypes to an entity.
+	/*!
+	By sending a message to the data manager you can add one or more data entries to an entity.
+	Each entry contains one DataBuffer. In the beginning of the DataBuffer the EntryHeader is located(which contains the Value for each DataType entry. The strings are stored at the end of the DataBuffer.
+	\sa DataType
+	\sa Tag::DataManager
+	*/
 	class DataManager : public Manager
 	{
 	private:
@@ -37,7 +43,7 @@ namespace MPE
 			};
 		};
 
-		//! The header struct, used for keeping track of the data entries an entity has.
+		//! The header struct, used for keeping track of the data entries an Entity has.
 		struct EntryHeader
 		{
 			uint8_t capacity = 0;
@@ -55,7 +61,7 @@ namespace MPE
 			size_t size = 0;
 		};
 
-		//! Struct for keeping track of the data entries an entity has been given.
+		//! Struct for keeping track of the data entries an Entity has been given.
 		/*!
 		The databuffer stores the header on the left side and the value_buffer on the right side.
 		 When the buffers meet the size is increased.
@@ -81,10 +87,10 @@ namespace MPE
 			const void HeaderResize();
 		};
 
-		//! The managers entity entry block.
+		//! The managers Entity entry block.
 		struct EntityData : public BaseManagerEntityEntryBlock
 		{
-			DataBuffer** dataBuff;/*!< Stores a pointer to the data entries for the entity entry */  
+			DataBuffer** dataBuff;/*!< Stores a pointer to the data entries for the Entity entry */  
 		};
 
 		EntityData _entityEntires; /*!< A reference pointer to avoid having to cast the basic datapointer all the time. */
@@ -98,56 +104,12 @@ namespace MPE
 
 
 	private:
-		//! Register an entity entry
+		//! Register an Entity entry
+		/*!
+		An Entity need to be registered before any data can be associated with the Entity.
+		*/
 		const void _CreateData(const Entity& entity);
 
-
-
-		///** Add the bool value to the given entity and key.
-		//*
-		//*/
-		//const void AddBoolValue(const Entity& entity, const string& key, const bool val);
-		///** Add the float value to the given entity and key.
-		//*
-		//*/
-		//const void AddFloatValue(const Entity& entity, const string& key, const float val);
-		///** Add the string value to the given entity and key.
-		//*
-		//*/
-		//const void AddStringValue(const Entity& entity, const string& key, const string& val);
-
-
-
-		///** Set the bool value to the given entity and key.
-		//*
-		//*/
-		//const void SetBoolValue(const Entity& entity, const string& key, const bool val);
-		///** Set the float value to the given entity and key.
-		//*
-		//*/
-		//const void SetFloatValue(const Entity& entity, const string& key, const float val);
-		///** Set the string value to the given entity and key.
-		//*
-		//*/
-		//const void SetStringValue(const Entity& entity, const string& key, const string& val);
-
-
-
-		///** Get the bool value to the given entity and key.
-		//*
-		//*/
-		//bool GetBoolValue(const Entity& entity, const string& key, bool default_value);
-		///** Get the float value to the given entity and key.
-		//*
-		//*/
-		//float GetFloatValue(const Entity& entity, const string& key, float default_value);
-		///** Get the string value to the given entity and key.
-		//*
-		//*/
-		//string GetStringValue(const Entity& entity, const string& key, string default_value);
-
-
-	private:
 		//! Allocate more memory
 		const void _Allocate(uint32_t size);
 

@@ -1,0 +1,72 @@
+\hypertarget{struct_m_p_e_1_1_data_manager_1_1_entry_header}{}\section{M\+PE\+:\+:Data\+Manager\+:\+:Entry\+Header Struct Reference}
+\label{struct_m_p_e_1_1_data_manager_1_1_entry_header}\index{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header@{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header}}
+
+
+The header struct, used for keeping track of the data entries an \hyperlink{struct_m_p_e_1_1_entity}{Entity} has.  
+
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{struct_m_p_e_1_1_data_manager_1_1_entry_header_a0d7adc0b636e8c00d1d38b6b780a96da}{capacity} = 0
+\item 
+uint8\+\_\+t \hyperlink{struct_m_p_e_1_1_data_manager_1_1_entry_header_ae1f8d7e4b6363ba5af82c1c20b7a9d1f}{entry\+Count} = 0
+\item 
+uint32\+\_\+t $\ast$ \hyperlink{struct_m_p_e_1_1_data_manager_1_1_entry_header_a1147ac0d74ba9de830139b4f661a92c7}{keys}
+\item 
+\hyperlink{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5f}{Data\+Type} $\ast$ \hyperlink{struct_m_p_e_1_1_data_manager_1_1_entry_header_aff785b6cab9ad54f0f3a14e3f4ca5a11}{type}
+\item 
+\hyperlink{struct_m_p_e_1_1_data_manager_1_1_value}{Value} $\ast$ \hyperlink{struct_m_p_e_1_1_data_manager_1_1_entry_header_a56c968449fa90b40890ec0f9ec8b3736}{value}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint8\+\_\+t \hyperlink{struct_m_p_e_1_1_data_manager_1_1_entry_header_a8b73487b833524d0b1497e07f5f63129}{entry\+Size} = sizeof(uint32\+\_\+t) + sizeof(\hyperlink{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5f}{Data\+Type}) + sizeof(\hyperlink{struct_m_p_e_1_1_data_manager_1_1_value}{Value})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The header struct, used for keeping track of the data entries an \hyperlink{struct_m_p_e_1_1_entity}{Entity} has. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_entry_header_a0d7adc0b636e8c00d1d38b6b780a96da}\label{struct_m_p_e_1_1_data_manager_1_1_entry_header_a0d7adc0b636e8c00d1d38b6b780a96da}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header@{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header}!capacity@{capacity}}
+\index{capacity@{capacity}!M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header@{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header}}
+\subsubsection{\texorpdfstring{capacity}{capacity}}
+{\footnotesize\ttfamily uint8\+\_\+t M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header\+::capacity = 0}
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_entry_header_ae1f8d7e4b6363ba5af82c1c20b7a9d1f}\label{struct_m_p_e_1_1_data_manager_1_1_entry_header_ae1f8d7e4b6363ba5af82c1c20b7a9d1f}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header@{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header}!entry\+Count@{entry\+Count}}
+\index{entry\+Count@{entry\+Count}!M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header@{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header}}
+\subsubsection{\texorpdfstring{entry\+Count}{entryCount}}
+{\footnotesize\ttfamily uint8\+\_\+t M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header\+::entry\+Count = 0}
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_entry_header_a8b73487b833524d0b1497e07f5f63129}\label{struct_m_p_e_1_1_data_manager_1_1_entry_header_a8b73487b833524d0b1497e07f5f63129}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header@{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header}!entry\+Size@{entry\+Size}}
+\index{entry\+Size@{entry\+Size}!M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header@{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header}}
+\subsubsection{\texorpdfstring{entry\+Size}{entrySize}}
+{\footnotesize\ttfamily const uint8\+\_\+t M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header\+::entry\+Size = sizeof(uint32\+\_\+t) + sizeof(\hyperlink{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5f}{Data\+Type}) + sizeof(\hyperlink{struct_m_p_e_1_1_data_manager_1_1_value}{Value})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_entry_header_a1147ac0d74ba9de830139b4f661a92c7}\label{struct_m_p_e_1_1_data_manager_1_1_entry_header_a1147ac0d74ba9de830139b4f661a92c7}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header@{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header}!keys@{keys}}
+\index{keys@{keys}!M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header@{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header}}
+\subsubsection{\texorpdfstring{keys}{keys}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header\+::keys}
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_entry_header_aff785b6cab9ad54f0f3a14e3f4ca5a11}\label{struct_m_p_e_1_1_data_manager_1_1_entry_header_aff785b6cab9ad54f0f3a14e3f4ca5a11}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header@{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header}!type@{type}}
+\index{type@{type}!M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header@{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \hyperlink{class_m_p_e_1_1_data_manager_aeebd98a9feed805f5ebd63276f003f5f}{Data\+Type}$\ast$ M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header\+::type}
+
+\mbox{\Hypertarget{struct_m_p_e_1_1_data_manager_1_1_entry_header_a56c968449fa90b40890ec0f9ec8b3736}\label{struct_m_p_e_1_1_data_manager_1_1_entry_header_a56c968449fa90b40890ec0f9ec8b3736}} 
+\index{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header@{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header}!value@{value}}
+\index{value@{value}!M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header@{M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header}}
+\subsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily \hyperlink{struct_m_p_e_1_1_data_manager_1_1_value}{Value}$\ast$ M\+P\+E\+::\+Data\+Manager\+::\+Entry\+Header\+::value}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_data_manager_8h}{Data\+Manager.\+h}\end{DoxyCompactItemize}

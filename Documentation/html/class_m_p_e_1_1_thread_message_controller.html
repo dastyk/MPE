@@ -59,49 +59,123 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>MPE</b></li><li class="navelem"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html">ThreadMessageController</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespace_m_p_e.html">MPE</a></li><li class="navelem"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html">ThreadMessageController</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_m_p_e_1_1_thread_message_controller-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MPE::ThreadMessageController Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="class_m_p_e_1_1_thread_message_controller.html" title="The ThreadMessageController initiates threads and handles the communication between them...">ThreadMessageController</a> initiates threads and handles the communication between them.  
+<p>The <a class="el" href="class_m_p_e_1_1_thread_message_controller.html" title="The ThreadMessageController initiates threads. ">ThreadMessageController</a> initiates threads.  
  <a href="class_m_p_e_1_1_thread_message_controller.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_thread_message_controller_8h_source.html">ThreadMessageController.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a08663e963b8ac560e0678527a6f0cd86"><td class="memItemLeft" align="right" valign="top">const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#a08663e963b8ac560e0678527a6f0cd86">StartThread</a> (<a class="el" href="class_m_p_e_1_1_thread.html">Thread</a> *thread, double frameSyncTime)</td></tr>
-<tr class="memdesc:a08663e963b8ac560e0678527a6f0cd86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a new thread.  <a href="#a08663e963b8ac560e0678527a6f0cd86">More...</a><br /></td></tr>
-<tr class="separator:a08663e963b8ac560e0678527a6f0cd86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4fdb8a09a50306d1002fd3fb5bae5e3"><td class="memItemLeft" align="right" valign="top">const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#ad4fdb8a09a50306d1002fd3fb5bae5e3">Send</a> (void *data, size_t size, uint32_t dest, uint32_t tag)</td></tr>
-<tr class="memdesc:ad4fdb8a09a50306d1002fd3fb5bae5e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message.  <a href="#ad4fdb8a09a50306d1002fd3fb5bae5e3">More...</a><br /></td></tr>
-<tr class="separator:ad4fdb8a09a50306d1002fd3fb5bae5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76ce2d05dfedd82e6d522151d42880f6"><td class="memItemLeft" align="right" valign="top">const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#a76ce2d05dfedd82e6d522151d42880f6">BroadC</a> (void *data, size_t, uint32_t tag)</td></tr>
-<tr class="memdesc:a76ce2d05dfedd82e6d522151d42880f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a Broadcast to all threads.  <a href="#a76ce2d05dfedd82e6d522151d42880f6">More...</a><br /></td></tr>
-<tr class="separator:a76ce2d05dfedd82e6d522151d42880f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab55fff1fb40f1456efb7e029fa1ddb89"><td class="memItemLeft" align="right" valign="top">const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#ab55fff1fb40f1456efb7e029fa1ddb89">Recv</a> (void **data, size_t &amp;size, uint32_t src, uint32_t tag)</td></tr>
-<tr class="memdesc:ab55fff1fb40f1456efb7e029fa1ddb89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recvieve a message.  <a href="#ab55fff1fb40f1456efb7e029fa1ddb89">More...</a><br /></td></tr>
-<tr class="separator:ab55fff1fb40f1456efb7e029fa1ddb89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfa4aaad59117d2b4f83cf7504d55cb7"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#abfa4aaad59117d2b4f83cf7504d55cb7">PeekMsg</a> (void **data, size_t &amp;size, uint32_t src, uint32_t tag)</td></tr>
-<tr class="memdesc:abfa4aaad59117d2b4f83cf7504d55cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peek message queue.  <a href="#abfa4aaad59117d2b4f83cf7504d55cb7">More...</a><br /></td></tr>
-<tr class="separator:abfa4aaad59117d2b4f83cf7504d55cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a74948fc34511a9c393994be2ebd8316e"><td class="memItemLeft" align="right" valign="top">static const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#a74948fc34511a9c393994be2ebd8316e">Init</a> ()</td></tr>
+<tr class="separator:a74948fc34511a9c393994be2ebd8316e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40d05ce8e2ec218e549ea01b42c7b0bd"><td class="memItemLeft" align="right" valign="top">static const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#a40d05ce8e2ec218e549ea01b42c7b0bd">Shutdown</a> ()</td></tr>
+<tr class="separator:a40d05ce8e2ec218e549ea01b42c7b0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a614845d564c92a28b148d66a2008755e"><td class="memItemLeft" align="right" valign="top">static const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#a614845d564c92a28b148d66a2008755e">StartThread</a> (<a class="el" href="class_m_p_e_1_1_thread.html">Thread</a> *thread)</td></tr>
+<tr class="memdesc:a614845d564c92a28b148d66a2008755e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a new thread.  <a href="#a614845d564c92a28b148d66a2008755e">More...</a><br /></td></tr>
+<tr class="separator:a614845d564c92a28b148d66a2008755e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcc8f572cd1355df9e6a0ef8e2d0f710"><td class="memItemLeft" align="right" valign="top">static const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#afcc8f572cd1355df9e6a0ef8e2d0f710">Send</a> (void *data, uint32_t src, uint32_t dest, uint32_t tag, uint8_t prio=0)</td></tr>
+<tr class="memdesc:afcc8f572cd1355df9e6a0ef8e2d0f710"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message.  <a href="#afcc8f572cd1355df9e6a0ef8e2d0f710">More...</a><br /></td></tr>
+<tr class="separator:afcc8f572cd1355df9e6a0ef8e2d0f710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3585e277495c8eec3926d455b433e99c"><td class="memItemLeft" align="right" valign="top">static const void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#a3585e277495c8eec3926d455b433e99c">BroadC</a> (void *data, uint32_t src, uint32_t tag, uint8_t prio=UINT8_MAX)</td></tr>
+<tr class="memdesc:a3585e277495c8eec3926d455b433e99c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a Broadcast to all threads.  <a href="#a3585e277495c8eec3926d455b433e99c">More...</a><br /></td></tr>
+<tr class="separator:a3585e277495c8eec3926d455b433e99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a6b8fea7b68af1cf62b5e3b9c40f7bb8e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#a6b8fea7b68af1cf62b5e3b9c40f7bb8e">ThreadMessageController</a> ()</td></tr>
+<tr class="separator:a6b8fea7b68af1cf62b5e3b9c40f7bb8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4886e82640bad9363f5fcf9914b66789"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#a4886e82640bad9363f5fcf9914b66789">~ThreadMessageController</a> ()</td></tr>
+<tr class="separator:a4886e82640bad9363f5fcf9914b66789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a23b7a7dc72ced66080f70165359ea3b4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::thread &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#a23b7a7dc72ced66080f70165359ea3b4">_stdThreads</a></td></tr>
+<tr class="separator:a23b7a7dc72ced66080f70165359ea3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac93b25a09aeba30cfb4bbad12967f799"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="namespace_m_p_e.html#a16447295e3105bd2ba2a9ea303566175">threadIdentifier</a>, <a class="el" href="class_m_p_e_1_1_thread.html">Thread</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#ac93b25a09aeba30cfb4bbad12967f799">_threads</a></td></tr>
+<tr class="separator:ac93b25a09aeba30cfb4bbad12967f799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:adcb1e8be3a49290adaf51d71b4eee0fc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_m_p_e_1_1_thread_message_controller.html">ThreadMessageController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html#adcb1e8be3a49290adaf51d71b4eee0fc">_instance</a> = nullptr</td></tr>
+<tr class="separator:adcb1e8be3a49290adaf51d71b4eee0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="class_m_p_e_1_1_thread_message_controller.html" title="The ThreadMessageController initiates threads and handles the communication between them...">ThreadMessageController</a> initiates threads and handles the communication between them. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a76ce2d05dfedd82e6d522151d42880f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76ce2d05dfedd82e6d522151d42880f6">&#9670;&nbsp;</a></span>BroadC()</h2>
+<div class="textblock"><p>The <a class="el" href="class_m_p_e_1_1_thread_message_controller.html" title="The ThreadMessageController initiates threads. ">ThreadMessageController</a> initiates threads. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6b8fea7b68af1cf62b5e3b9c40f7bb8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b8fea7b68af1cf62b5e3b9c40f7bb8e">&#9670;&nbsp;</a></span>ThreadMessageController()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MPE::ThreadMessageController::ThreadMessageController </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4886e82640bad9363f5fcf9914b66789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4886e82640bad9363f5fcf9914b66789">&#9670;&nbsp;</a></span>~ThreadMessageController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MPE::ThreadMessageController::~ThreadMessageController </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3585e277495c8eec3926d455b433e99c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3585e277495c8eec3926d455b433e99c">&#9670;&nbsp;</a></span>BroadC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const void MPE::ThreadMessageController::BroadC </td>
@@ -112,14 +186,20 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>tag</em>&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>prio</em> = <code>UINT8_MAX</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -127,131 +207,60 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Send a Broadcast to all threads. </p>
 <p>This is a non-blocking command </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>Data to be sent </td></tr>
-    <tr><td class="paramname">size</td><td>size of data </td></tr>
+    <tr><td class="paramname">src</td><td>From where the message is sent. </td></tr>
     <tr><td class="paramname">tag</td><td>An identifier for the recviever. </td></tr>
+    <tr><td class="paramname">prio</td><td>Priority of the message, 0 is lowest. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_tag.html">Tag</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespace_m_p_e_1_1_tag.html">Tag</a> </dd></dl>
 
 </div>
 </div>
-<a id="abfa4aaad59117d2b4f83cf7504d55cb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfa4aaad59117d2b4f83cf7504d55cb7">&#9670;&nbsp;</a></span>PeekMsg()</h2>
+<a id="a74948fc34511a9c393994be2ebd8316e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74948fc34511a9c393994be2ebd8316e">&#9670;&nbsp;</a></span>Init()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint32_t MPE::ThreadMessageController::PeekMsg </td>
+          <td class="memname">const void MPE::ThreadMessageController::Init </td>
           <td>(</td>
-          <td class="paramtype">void **&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">size_t &amp;&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>src</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>tag</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Peek message queue. </p>
-<p>This is a non-blocking command </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>Data will be initialized and filled with recvieved data </td></tr>
-    <tr><td class="paramname">size</td><td>size of data </td></tr>
-    <tr><td class="paramname">Src</td><td>Intended destination. Specify MPE::AnySrc to accept message from any source </td></tr>
-    <tr><td class="paramname">tag</td><td>An identifier for the recviever, tags are found in MPE::Tag, or any user defined tags </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 if no messages in queue, non-zero otherwise. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_tag.html">Tag</a> </dd></dl>
-
 </div>
 </div>
-<a id="ab55fff1fb40f1456efb7e029fa1ddb89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab55fff1fb40f1456efb7e029fa1ddb89">&#9670;&nbsp;</a></span>Recv()</h2>
+<a id="afcc8f572cd1355df9e6a0ef8e2d0f710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcc8f572cd1355df9e6a0ef8e2d0f710">&#9670;&nbsp;</a></span>Send()</h2>
 
 <div class="memitem">
 <div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const void MPE::ThreadMessageController::Recv </td>
-          <td>(</td>
-          <td class="paramtype">void **&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t &amp;&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>src</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>tag</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Recvieve a message. </p>
-<p>This is a blocking command </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>Data will be initialized and filled with recvieved data </td></tr>
-    <tr><td class="paramname">size</td><td>size of data </td></tr>
-    <tr><td class="paramname">Src</td><td>Intended destination. Specify MPE::AnySrc to accept message from any source </td></tr>
-    <tr><td class="paramname">tag</td><td>An identifier for the recviever. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_tag.html">Tag</a> </dd></dl>
-
-</div>
-</div>
-<a id="ad4fdb8a09a50306d1002fd3fb5bae5e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4fdb8a09a50306d1002fd3fb5bae5e3">&#9670;&nbsp;</a></span>Send()</h2>
-
-<div class="memitem">
-<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const void MPE::ThreadMessageController::Send </td>
@@ -262,8 +271,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -275,7 +284,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>tag</em>&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>prio</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -283,53 +298,80 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Send a message. </p>
 <p>This is a non-blocking command </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>Data to be sent </td></tr>
-    <tr><td class="paramname">size</td><td>size of data </td></tr>
+    <tr><td class="paramname">src</td><td>From where the message is sent. </td></tr>
     <tr><td class="paramname">dest</td><td>Intended destination </td></tr>
     <tr><td class="paramname">tag</td><td>An identifier for the recviever. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_tag.html">Tag</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespace_m_p_e_1_1_tag.html">Tag</a> </dd></dl>
 
 </div>
 </div>
-<a id="a08663e963b8ac560e0678527a6f0cd86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08663e963b8ac560e0678527a6f0cd86">&#9670;&nbsp;</a></span>StartThread()</h2>
+<a id="a40d05ce8e2ec218e549ea01b42c7b0bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40d05ce8e2ec218e549ea01b42c7b0bd">&#9670;&nbsp;</a></span>Shutdown()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const void MPE::ThreadMessageController::Shutdown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a614845d564c92a28b148d66a2008755e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a614845d564c92a28b148d66a2008755e">&#9670;&nbsp;</a></span>StartThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const void MPE::ThreadMessageController::StartThread </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_m_p_e_1_1_thread.html">Thread</a> *&#160;</td>
-          <td class="paramname"><em>thread</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>thread</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>frameSyncTime</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Starts a new thread. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">thread</td><td>Pointer to the class which should occupy the thread </td></tr>
-    <tr><td class="paramname">frameSyncTime</td><td>Limit the thread's frametime to a specific time. </td></tr>
   </table>
   </dd>
 </dl>
@@ -337,9 +379,76 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="adcb1e8be3a49290adaf51d71b4eee0fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb1e8be3a49290adaf51d71b4eee0fc">&#9670;&nbsp;</a></span>_instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_m_p_e_1_1_thread_message_controller.html">ThreadMessageController</a> * MPE::ThreadMessageController::_instance = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a23b7a7dc72ced66080f70165359ea3b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b7a7dc72ced66080f70165359ea3b4">&#9670;&nbsp;</a></span>_stdThreads</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::thread&gt; MPE::ThreadMessageController::_stdThreads</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac93b25a09aeba30cfb4bbad12967f799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac93b25a09aeba30cfb4bbad12967f799">&#9670;&nbsp;</a></span>_threads</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;<a class="el" href="namespace_m_p_e.html#a16447295e3105bd2ba2a9ea303566175">threadIdentifier</a>, <a class="el" href="class_m_p_e_1_1_thread.html">Thread</a>*&gt; MPE::ThreadMessageController::_threads</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_thread_message_controller_8h_source.html">ThreadMessageController.h</a></li>
-<li>ThreadMessageController.cpp</li>
+<li><a class="el" href="_thread_message_controller_8cpp.html">ThreadMessageController.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

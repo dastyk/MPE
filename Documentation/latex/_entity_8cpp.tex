@@ -1,0 +1,47 @@
+\hypertarget{_entity_8cpp}{}\section{Entity.\+cpp File Reference}
+\label{_entity_8cpp}\index{Entity.\+cpp@{Entity.\+cpp}}
+{\ttfamily \#include $<$Profiler.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Entity.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_m_p_e}{M\+PE}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static thread\+\_\+local std\+::mt19937 \hyperlink{_entity_8cpp_ac5b4b01ff66e7fabaa26cc80125645c0}{gen} (\hyperlink{_entity_8cpp_a6db4fd82879117aa228023d043853759}{rd}())
+\item 
+static thread\+\_\+local std\+::uniform\+\_\+int\+\_\+distribution$<$ uint64\+\_\+t $>$ \hyperlink{_entity_8cpp_adf0479fd0f326e7fd54abfa100a5a8b6}{dis} (0, U\+I\+N\+T64\+\_\+\+M\+AX)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static thread\+\_\+local std\+::random\+\_\+device \hyperlink{_entity_8cpp_a6db4fd82879117aa228023d043853759}{rd}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_entity_8cpp_adf0479fd0f326e7fd54abfa100a5a8b6}\label{_entity_8cpp_adf0479fd0f326e7fd54abfa100a5a8b6}} 
+\index{Entity.\+cpp@{Entity.\+cpp}!dis@{dis}}
+\index{dis@{dis}!Entity.\+cpp@{Entity.\+cpp}}
+\subsubsection{\texorpdfstring{dis()}{dis()}}
+{\footnotesize\ttfamily static thread\+\_\+local std\+::uniform\+\_\+int\+\_\+distribution$<$uint64\+\_\+t$>$ dis (\begin{DoxyParamCaption}\item[{0}]{,  }\item[{U\+I\+N\+T64\+\_\+\+M\+AX}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{_entity_8cpp_ac5b4b01ff66e7fabaa26cc80125645c0}\label{_entity_8cpp_ac5b4b01ff66e7fabaa26cc80125645c0}} 
+\index{Entity.\+cpp@{Entity.\+cpp}!gen@{gen}}
+\index{gen@{gen}!Entity.\+cpp@{Entity.\+cpp}}
+\subsubsection{\texorpdfstring{gen()}{gen()}}
+{\footnotesize\ttfamily static thread\+\_\+local std\+::mt19937 gen (\begin{DoxyParamCaption}\item[{\hyperlink{_entity_8cpp_a6db4fd82879117aa228023d043853759}{rd}()}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_entity_8cpp_a6db4fd82879117aa228023d043853759}\label{_entity_8cpp_a6db4fd82879117aa228023d043853759}} 
+\index{Entity.\+cpp@{Entity.\+cpp}!rd@{rd}}
+\index{rd@{rd}!Entity.\+cpp@{Entity.\+cpp}}
+\subsubsection{\texorpdfstring{rd}{rd}}
+{\footnotesize\ttfamily thread\+\_\+local std\+::random\+\_\+device rd\hspace{0.3cm}{\ttfamily [static]}}
+
