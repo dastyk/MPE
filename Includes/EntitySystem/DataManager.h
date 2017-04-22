@@ -86,21 +86,20 @@ namespace MPE
 		{
 			DataBuffer** dataBuff;/*!< Stores a pointer to the data entries for the entity entry */  
 		};
+
 		EntityData _entityEntires; /*!< A reference pointer to avoid having to cast the basic datapointer all the time. */
 
 	public:
-		DataManager();
+		DataManager(threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		~DataManager();
 
 
 		const void Start();
 
 
-
-		///** Create the data component for the entity.
-		//*
-		//*/
-		//const void CreateData(const Entity& entity);
+	private:
+		//! Register an entity entry
+		const void _CreateData(const Entity& entity);
 
 
 

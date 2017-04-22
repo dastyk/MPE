@@ -4,68 +4,59 @@
 #include "Thread.h"
 #include <stdint.h>
 #include "MPE_Tag.h"
+#include <unordered_map>
+
 namespace MPE
 {
-	static uint32_t AnySrc;/**< Specify to allow messages from any source. */
 
-	//! The ThreadMessageController initiates threads and handles the communication between them. 
+	//! The ThreadMessageController initiates threads.
 	class ThreadMessageController
 	{
-	public:
+	private:
+		std::vector<std::thread> _stdThreads;
+		std::unordered_map<threadIdentifier, Thread*> _threads;
+
+
+		static ThreadMessageController* _instance;
+
 		ThreadMessageController();
 		~ThreadMessageController();
+	public:
+		static const void Init();
+		static const void Shutdown();
+
+
 
 		 //! Starts a new thread. 
 		 /*!
 		 \param thread: Pointer to the class which should occupy the thread
-		 \param frameSyncTime: Limit the thread's frametime to a specific time.
 		 \sa Thread
 		 */
-		const void StartThread(Thread* thread, /*Allocator info,*/double frameSyncTime);
+		static const void StartThread(Thread* thread /*Allocator info,*/);
 
-		//! \brief Send a message. 
+		//! Send a message. 
 		/*!
 		  This is a non-blocking command 
 		 \param data: Data to be sent 
 		 \param size: size of data 
+		 \param src: From where the message is sent.
 		 \param dest: Intended destination 
 		 \param tag: An identifier for the recviever.
 		 \sa Tag
 		 */
-		const void Send(void* data, size_t size, uint32_t dest, uint32_t tag);
+		static const void Send(void* data, uint32_t src, uint32_t dest, uint32_t tag, uint8_t prio = 0);
 
-		//! \brief Send a Broadcast to all threads. 
+		//! Send a Broadcast to all threads. 
 		/*!
 		  This is a non-blocking command 
 		\param  data: Data to be sent 
 		\param size: size of data 
+		\param src: From where the message is sent.
 		\param  tag: An identifier for the recviever. 
+		\param prio: Priority of the message, 0 is lowest.
 		\sa Tag
 		*/
-		const void BroadC(void* data, size_t, uint32_t tag);
-
-		//! \brief Recvieve a message
-		/*!
-		  This is a blocking command 
-		 \param data: Data will be initialized and filled with recvieved data
-		 \param size: size of data
-		 \param Src: Intended destination. Specify MPE::AnySrc to accept message from any source
-		 \param tag: An identifier for the recviever.
-		 \sa Tag
-		 */
-		const void Recv(void** data, size_t& size, uint32_t src, uint32_t tag);
-
-		 //! \brief Peek message queue 
-		 /*!
-		  This is a non-blocking command 
-		 \param data: Data will be initialized and filled with recvieved data
-		 \param size: size of data 
-		 \param Src: Intended destination. Specify MPE::AnySrc to accept message from any source 
-		 \param tag: An identifier for the recviever, tags are found in MPE::Tag, or any user defined tags 
-		 \return Returns 0 if no messages in queue, non-zero otherwise. 
-		 \sa Tag
-		 */
-		const uint32_t PeekMsg(void** data, size_t& size, uint32_t src, uint32_t tag);
+		static const void BroadC(void* data, uint32_t src, uint32_t tag, uint8_t prio = UINT8_MAX);
 	};
 }
 

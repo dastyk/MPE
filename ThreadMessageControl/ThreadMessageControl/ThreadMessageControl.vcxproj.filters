@@ -32,5 +32,8 @@
     <ClInclude Include="..\..\Includes\ThreadMessageControl\ThreadMessageController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Includes\ThreadMessageControl\Msg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

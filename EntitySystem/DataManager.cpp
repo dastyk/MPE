@@ -1,15 +1,21 @@
 #include "DataManager.h"
+#include "DataMangagerMessages.h"
+
+#include <Profiler.h>
+
 #ifdef _DEBUG
-#pragma comment(lib, "Ensum_utilsD.lib")
+#pragma comment(lib, "ProfilerD.lib")
 #else
-#pragma comment(lib, "Ensum_utils.lib")
+#pragma comment(lib, "Profiler.lib")
 #endif
+
+
 
 namespace MPE
 {
 
-	DataManager::DataManager() :
-		Manager(&_entityEntires)
+	DataManager::DataManager(threadIdentifier identifier, uint8_t frameSyncTime) :
+		Manager(&_entityEntires, identifier, frameSyncTime)
 	{
 		_Allocate(10);
 	}
@@ -18,34 +24,56 @@ namespace MPE
 	{
 		for (auto& e : _entityToIndex)
 		{
-			delete _entityEntires.dataBuff[e.second];
+			delete _entityEntires.dataBuff[e.second];			
 		}
+		operator delete(_entityEntires.buffer);
 	}
 	const void DataManager::Start()
 	{
+		Msg msg;
+		bool running = true;
+		while (running)
+		{
+			StartProfile;
+			
+
+			if (PeekMsg(msg, Msg_Any_Src, Tag::Any))
+			{
+				if (msg.tag == Tag::Shutdown)
+					running = false;
+				if (msg.tag == Tag::DataManager::RegisterEntity)
+				{
+					auto& entity = *(Entity*)msg.data;
+					_CreateData(entity);
+				}
+			}
+
+			std::this_thread::sleep_for(std::chrono::milliseconds(_frameSyncTime));
+
+			StopProfile;
+		}
+
 		return void();
 	}
-	//const void DataManager::CreateData(const Entity & entity)
-	//{
-	//	auto find = _entityToIndex->find(entity);
-	//	if (find != _entityToIndex->end())
-	//		return;
-	//	if (!_entityManager.Alive(entity))
-	//	{
-	//		Utils::ConsoleLog::DumpToConsole("Tried to bind datacomponent to a dead entity. Entity: %d", entity.ID);
-	//		return;
-	//	}
+	const void DataManager::_CreateData(const Entity & entity)
+	{
+		StartProfile;
+		auto find = _entityToIndex.find(entity);
+		if (find != _entityToIndex.end())
+			ProfileReturnVoid;
 
-	//	if (_datap->used >= _datap->allocated)
-	//		_Allocate(static_cast<uint32_t>(_datap->allocated * 1.5f) + 10);
+		if (_entityEntires.used >= _entityEntires.allocated)
+			_Allocate(static_cast<uint32_t>(_entityEntires.allocated * 1.5f) + 10);
 
-	//	Utils::ConsoleLog::DumpToConsole("Creating Datacomponent for Entity: %d", entity.ID);
+		//Utils::ConsoleLog::DumpToConsole("Creating Datacomponent for Entity: %d", entity.ID);
 
-	//	uint32_t index = (*_entityToIndex)[entity] = static_cast<uint32_t>(_entityToIndex->size());
-	//	_datap->entity[index] = entity;
-	//	_datap->dataBuff[index] = new DataBuffer(entity);
-	//	_datap->used++;
-	//}
+		uint32_t index = _entityToIndex[entity] = static_cast<uint32_t>(_entityToIndex.size());
+		_entityEntires.entity[index] = entity;
+		_entityEntires.dataBuff[index] = new DataBuffer();
+		_entityEntires.used++;
+
+		ProfileReturnVoid;
+	}
 	//const void DataManager::AddBoolValue(const Entity & entity, const string & key, const bool val)
 	//{
 	//	auto& find = _entityToIndex->find(entity);
@@ -306,6 +334,7 @@ namespace MPE
 	//}
 	const void DataManager::_Allocate(uint32_t size)
 	{
+		StartProfile;
 		if (size <= _entityEntires.allocated)
 		{
 			printf("Data Manager tried to shrink entity entry block.\n");
@@ -327,9 +356,12 @@ namespace MPE
 
 		operator delete(_entityEntires.buffer);
 		_entityEntires = new_data;
+
+		StopProfile;
 	}
 	const void DataManager::_Destroy(uint32_t index)
 	{
+		StartProfile;
 		uint32_t last = _entityEntires.used - 1;
 		const Entity& e = _entityEntires.entity[index];
 		const Entity& last_e = _entityEntires.entity[last];
@@ -342,6 +374,7 @@ namespace MPE
 		_entityToIndex.erase(e);
 
 		_entityEntires.used--;
+		StopProfile;
 	}
 
 
@@ -367,10 +400,11 @@ namespace MPE
 
 	const void DataManager::DataBuffer::Allocate(size_t size)
 	{
+		StartProfile;
 		if (size <= capacity)
 		{
 			printf("Data Manager tried to shrink a Data Buffer.\n");
-			return;
+			ProfileReturnVoid;
 		}
 
 
@@ -393,14 +427,15 @@ namespace MPE
 		operator delete(data);
 		data = new_data;
 
-	
+		ProfileReturnVoid;
 	}
 	const void DataManager::DataBuffer::AllocateAndResizeHeader(size_t size)
 	{
+		StartProfile;
 		if (size <= capacity)
 		{
 			printf("Data Manager tried to shrink a Data Buffer.\n");
-			return;
+			ProfileReturnVoid;
 		}
 
 		EntryHeader newHeader = header;
@@ -427,10 +462,12 @@ namespace MPE
 		data = new_data;
 
 		capacity = size;
+
+		ProfileReturnVoid;
 	}
 	const void DataManager::DataBuffer::HeaderResize()
 	{
-
+		StartProfile;
 		EntryHeader newHeader = header;
 		if (((uint16_t)header.capacity) * 2 + 5 > UINT8_MAX)
 			newHeader.capacity = ~0;
@@ -446,7 +483,7 @@ namespace MPE
 		memcpy(newHeader.value, header.value, header.capacity * sizeof(Value));
 		memcpy(newHeader.type, header.type, header.capacity * sizeof(DataType));
 		memcpy(newHeader.keys, header.keys, header.capacity * sizeof(uint32_t));
-
+		ProfileReturnVoid;
 	}
 
 }

@@ -4,10 +4,13 @@
 #include <stdint.h>
 
 /** The basic tags used during message passing.*/
-struct Tag
+namespace MPE
 {
-	static const uint32_t Any = 0;
-	static const uint32_t Shutdown = 1;
-};
+	namespace Tag
+	{
+		static const uint32_t Any = 0;
+		static const uint32_t Shutdown = 1;
+	}
+}
 
 #endif

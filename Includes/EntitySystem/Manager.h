@@ -32,7 +32,7 @@ namespace MPE
 	class Manager : public Thread
 	{
 	protected:
-		Manager(BaseManagerEntityEntryBlock* entires);
+		Manager(BaseManagerEntityEntryBlock* entires, threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		virtual ~Manager();
 
 	private:

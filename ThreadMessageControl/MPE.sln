@@ -11,6 +11,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EntitySystem", "..\EntitySy
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestBench1", "..\TestBench1\TestBench1.vcxproj", "{5F337FA4-FCE1-437F-BCC3-F7F19B97A1F2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{67975378-8F41-4B08-8D12-8192B2EC4A20} = {67975378-8F41-4B08-8D12-8192B2EC4A20}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

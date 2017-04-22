@@ -4,7 +4,7 @@ namespace MPE
 {
 
 
-	Manager::Manager(BaseManagerEntityEntryBlock * entires) : Thread(), _baseEntityEntires(entires)
+	Manager::Manager(BaseManagerEntityEntryBlock * entires, threadIdentifier identifier, uint8_t frameSyncTime) : Thread(identifier, frameSyncTime), _baseEntityEntires(entires)
 	{
 	}
 
