@@ -1,7 +1,7 @@
 #ifndef _MSG_H_
 #define _MSG_H_
 #pragma once
-#include "MPE_Tag.h"
+#include "Tag.h"
 namespace MPE
 {
 	static uint32_t Src_ThreadMessageController = 0; /**< Soruce 0 is reserved for ThreadMessageController. */

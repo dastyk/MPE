@@ -139,7 +139,7 @@
     <ClCompile Include="ThreadMessageController.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Includes\ThreadMessageControl\MPE_Tag.h" />
+    <ClInclude Include="..\..\Includes\ThreadMessageControl\Tag.h" />
     <ClInclude Include="..\..\Includes\ThreadMessageControl\Msg.h" />
     <ClInclude Include="..\..\Includes\ThreadMessageControl\Thread.h" />
     <ClInclude Include="..\..\Includes\ThreadMessageControl\ThreadMessageController.h" />

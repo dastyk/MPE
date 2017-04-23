@@ -1,5 +1,5 @@
 #pragma once
-#include <ThreadMessageControl\MPE_Tag.h>
+#include <ThreadMessageControl\Tag.h>
 
 namespace MPE
 {

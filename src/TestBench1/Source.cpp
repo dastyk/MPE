@@ -51,11 +51,14 @@
 #include <EntitySystem\DataManager.h>
 #include <EntitySystem\DataMangagerMessages.h>
 #include <ThreadMessageControl\ThreadMessageController.h>
+#include <LuaScript\LuaScript.h>
 
 #ifdef _DEBUG
 #pragma comment(lib, "EntitySystemD.lib")
+#pragma comment(lib, "LuaScriptD.lib")
 #else
 #pragma comment(lib, "EntitySystem.lib")
+#pragma comment(lib, "LuaScript.lib")
 #endif
 
 int main()
@@ -76,7 +79,10 @@ int main()
 	MPE::Entity test;
 	MPE::ThreadMessageController::Send(&test, 0, 1, MPE::Tag::DataManager::RegisterEntity);
 
+	MPE::LuaScript* s = MPE::LuaScript::Create("test.lua");
 
+
+	delete s;
 
 	auto i = 1;
 	while (i)

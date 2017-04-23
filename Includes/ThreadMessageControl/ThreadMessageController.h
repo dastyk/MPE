@@ -3,7 +3,7 @@
 #pragma once
 #include "Thread.h"
 #include <stdint.h>
-#include "MPE_Tag.h"
+#include "Tag.h"
 #include <unordered_map>
 
 namespace MPE

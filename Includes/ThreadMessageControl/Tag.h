@@ -1,5 +1,5 @@
-#ifndef _MPE_TAG_H_
-#define _MPE_TAG_H_
+#ifndef _TAG_H_
+#define _TAG_H_
 #pragma once
 #include <stdint.h>
 
