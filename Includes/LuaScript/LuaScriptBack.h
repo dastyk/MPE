@@ -25,7 +25,7 @@ namespace MPE
 		//! Private Constructor
 		LuaScriptBack(const char* filename);
 
-		lua_State* L;
+		luabridge::lua_State* L;
 	public:
 		~LuaScriptBack();
 
