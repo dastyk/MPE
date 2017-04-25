@@ -72,26 +72,26 @@
     <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
     <TargetName>$(ProjectName)D</TargetName>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName)\LuaBridge\;$(SolutionDir)$(ProjectName)\lua-5.3.4\src;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName)\;$(SolutionDir)$(ProjectName)\LuaBridge\;$(SolutionDir)$(ProjectName)\lua-5.3.4\src;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName)\LuaBridge\;$(SolutionDir)$(ProjectName)\lua-5.3.4\src;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName)\;$(SolutionDir)$(ProjectName)\LuaBridge\;$(SolutionDir)$(ProjectName)\lua-5.3.4\src;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
     <TargetName>$(ProjectName)D</TargetName>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName)\LuaBridge\;$(SolutionDir)$(ProjectName)\lua-5.3.4\src;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName)\;$(SolutionDir)$(ProjectName)\LuaBridge\;$(SolutionDir)$(ProjectName)\lua-5.3.4\src;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName)\LuaBridge\;$(SolutionDir)$(ProjectName)\lua-5.3.4\src;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName)\;$(SolutionDir)$(ProjectName)\LuaBridge\;$(SolutionDir)$(ProjectName)\lua-5.3.4\src;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -170,12 +170,17 @@
     <ClCompile Include="lua-5.3.4\src\lutf8lib.c" />
     <ClCompile Include="lua-5.3.4\src\lvm.c" />
     <ClCompile Include="lua-5.3.4\src\lzio.c" />
+    <ClCompile Include="LuaHelpers.cpp" />
     <ClCompile Include="LuaScript.cpp" />
-    <ClCompile Include="LuaScriptBack.cpp" />
+    <ClCompile Include="LuaScript_Back.cpp" />
+    <ClCompile Include="LuaTable.cpp" />
+    <ClCompile Include="LuaTable_Back.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Includes\LuaScript\LuaScript.h" />
-    <ClInclude Include="..\..\Includes\LuaScript\LuaScriptBack.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaScript_Back.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaTable.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaTable_Back.h" />
     <ClInclude Include="lua-5.3.4\src\lapi.h" />
     <ClInclude Include="lua-5.3.4\src\lauxlib.h" />
     <ClInclude Include="lua-5.3.4\src\lcode.h" />
@@ -219,6 +224,7 @@
     <ClInclude Include="LuaBridge\LuaBridge.h" />
     <ClInclude Include="LuaBridge\RefCountedObject.h" />
     <ClInclude Include="LuaBridge\RefCountedPtr.h" />
+    <ClInclude Include="LuaHelpers.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="lua-5.3.4\src\Makefile" />

@@ -1,14 +1,15 @@
 #ifndef _LUA_SCRIPT_H_
 #define  _LUA_SCRIPT_H_
 #pragma once
-#include <vector>
+
+#include "LuaTable.h"
 
 namespace MPE
 {
-	//! A pure virtual class, so we can avoid including the base lua src into the whole thing.
+	//! A pure virtual class, so we can avoid including the base lua and luabridge src into the whole thing.
 	/*!
-	This class hides the actual lua implementation found in LuaScriptBack
-	\sa LuaScriptBack
+	This class hides the actual lua and luabridge implementation found in LuaScript_Back
+	\sa LuaScript_Back
 	*/
 	class LuaScript
 	{
@@ -17,11 +18,11 @@ namespace MPE
 		LuaScript();
 
 	public:
-		//! Creates the actual LuaScriptBack object.
+		//! Creates the actual LuaScript_Back object.
 		static LuaScript* Create(const char* filename);
 		virtual ~LuaScript();
 
-		virtual std::vector<std::string> GetTableKeys(const char* tableName) = 0;
+		virtual LuaTable* GetData(const char* tableName) = 0;
 	};
 }
 #endif

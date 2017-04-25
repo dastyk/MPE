@@ -1,5 +1,5 @@
 #include "LuaScript.h"
-#include "LuaScriptBack.h"
+#include "LuaScript_Back.h"
 
 namespace MPE
 {
@@ -8,7 +8,7 @@ namespace MPE
 	}
 	LuaScript * LuaScript::Create(const char * filename)
 	{
-		return new LuaScriptBack(filename);
+		return new LuaScript_Back(filename);
 	}
 	LuaScript::~LuaScript()
 	{

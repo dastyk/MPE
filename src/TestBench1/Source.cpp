@@ -81,7 +81,7 @@ int main()
 
 	MPE::LuaScript* s = MPE::LuaScript::Create("test.lua");
 
-	auto keys = s->GetTableKeys("data.ghost");
+	auto keys = s->GetTableKeys("data");
 
 
 
