@@ -1,3 +1,6 @@
+data = 
+{
+
 ghost = {
     GraphicsComponent = {
         filename = "ghost.png"
@@ -5,4 +8,6 @@ ghost = {
     NpcComponent = {
         phrase = "I'M A SCARY GHOST!!!"
     }
+}
+
 }

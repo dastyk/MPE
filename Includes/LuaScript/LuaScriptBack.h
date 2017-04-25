@@ -1,7 +1,7 @@
 #pragma once
 #include "LuaScript.h"
-
-//#include <LuaBridge.h>
+#include <vector>
+#include <LuaBridge.h>
 
 extern "C" {
 # include <lua.h>
@@ -25,10 +25,19 @@ namespace MPE
 		//! Private Constructor
 		LuaScriptBack(const char* filename);
 
-		lua_State* L;
+
+		const void _LoadScript(luabridge::lua_State*& L, const char* filename);
+		const void _GetToStack(luabridge::lua_State* L, const std::string& variableName);
+		const void _LoadGetKeysFunction(luabridge::lua_State* L);
+	
+
+		std::string _filename;
+		luabridge::lua_State* _state;
 	public:
 		~LuaScriptBack();
 
+
+		std::vector<std::string> GetTableKeys(const char* tableName);
 	};
 
 }

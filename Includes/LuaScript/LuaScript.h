@@ -1,6 +1,7 @@
 #ifndef _LUA_SCRIPT_H_
 #define  _LUA_SCRIPT_H_
 #pragma once
+#include <vector>
 
 namespace MPE
 {
@@ -20,7 +21,7 @@ namespace MPE
 		static LuaScript* Create(const char* filename);
 		virtual ~LuaScript();
 
-
+		virtual std::vector<std::string> GetTableKeys(const char* tableName) = 0;
 	};
 }
 #endif
