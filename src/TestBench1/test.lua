@@ -1,9 +1,8 @@
-player = {
-    pos = {
-         X = 20,
-         Y = 30,
+ghost = {
+    GraphicsComponent = {
+        filename = "ghost.png"
     },
-    filename = "res/images/player.png",
-    HP = 20,
--- you can also have comments
+    NpcComponent = {
+        phrase = "I'M A SCARY GHOST!!!"
+    }
 }

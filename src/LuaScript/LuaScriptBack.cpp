@@ -1,12 +1,12 @@
 #include "LuaScriptBack.h"
 #include  <stdexcept>
-
+//using namespace luabridge;
 namespace MPE
 {
-	using namespace luabridge;
+
 	LuaScriptBack::LuaScriptBack(const char* filename) 
 	{
-		lua_State* L = luaL_newstate();
+		/*lua_State* L = luaL_newstate();
 		if (luaL_loadfile(L, filename) || lua_pcall(L, 0, 0, 0)) 
 		{
 			L = 0;
@@ -18,7 +18,7 @@ namespace MPE
 		for (int i = 0; i < ref.length(); i++)
 		{
 
-		}
+		}*/
 	}
 
 

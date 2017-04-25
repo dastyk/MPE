@@ -1,7 +1,7 @@
 #pragma once
 #include "LuaScript.h"
 
-#include <LuaBridge.h>
+//#include <LuaBridge.h>
 
 extern "C" {
 # include <lua.h>
@@ -25,7 +25,7 @@ namespace MPE
 		//! Private Constructor
 		LuaScriptBack(const char* filename);
 
-		luabridge::lua_State* L;
+		lua_State* L;
 	public:
 		~LuaScriptBack();
 
