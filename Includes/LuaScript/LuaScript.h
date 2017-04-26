@@ -22,7 +22,10 @@ namespace MPE
 		static LuaScript* Create(const char* filename);
 		virtual ~LuaScript();
 
+		//! Get the specified table
 		virtual LuaTable* GetTable(const char* tableName = "data") = 0;
+
+		//! Load another script into the current state.
 		virtual const void LoadScript(const char* filename) = 0;
 	};
 }

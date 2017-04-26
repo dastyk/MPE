@@ -1,12 +1,14 @@
 #include "LuaTable.h"
 
 
-
-LuaTable::LuaTable()
+namespace MPE
 {
-}
+	LuaTable::LuaTable()
+	{
+	}
 
 
-LuaTable::~LuaTable()
-{
+	LuaTable::~LuaTable()
+	{
+	}
 }
