@@ -67,7 +67,7 @@ int main()
 			_CrtDumpMemoryLeaks();
 			_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 			_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_DEBUG);
-		//	_crtBreakAlloc = 163;
+		//	_crtBreakAlloc = 220;
 		#endif
 
 	StartProfile;
@@ -80,10 +80,13 @@ int main()
 	MPE::ThreadMessageController::Send(&test, 0, 1, MPE::Tag::DataManager::RegisterEntity);
 
 	MPE::LuaScript* s = MPE::LuaScript::Create("test.lua");
+	s->LoadScript("testext.lua");
 
-	auto keys = s->GetTableKeys("data");
-
-
+	
+	auto data = s->GetTable("data");
+	auto keys = data->GetKeys();
+	auto ghost = data->GetTable("ghost");
+	auto gk = ghost->GetKeys();
 
 	delete s;
 

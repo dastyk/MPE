@@ -25,11 +25,13 @@ namespace MPE
 		LuaScript_Back(const char* filename);
 		~LuaScript_Back();
 
-		//! Get the base data table
+		//! Get the specified table
 		/*!
-		\param name The base table name, default is data
+		\param name The table name, default is data. (Can be ex. data.item)
 		*/		
-		LuaTable* GetData(const char* name = "data");
+		LuaTable* GetTable(const char* name = "data");
+
+		const void LoadScript(const char* filename);
 	};
 
 }
