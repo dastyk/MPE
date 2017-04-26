@@ -8,7 +8,7 @@ namespace MPE
 		public Manager
 	{
 	public:
-		ScriptManager();
+		ScriptManager(threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		~ScriptManager();
 	};
 
