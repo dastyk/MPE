@@ -84,9 +84,18 @@ int main()
 
 	
 	auto data = s->GetTable("data");
+	
 	auto keys = data->GetKeys();
-	auto ghost = data->GetTable("ghost");
-	auto gk = ghost->GetKeys();
+
+	for (auto& k : keys)
+	{
+		printf("%s\n", k.c_str());
+		auto d = data->GetTable(k.c_str());
+		auto dk = d->GetKeys();
+		for (auto& kdk : dk)
+			printf("\t%s\n", kdk.c_str());
+	}
+	
 
 	delete s;
 

@@ -1,5 +1,11 @@
 #include "LuaHelpers.h"
+#include <Profiler.h>
 
+#ifdef _DEBUG
+#pragma comment(lib, "ProfilerD.lib")
+#else
+#pragma comment(lib, "Profiler.lib")
+#endif
 namespace MPE
 {
 	namespace LuaHelpers
@@ -7,6 +13,7 @@ namespace MPE
 		using namespace luabridge;
 		const void LoadScript(lua_State *& L, const char * filename)
 		{
+			StartProfile;
 			if (!L)
 			{
 				L = luaL_newstate();
@@ -33,12 +40,13 @@ namespace MPE
 					throw std::runtime_error(std::string("Failed to load srcipt: ") + filename);
 				}
 			}
-			
+			StopProfile;
 			
 		}
 
 		const void GetToStack(luabridge::lua_State * L, const std::string & variableName)
 		{
+			StartProfile;
 			int level = 0;
 			std::string var = "";
 
@@ -84,9 +92,11 @@ namespace MPE
 				lua_settop(L, tableIndex);
 
 			}
+			StopProfile;
 		}
 		const void LoadGetKeysFunction(luabridge::lua_State * L)
 		{
+			StartProfile;
 			std::string code =
 				R"(function getKeys(t)
         s = {}
@@ -96,10 +106,12 @@ namespace MPE
         return s 
         end)";
 			luaL_dostring(L, code.c_str());
+			StopProfile;
 		}
 
 		const void LoadDataExtendFunction(luabridge::lua_State * L)
 		{
+			StartProfile;
 			std::string code =
 				R"(function extend(table, t)
 
@@ -108,11 +120,12 @@ namespace MPE
 		end
         end)";
 			luaL_dostring(L, code.c_str());
+			StopProfile;
 		}
 
 		std::vector<std::string> GetTableKeys(luabridge::lua_State * L, const char * tableName)
 		{
-
+			StartProfile;
 			lua_getglobal(L, "getKeys"); // get function
 			if (lua_isnil(L, -1)) {
 				printf("Get keys function is not loaded. Loading...\n");
@@ -134,7 +147,7 @@ namespace MPE
 			}
 
 			lua_settop(L, 0); // remove s table from stack 
-			return keys;
+			ProfileReturn(keys);
 		}
 	}
 }
