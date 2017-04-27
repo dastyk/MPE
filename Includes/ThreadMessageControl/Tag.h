@@ -8,8 +8,8 @@ namespace MPE
 {
 	namespace Tag
 	{
-		static const uint32_t Any = 0;
-		static const uint32_t Shutdown = 1;
+		const static uint32_t Any = 0;
+		const static uint32_t Shutdown = 1;
 	}
 }
 

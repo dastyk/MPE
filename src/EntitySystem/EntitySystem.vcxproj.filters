@@ -44,5 +44,8 @@
     <ClInclude Include="..\..\Includes\EntitySystem\Manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ManagerIdentifiers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

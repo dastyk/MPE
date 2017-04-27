@@ -35,5 +35,8 @@
     <ClInclude Include="..\..\Includes\ThreadMessageControl\Tag.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Includes\ThreadMessageControl\Destination.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

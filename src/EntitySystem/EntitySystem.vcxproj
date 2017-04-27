@@ -30,6 +30,7 @@
     <ClInclude Include="..\..\Includes\EntitySystem\Entity.h" />
     <ClInclude Include="..\..\Includes\EntitySystem\Manager.h" />
     <ClInclude Include="..\..\Includes\EntitySystem\ScriptManager.h" />
+    <ClInclude Include="ManagerIdentifiers.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{67975378-8F41-4B08-8D12-8192B2EC4A20}</ProjectGuid>

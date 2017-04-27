@@ -77,7 +77,7 @@ int main()
 	MPE::ThreadMessageController::StartThread(dm);
 
 	MPE::Entity test;
-	MPE::ThreadMessageController::Send(&test, 0, 1, MPE::Tag::DataManager::RegisterEntity);
+	MPE::ThreadMessageController::Send(&test, MPE::Destination::ThreadMessageController, MPE::Destination::DataManager, MPE::Tag::DataManager::RegisterEntity);
 
 	MPE::LuaScript s("test.lua");
 	s.LoadScript("testext.lua");

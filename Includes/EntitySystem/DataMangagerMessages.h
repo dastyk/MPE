@@ -8,7 +8,7 @@ namespace MPE
 		namespace DataManager
 		{
 			static const uint32_t RegisterEntity = 2;
-
 		}
+		
 	}
 }

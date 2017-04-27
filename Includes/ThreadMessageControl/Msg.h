@@ -2,14 +2,13 @@
 #define _MSG_H_
 #pragma once
 #include "Tag.h"
+#include "Destination.h"
 namespace MPE
 {
-	static uint32_t Src_ThreadMessageController = 0; /**< Soruce 0 is reserved for ThreadMessageController. */
-	static uint32_t Msg_Any_Src = UINT32_MAX;/**< Specify to allow messages from any source. */
 	struct Msg
 	{
 		void* data;
-		uint32_t src; /**< Source, if Msg_Any_Src was specified. */
+		uint32_t src; /**< Source*/
 		uint32_t tag; /**< Tag, if Tag::Any was specified. */
 		uint8_t prio;
 	};

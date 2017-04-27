@@ -51,6 +51,6 @@ namespace MPE
 		{
 			table = new LuaTable(_state, _ref, tableName, (_parentKey + _key + ".").c_str());
 		}
-		ProfileReturn( table);
+		ProfileReturn( *table);
 	}
 }
