@@ -1,0 +1,128 @@
+digraph "11600" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"00000224F1468B80"[
+label = "<f0> MPE::DataManager::Start | <f1> Times Called: 957 | <f2> Time Spent(IC): 1.58933e+10ns | Time Spent(EC): 1.58924e+10ns"];
+"00000224F1477920"[
+label = "<f0> MPE::DataManager::_CreateData | <f1> Times Called: 1 | <f2> Time Spent(IC): 56173ns, 3.53438e-06 % of parents. | Time Spent(EC): 54125ns"];
+"00000224F1477380"[
+label = "<f0> MPE::DataManager::DataBuffer::AllocateAndResizeHeader | <f1> Times Called: 1 | <f2> Time Spent(IC): 2048ns, 0.0364588 % of parents."];
+
+"00000224F1477920":f0 -> "00000224F1477380":f0
+
+"00000224F1468B80":f0 -> "00000224F1477920":f0
+"00000224F1466130"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 957 | <f2> Time Spent(IC): 832945ns, 5.24086e-05 % of parents."];
+
+"00000224F1468B80":f0 -> "00000224F1466130":f0
+
+
+}
+
+digraph "15668" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"00000224F1455230"[
+label = "<f0> main | <f1> Times Called: 1 | <f2> Time Spent(IC): 1.59032e+10ns | Time Spent(EC): 1.58707e+10ns"];
+"00000224F14774C0"[
+label = "<f0> MPE::LuaTable_Back::GetTable | <f1> Times Called: 2 | <f2> Time Spent(IC): 373907ns, 2.35115e-05 % of parents. | Time Spent(EC): 137217ns"];
+"00000224F1477A60"[
+label = "<f0> MPE::LuaTable_Back::LuaTable_Back | <f1> Times Called: 2 | <f2> Time Spent(IC): 236690ns, 0.633018 % of parents. | Time Spent(EC): 88357ns"];
+"00000224F1477BA0"[
+label = "<f0> MPE::LuaHelpers::GetTableKeys | <f1> Times Called: 2 | <f2> Time Spent(IC): 148333ns, 0.626697 % of parents. | Time Spent(EC): 119661ns"];
+"00000224F1476D40"[
+label = "<f0> MPE::LuaHelpers::GetToStack | <f1> Times Called: 2 | <f2> Time Spent(IC): 28672ns, 0.193295 % of parents."];
+
+"00000224F1477BA0":f0 -> "00000224F1476D40":f0
+
+"00000224F1477A60":f0 -> "00000224F1477BA0":f0
+
+"00000224F14774C0":f0 -> "00000224F1477A60":f0
+
+"00000224F1455230":f0 -> "00000224F14774C0":f0
+"00000224F1469000"[
+label = "<f0> MPE::LuaScript_Back::LuaScript_Back | <f1> Times Called: 1 | <f2> Time Spent(IC): 1.04624e+06ns, 6.57879e-05 % of parents. | Time Spent(EC): 36572ns"];
+"00000224F146A0B0"[
+label = "<f0> MPE::LuaHelpers::LoadScript | <f1> Times Called: 1 | <f2> Time Spent(IC): 1.00966e+06ns, 0.965044 % of parents. | Time Spent(EC): 923647ns"];
+"00000224F146AE60"[
+label = "<f0> MPE::LuaHelpers::LoadDataExtendFunction | <f1> Times Called: 1 | <f2> Time Spent(IC): 86016ns, 0.0851928 % of parents."];
+
+"00000224F146A0B0":f0 -> "00000224F146AE60":f0
+
+"00000224F1469000":f0 -> "00000224F146A0B0":f0
+
+"00000224F1455230":f0 -> "00000224F1469000":f0
+"00000224F1456780"[
+label = "<f0> MPE::DataManager::_Allocate | <f1> Times Called: 1 | <f2> Time Spent(IC): 1170ns, 7.35703e-08 % of parents."];
+
+"00000224F1455230":f0 -> "00000224F1456780":f0
+"00000224F1468E40"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 48567ns, 3.05392e-06 % of parents. | Time Spent(EC): 28087ns"];
+"00000224F1468EE0"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 20480ns, 0.421686 % of parents."];
+
+"00000224F1468E40":f0 -> "00000224F1468EE0":f0
+
+"00000224F1455230":f0 -> "00000224F1468E40":f0
+"00000224F1476F20"[
+label = "<f0> MPE::ThreadMessageController::~ThreadMessageController | <f1> Times Called: 1 | <f2> Time Spent(IC): 2.63996e+07ns, 0.00166002 % of parents. | Time Spent(EC): 2.63718e+07ns"];
+"00000224F1476FC0"[
+label = "<f0> MPE::ThreadMessageController::BroadC | <f1> Times Called: 1 | <f2> Time Spent(IC): 27794ns, 0.00105282 % of parents. | Time Spent(EC): 18139ns"];
+"00000224F14771A0"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 9655ns, 0.347377 % of parents."];
+
+"00000224F1476FC0":f0 -> "00000224F14771A0":f0
+
+"00000224F1476F20":f0 -> "00000224F1476FC0":f0
+
+"00000224F1455230":f0 -> "00000224F1476F20":f0
+"00000224F14570C0"[
+label = "<f0> MPE::ThreadMessageController::StartThread | <f1> Times Called: 1 | <f2> Time Spent(IC): 3.69488e+06ns, 0.000232336 % of parents."];
+
+"00000224F1455230":f0 -> "00000224F14570C0":f0
+"00000224F146D4A0"[
+label = "<f0> MPE::LuaScript_Back::LoadScript | <f1> Times Called: 1 | <f2> Time Spent(IC): 233179ns, 1.46624e-05 % of parents. | Time Spent(EC): 20187ns"];
+"00000224F146F570"[
+label = "<f0> MPE::LuaHelpers::LoadScript | <f1> Times Called: 1 | <f2> Time Spent(IC): 212992ns, 0.913427 % of parents."];
+
+"00000224F146D4A0":f0 -> "00000224F146F570":f0
+
+"00000224F1455230":f0 -> "00000224F146D4A0":f0
+"00000224F1476DE0"[
+label = "<f0> MPE::LuaScript_Back::GetTable | <f1> Times Called: 1 | <f2> Time Spent(IC): 451438ns, 2.83867e-05 % of parents. | Time Spent(EC): 99182ns"];
+"00000224F1477100"[
+label = "<f0> MPE::LuaTable_Back::LuaTable_Back | <f1> Times Called: 1 | <f2> Time Spent(IC): 352256ns, 0.780298 % of parents. | Time Spent(EC): 64658ns"];
+"00000224F1477560"[
+label = "<f0> MPE::LuaHelpers::GetTableKeys | <f1> Times Called: 1 | <f2> Time Spent(IC): 287598ns, 0.816446 % of parents. | Time Spent(EC): 170569ns"];
+"00000224F1476CA0"[
+label = "<f0> MPE::LuaHelpers::GetToStack | <f1> Times Called: 1 | <f2> Time Spent(IC): 13751ns, 0.0478133 % of parents."];
+
+"00000224F1477560":f0 -> "00000224F1476CA0":f0
+"00000224F14772E0"[
+label = "<f0> MPE::LuaHelpers::LoadGetKeysFunction | <f1> Times Called: 1 | <f2> Time Spent(IC): 103278ns, 0.359105 % of parents."];
+
+"00000224F1477560":f0 -> "00000224F14772E0":f0
+
+"00000224F1477100":f0 -> "00000224F1477560":f0
+
+"00000224F1476DE0":f0 -> "00000224F1477100":f0
+
+"00000224F1455230":f0 -> "00000224F1476DE0":f0
+"00000224F1477880"[
+label = "<f0> MPE::LuaScript_Back::~LuaScript_Back | <f1> Times Called: 1 | <f2> Time Spent(IC): 185490ns, 1.16637e-05 % of parents. | Time Spent(EC): 125513ns"];
+"00000224F1476E80"[
+label = "<f0> MPE::LuaTable_Back::~LuaTable_Back | <f1> Times Called: 1 | <f2> Time Spent(IC): 59977ns, 0.323344 % of parents. | Time Spent(EC): 55882ns"];
+"00000224F14776A0"[
+label = "<f0> MPE::LuaTable_Back::~LuaTable_Back | <f1> Times Called: 2 | <f2> Time Spent(IC): 4095ns, 0.0682762 % of parents."];
+
+"00000224F1476E80":f0 -> "00000224F14776A0":f0
+
+"00000224F1477880":f0 -> "00000224F1476E80":f0
+
+"00000224F1455230":f0 -> "00000224F1477880":f0
+"00000224F1468DA0"[
+label = "<f0> MPE::Entity::GenerateID | <f1> Times Called: 1 | <f2> Time Spent(IC): 11703ns, 7.35891e-07 % of parents."];
+
+"00000224F1455230":f0 -> "00000224F1468DA0":f0
+
+
+}
+

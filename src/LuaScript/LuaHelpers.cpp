@@ -148,7 +148,6 @@ namespace MPE
 
 			lua_settop(L, 0); // remove s table from stack 
 
-
 			ProfileReturn(keys);
 		}
 	}

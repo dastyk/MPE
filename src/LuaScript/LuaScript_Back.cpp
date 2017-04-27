@@ -21,6 +21,10 @@ namespace MPE
 		{
 
 		}*/
+
+		LuaHelpers::RegisterClass<LuaScript_Back>(_state, &LuaScript_Back::Create);
+
+
 		StopProfile;
 	}
 

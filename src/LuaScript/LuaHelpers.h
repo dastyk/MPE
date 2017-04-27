@@ -15,6 +15,17 @@ namespace MPE
 {
 	namespace LuaHelpers
 	{
+		struct Test
+		{
+			const char* d;
+			void * p;
+
+			void Foo()
+			{
+
+			}
+		};
+
 		//! Loads the initial state of the script
 		const void LoadScript(luabridge::lua_State*& L, const char* filename);
 		//! Takes the variableName and puts it on the top of the stack
@@ -32,6 +43,15 @@ namespace MPE
 
 		//! Get the keys of the specified table
 		std::vector<std::string> GetTableKeys(luabridge::lua_State * L, const char * tableName);
+
+		template<class T, class MemFn>
+		void RegisterClass(luabridge::lua_State* L, MemFn func)
+		{
+			luabridge::getGlobalNamespace(L)
+				.beginClass<T>("Test")
+				.addFunction("Test", &Test::Foo)
+				.endClass();
+		}
 	}
 }
 #endif
