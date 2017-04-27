@@ -40,6 +40,8 @@
 #include <crtdbg.h>  
 #endif
 
+#define _P_MS
+
 #include <Profiler.h>
 
 #ifdef _DEBUG
