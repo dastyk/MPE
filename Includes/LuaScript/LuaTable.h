@@ -15,7 +15,7 @@ namespace MPE
 		std::string _parentKey;
 		std::unordered_map<std::string, LuaTable*> _tables;
 		std::vector<std::string> _keys;
-		luabridge::LuaRef* _ref;
+		luabridge::LuaRef* _ref = nullptr;
 	public:
 		//! Constructor for when LuaScript creates the table
 		/*!

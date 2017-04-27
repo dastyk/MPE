@@ -71,27 +71,27 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)..\Build\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
-    <IncludePath>$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)..\Includes\LuaScript;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
     <OutDir>$(SolutionDir)..\Build\$(Platform)\</OutDir>
     <TargetName>$(ProjectName)D</TargetName>
-    <IncludePath>$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)..\Includes\LuaScript;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
     <OutDir>$(SolutionDir)..\Build\$(Platform)\</OutDir>
-    <IncludePath>$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)..\Includes\LuaScript;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
     <OutDir>$(SolutionDir)..\Build\$(Platform)\</OutDir>
     <TargetName>$(ProjectName)D</TargetName>
-    <IncludePath>$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)..\Includes\LuaScript;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

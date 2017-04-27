@@ -72,26 +72,26 @@
     <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
     <TargetName>$(ProjectName)D</TargetName>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName)\;$(SolutionDir)$(ProjectName)\LuaBridge\;$(SolutionDir)$(ProjectName)\lua-5.3.4\src;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName)\;$(SolutionDir)$(ProjectName)\LuaBridge\;$(SolutionDir)$(ProjectName)\lua-5.3.4\src;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
     <TargetName>$(ProjectName)D</TargetName>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName)\;$(SolutionDir)$(ProjectName)\LuaBridge\;$(SolutionDir)$(ProjectName)\lua-5.3.4\src;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)$(ProjectName)\;$(SolutionDir)$(ProjectName)\LuaBridge\;$(SolutionDir)$(ProjectName)\lua-5.3.4\src;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -139,95 +139,92 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lua-5.3.4\src\lapi.c" />
-    <ClCompile Include="lua-5.3.4\src\lauxlib.c" />
-    <ClCompile Include="lua-5.3.4\src\lbaselib.c" />
-    <ClCompile Include="lua-5.3.4\src\lbitlib.c" />
-    <ClCompile Include="lua-5.3.4\src\lcode.c" />
-    <ClCompile Include="lua-5.3.4\src\lcorolib.c" />
-    <ClCompile Include="lua-5.3.4\src\lctype.c" />
-    <ClCompile Include="lua-5.3.4\src\ldblib.c" />
-    <ClCompile Include="lua-5.3.4\src\ldebug.c" />
-    <ClCompile Include="lua-5.3.4\src\ldo.c" />
-    <ClCompile Include="lua-5.3.4\src\ldump.c" />
-    <ClCompile Include="lua-5.3.4\src\lfunc.c" />
-    <ClCompile Include="lua-5.3.4\src\lgc.c" />
-    <ClCompile Include="lua-5.3.4\src\linit.c" />
-    <ClCompile Include="lua-5.3.4\src\liolib.c" />
-    <ClCompile Include="lua-5.3.4\src\llex.c" />
-    <ClCompile Include="lua-5.3.4\src\lmathlib.c" />
-    <ClCompile Include="lua-5.3.4\src\lmem.c" />
-    <ClCompile Include="lua-5.3.4\src\loadlib.c" />
-    <ClCompile Include="lua-5.3.4\src\lobject.c" />
-    <ClCompile Include="lua-5.3.4\src\lopcodes.c" />
-    <ClCompile Include="lua-5.3.4\src\loslib.c" />
-    <ClCompile Include="lua-5.3.4\src\lparser.c" />
-    <ClCompile Include="lua-5.3.4\src\lstate.c" />
-    <ClCompile Include="lua-5.3.4\src\lstring.c" />
-    <ClCompile Include="lua-5.3.4\src\lstrlib.c" />
-    <ClCompile Include="lua-5.3.4\src\ltable.c" />
-    <ClCompile Include="lua-5.3.4\src\ltablib.c" />
-    <ClCompile Include="lua-5.3.4\src\ltm.c" />
-    <ClCompile Include="lua-5.3.4\src\lua.c" />
-    <ClCompile Include="lua-5.3.4\src\luac.c" />
-    <ClCompile Include="lua-5.3.4\src\lundump.c" />
-    <ClCompile Include="lua-5.3.4\src\lutf8lib.c" />
-    <ClCompile Include="lua-5.3.4\src\lvm.c" />
-    <ClCompile Include="lua-5.3.4\src\lzio.c" />
     <ClCompile Include="LuaHelpers.cpp" />
     <ClCompile Include="LuaScript.cpp" />
     <ClCompile Include="LuaTable.cpp" />
+    <ClCompile Include="Lua\lapi.c" />
+    <ClCompile Include="Lua\lauxlib.c" />
+    <ClCompile Include="Lua\lbaselib.c" />
+    <ClCompile Include="Lua\lbitlib.c" />
+    <ClCompile Include="Lua\lcode.c" />
+    <ClCompile Include="Lua\lcorolib.c" />
+    <ClCompile Include="Lua\lctype.c" />
+    <ClCompile Include="Lua\ldblib.c" />
+    <ClCompile Include="Lua\ldebug.c" />
+    <ClCompile Include="Lua\ldo.c" />
+    <ClCompile Include="Lua\ldump.c" />
+    <ClCompile Include="Lua\lfunc.c" />
+    <ClCompile Include="Lua\lgc.c" />
+    <ClCompile Include="Lua\linit.c" />
+    <ClCompile Include="Lua\liolib.c" />
+    <ClCompile Include="Lua\llex.c" />
+    <ClCompile Include="Lua\lmathlib.c" />
+    <ClCompile Include="Lua\lmem.c" />
+    <ClCompile Include="Lua\loadlib.c" />
+    <ClCompile Include="Lua\lobject.c" />
+    <ClCompile Include="Lua\lopcodes.c" />
+    <ClCompile Include="Lua\loslib.c" />
+    <ClCompile Include="Lua\lparser.c" />
+    <ClCompile Include="Lua\lstate.c" />
+    <ClCompile Include="Lua\lstring.c" />
+    <ClCompile Include="Lua\lstrlib.c" />
+    <ClCompile Include="Lua\ltable.c" />
+    <ClCompile Include="Lua\ltablib.c" />
+    <ClCompile Include="Lua\ltm.c" />
+    <ClCompile Include="Lua\lua.c" />
+    <ClCompile Include="Lua\luac.c" />
+    <ClCompile Include="Lua\lundump.c" />
+    <ClCompile Include="Lua\lutf8lib.c" />
+    <ClCompile Include="Lua\lvm.c" />
+    <ClCompile Include="Lua\lzio.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\CFunctions.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\ClassInfo.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\Constructor.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\dump.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\FuncTraits.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\Iterator.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\LuaException.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\LuaHelpers.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\LuaRef.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\Namespace.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\Stack.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\TypeList.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\TypeTraits.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\detail\Userdata.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\LuaBridge.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\RefCountedObject.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\LuaBridge\RefCountedPtr.h" />
     <ClInclude Include="..\..\Includes\LuaScript\LuaHelpers.h" />
     <ClInclude Include="..\..\Includes\LuaScript\LuaScript.h" />
     <ClInclude Include="..\..\Includes\LuaScript\LuaTable.h" />
-    <ClInclude Include="lua-5.3.4\src\lapi.h" />
-    <ClInclude Include="lua-5.3.4\src\lauxlib.h" />
-    <ClInclude Include="lua-5.3.4\src\lcode.h" />
-    <ClInclude Include="lua-5.3.4\src\lctype.h" />
-    <ClInclude Include="lua-5.3.4\src\ldebug.h" />
-    <ClInclude Include="lua-5.3.4\src\ldo.h" />
-    <ClInclude Include="lua-5.3.4\src\lfunc.h" />
-    <ClInclude Include="lua-5.3.4\src\lgc.h" />
-    <ClInclude Include="lua-5.3.4\src\llex.h" />
-    <ClInclude Include="lua-5.3.4\src\llimits.h" />
-    <ClInclude Include="lua-5.3.4\src\lmem.h" />
-    <ClInclude Include="lua-5.3.4\src\lobject.h" />
-    <ClInclude Include="lua-5.3.4\src\lopcodes.h" />
-    <ClInclude Include="lua-5.3.4\src\lparser.h" />
-    <ClInclude Include="lua-5.3.4\src\lprefix.h" />
-    <ClInclude Include="lua-5.3.4\src\lstate.h" />
-    <ClInclude Include="lua-5.3.4\src\lstring.h" />
-    <ClInclude Include="lua-5.3.4\src\ltable.h" />
-    <ClInclude Include="lua-5.3.4\src\ltm.h" />
-    <ClInclude Include="lua-5.3.4\src\lua.h" />
-    <ClInclude Include="lua-5.3.4\src\lua.hpp" />
-    <ClInclude Include="lua-5.3.4\src\luaconf.h" />
-    <ClInclude Include="lua-5.3.4\src\lualib.h" />
-    <ClInclude Include="lua-5.3.4\src\lundump.h" />
-    <ClInclude Include="lua-5.3.4\src\lvm.h" />
-    <ClInclude Include="lua-5.3.4\src\lzio.h" />
-    <ClInclude Include="LuaBridge\detail\CFunctions.h" />
-    <ClInclude Include="LuaBridge\detail\ClassInfo.h" />
-    <ClInclude Include="LuaBridge\detail\Constructor.h" />
-    <ClInclude Include="LuaBridge\detail\dump.h" />
-    <ClInclude Include="LuaBridge\detail\FuncTraits.h" />
-    <ClInclude Include="LuaBridge\detail\Iterator.h" />
-    <ClInclude Include="LuaBridge\detail\LuaException.h" />
-    <ClInclude Include="LuaBridge\detail\LuaHelpers.h" />
-    <ClInclude Include="LuaBridge\detail\LuaRef.h" />
-    <ClInclude Include="LuaBridge\detail\Namespace.h" />
-    <ClInclude Include="LuaBridge\detail\Stack.h" />
-    <ClInclude Include="LuaBridge\detail\TypeList.h" />
-    <ClInclude Include="LuaBridge\detail\TypeTraits.h" />
-    <ClInclude Include="LuaBridge\detail\Userdata.h" />
-    <ClInclude Include="LuaBridge\LuaBridge.h" />
-    <ClInclude Include="LuaBridge\RefCountedObject.h" />
-    <ClInclude Include="LuaBridge\RefCountedPtr.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="lua-5.3.4\src\Makefile" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lapi.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lauxlib.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lcode.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lctype.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\ldebug.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\ldo.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lfunc.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lgc.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\llex.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\llimits.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lmem.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lobject.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lopcodes.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lparser.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lprefix.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lstate.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lstring.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\ltable.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\ltm.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lua.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lua.hpp" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\luaconf.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lualib.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lundump.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lvm.h" />
+    <ClInclude Include="..\..\Includes\LuaScript\Lua\lzio.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

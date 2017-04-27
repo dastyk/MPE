@@ -29,7 +29,7 @@ namespace MPE
 	ThreadMessageController::~ThreadMessageController()
 	{
 		StartProfile;
-		BroadC(nullptr, Src_ThreadMessageController, Tag::Shutdown);
+		BroadC(nullptr, Destination::ThreadMessageController, Tag::Shutdown);
 		for (auto& t : _stdThreads)	
 			t.join();
 		ProfileReturnVoid;

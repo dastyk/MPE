@@ -1,12 +1,12 @@
 #ifndef _LUA_HELPERS_H_
 #define _LUA_HELPERS_H_
 #pragma once
-#include <LuaBridge.h>
+#include <LuaBridge\LuaBridge.h>
 
 extern "C" {
-# include <lua.h>
-# include <lauxlib.h>
-# include <lualib.h>
+# include <Lua\lua.h>
+# include <Lua\lauxlib.h>
+# include <Lua\lualib.h>
 }
 
 #include <vector>

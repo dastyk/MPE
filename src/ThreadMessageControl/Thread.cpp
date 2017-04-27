@@ -12,7 +12,7 @@ namespace MPE
 
 	Thread::Thread(threadIdentifier identifier, uint8_t frameSyncTime) : _frameSyncTime(frameSyncTime), _identity(identifier)
 	{
-		_ASSERT(_identity != Src_ThreadMessageController);
+		_ASSERT(_identity != Destination::ThreadMessageController);
 	}
 
 
