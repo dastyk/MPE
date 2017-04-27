@@ -1,5 +1,4 @@
 #include "DataManager.h"
-#include "DataMangagerMessages.h"
 
 #include <Profiler.h>
 
@@ -13,7 +12,6 @@
 
 namespace MPE
 {
-
 	DataManager::DataManager(threadIdentifier identifier, uint8_t frameSyncTime) :
 		Manager(&_entityEntires, identifier, frameSyncTime)
 	{
@@ -37,11 +35,11 @@ namespace MPE
 			StartProfile;
 			
 
-			if (PeekMsg(msg, Destination::Any, Tag::Any))
+			if (PeekMsg(msg, Msg::Destination::Any, Msg::Tag::Any))
 			{
-				if (msg.tag == Tag::Shutdown)
+				if (msg.tag == Msg::Tag::Shutdown)
 					running = false;
-				if (msg.tag == Tag::DataManager::RegisterEntity)
+				if (msg.tag == Msg::Tag::DataManager::RegisterEntity)
 				{
 					auto& entity = *(Entity*)msg.data;
 					_CreateData(entity);

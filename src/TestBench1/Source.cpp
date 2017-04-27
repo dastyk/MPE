@@ -51,7 +51,6 @@
 #endif
 
 #include <EntitySystem\DataManager.h>
-#include <EntitySystem\DataMangagerMessages.h>
 #include <ThreadMessageControl\ThreadMessageController.h>
 #include <LuaScript\LuaScript.h>
 #include <Renderer\Renderer.h>
@@ -76,23 +75,21 @@ int main()
 		#endif
 
 	StartProfile;
-	MPE::DataManager* dm = new MPE::DataManager(MPE::Destination::DataManager);
-	MPE::Renderer* r = MPE::Renderer::CreateBackend(MPE::Renderer::Backend::DirectX11, MPE::Destination::Renderer);
-	MPE::ThreadMessageController::Init();
+	std::vector<MPE::Thread*> threads;
+	threads.push_back(new MPE::DataManager(MPE::Msg::Destination::DataManager));
+	//threads.push_back(MPE::Renderer::CreateBackend(MPE::Renderer::Backend::DirectX11, MPE::Msg::Destination::Renderer));
+	MPE::ThreadMessageController::Start(threads);
 
-	MPE::ThreadMessageController::StartThread(dm);
-	MPE::ThreadMessageController::StartThread(r);
+	//MPE::Entity test;
+	//MPE::ThreadMessageController::Send(&test, MPE::Destination::ThreadMessageController, MPE::Destination::DataManager, MPE::Tag::DataManager::RegisterEntity);
 
-	MPE::Entity test;
-	MPE::ThreadMessageController::Send(&test, MPE::Destination::ThreadMessageController, MPE::Destination::DataManager, MPE::Tag::DataManager::RegisterEntity);
+	//MPE::LuaScript s("test.lua");
+	//s.LoadScript("testext.lua");
 
-	MPE::LuaScript s("test.lua");
-	s.LoadScript("testext.lua");
-
-	
-	auto& data = s.GetTable("data");
-	
-	auto keys = data.GetKeys();
+	//
+	//auto& data = s.GetTable("data");
+	//
+	//auto keys = data.GetKeys();
 
 	//for (auto& k : keys)
 	//{
@@ -104,14 +101,10 @@ int main()
 	//}
 	
 
-	auto i = 1;
-	while (i)
-		std::cin >> i;
+	//auto i = 1;
+	//while (i)
+	//	std::cin >> i;
 
-
-	MPE::ThreadMessageController::Shutdown();
-	delete r;
-	delete dm;
 
 	ProfileReturnConst(0);
 }

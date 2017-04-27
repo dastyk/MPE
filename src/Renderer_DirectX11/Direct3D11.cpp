@@ -4,7 +4,7 @@
 #include <string>
 // Initializes Direct3D11 by creating the device, context, and swap chain
 // with back buffer.
-const void Direct3D11::Start(HWND hWnd, unsigned backbufferWidth, unsigned backbufferHeight, UINT Numerator, UINT Denominator, bool fullscreen = false)
+const void Direct3D11::Start(HWND hWnd, unsigned backbufferWidth, unsigned backbufferHeight, UINT Numerator, UINT Denominator, bool fullscreen)
 {
 	this->_hWnd = hWnd;
 

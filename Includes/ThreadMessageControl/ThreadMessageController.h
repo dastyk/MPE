@@ -3,14 +3,13 @@
 #pragma once
 #include "Thread.h"
 #include <stdint.h>
-#include "Tag.h"
 #include <unordered_map>
 
 namespace MPE
 {
 
 	//! The ThreadMessageController initiates threads.
-	class ThreadMessageController
+	class ThreadMessageController : public Thread
 	{
 	private:
 		std::vector<std::thread> _stdThreads;
@@ -19,20 +18,20 @@ namespace MPE
 
 		static ThreadMessageController* _instance;
 
-		ThreadMessageController();
+		ThreadMessageController(const std::vector<Thread*>& threadsToStart, uint8_t frameSyncTime = 16);
 		~ThreadMessageController();
 	public:
-		static const void Init();
-		static const void Shutdown();
+		//! Starts the ThreadMessageController and all specified threads.
+		/*!
+		\param threadsToStart Vector of all the threads to start.
+		\sa Thread
+		*/
+		static const void Start(const std::vector<Thread*>& threadsToStart, uint8_t frameSyncTime = 16);
+
+		//! A special case of the Thread Start function.
+		const void Start();
 
 
-
-		 //! Starts a new thread. 
-		 /*!
-		 \param thread: Pointer to the class which should occupy the thread
-		 \sa Thread
-		 */
-		static const void StartThread(Thread* thread /*Allocator info,*/);
 
 		//! Send a message. 
 		/*!
@@ -43,7 +42,7 @@ namespace MPE
 		 \param tag: An identifier for the recviever.
 		 \sa Tag
 		 */
-		static const void Send(void* data, uint32_t src, uint32_t dest, uint32_t tag, uint8_t prio = 0);
+		static const void Send(void* data, const Msg::Destination&  src, const Msg::Destination& dest, const Msg::Tag& tag, uint8_t prio = 0);
 
 		//! Send a Broadcast to all threads. 
 		/*!
@@ -54,7 +53,7 @@ namespace MPE
 		\param prio: Priority of the message, 0 is lowest.
 		\sa Tag
 		*/
-		static const void BroadC(void* data, uint32_t src, uint32_t tag, uint8_t prio = UINT8_MAX);
+		static const void BroadC(void* data, const Msg::Destination& src, const Msg::Tag& tag, uint8_t prio = UINT8_MAX);
 	};
 }
 

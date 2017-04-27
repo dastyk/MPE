@@ -31,9 +31,9 @@ namespace MPE
 			StartProfile;
 
 
-			if (PeekMsg(msg, Destination::Any, Tag::Any))
+			if (PeekMsg(msg, Msg::Destination::Any, Msg::Tag::Any))
 			{
-				if (msg.tag == Tag::Shutdown)
+				if (msg.tag == Msg::Tag::Shutdown)
 					running = false;
 			}
 

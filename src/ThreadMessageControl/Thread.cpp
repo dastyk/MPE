@@ -12,14 +12,14 @@ namespace MPE
 
 	Thread::Thread(threadIdentifier identifier, uint8_t frameSyncTime) : _frameSyncTime(frameSyncTime), _identity(identifier)
 	{
-		_ASSERT(_identity != Destination::ThreadMessageController);
+
 	}
 
 
 	Thread::~Thread()
 	{
 	}
-	const uint32_t Thread::PeekMsg(Msg & msg, uint32_t src, uint32_t tag)
+	const uint32_t Thread::PeekMsg(Msg & msg, const Msg::Destination& src, const Msg::Tag& tag)
 	{
 		StartProfile;
 		
@@ -38,7 +38,7 @@ namespace MPE
 		_writeLock.unlock();
 		ProfileReturn(ret);
 	}
-	const void Thread::Send(void * data, uint32_t src, uint32_t tag, uint8_t prio)
+	const void Thread::Send(void * data, const Msg::Destination& src, const Msg::Tag& tag, uint8_t prio)
 	{
 		StartProfile;
 		_writeLock.lock();

@@ -35,9 +35,6 @@
     <ClInclude Include="..\..\Includes\EntitySystem\DataManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Includes\EntitySystem\DataMangagerMessages.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Includes\EntitySystem\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
