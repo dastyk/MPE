@@ -21,7 +21,7 @@ namespace MPE
 
 	ThreadMessageController::ThreadMessageController(const std::vector<Thread*>& threadsToStart, uint8_t frameSyncTime) : Thread(Msg::Destination::ThreadMessageController, frameSyncTime)
 	{
-
+		_threads[Msg::Destination::ThreadMessageController] = this;
 		for (auto& t : threadsToStart)
 		{
 			_threads[t->GetIdentity()] = t;
@@ -67,11 +67,10 @@ namespace MPE
 					running = false;
 			}
 
-			std::this_thread::sleep_for(std::chrono::seconds(2));//std::chrono::milliseconds(_frameSyncTime));
-			running = false;
+			std::this_thread::sleep_for(std::chrono::milliseconds(_frameSyncTime));
 			StopProfile;
 		}
-
+		_threads.erase(Msg::Destination::ThreadMessageController);
 		delete this;
 	}
 

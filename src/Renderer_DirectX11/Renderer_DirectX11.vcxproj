@@ -21,10 +21,12 @@
   <ItemGroup>
     <ClCompile Include="Direct3D11.cpp" />
     <ClCompile Include="Renderer_DirectX11.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Includes\Renderer_DirectX11\Direct3D11.h" />
     <ClInclude Include="..\..\Includes\Renderer_DirectX11\Renderer_DirectX11.h" />
+    <ClInclude Include="..\..\Includes\Renderer_DirectX11\Window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{96181BFE-EEDE-4DEE-9388-C7A6E52B8961}</ProjectGuid>

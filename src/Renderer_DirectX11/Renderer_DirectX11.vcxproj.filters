@@ -21,12 +21,18 @@
     <ClCompile Include="Direct3D11.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Includes\Renderer_DirectX11\Renderer_DirectX11.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Includes\Renderer_DirectX11\Direct3D11.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Includes\Renderer_DirectX11\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
