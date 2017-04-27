@@ -79,25 +79,23 @@ int main()
 	MPE::Entity test;
 	MPE::ThreadMessageController::Send(&test, 0, 1, MPE::Tag::DataManager::RegisterEntity);
 
-	MPE::LuaScript* s = MPE::LuaScript::Create("test.lua");
-	s->LoadScript("testext.lua");
+	MPE::LuaScript s("test.lua");
+	s.LoadScript("testext.lua");
 
 	
-	auto data = s->GetTable("data");
+	auto data = s.GetTable("data");
 	
-	auto keys = data->GetKeys();
+	auto keys = data.GetKeys();
 
 	for (auto& k : keys)
 	{
 		printf("%s\n", k.c_str());
-		auto d = data->GetTable(k.c_str());
-		auto dk = d->GetKeys();
+		auto d = data.GetTable(k.c_str());
+		auto dk = d.GetKeys();
 		for (auto& kdk : dk)
 			printf("\t%s\n", kdk.c_str());
 	}
 	
-
-	delete s;
 
 	auto i = 1;
 	while (i)

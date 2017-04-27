@@ -23,7 +23,7 @@ namespace MPE
 		/*!
 		\param name The table name, default is data. (Can be ex. data.item)
 		*/		
-		LuaTable* GetTable(const char* name = "data");
+		LuaTable& GetTable(const char* name = "data");
 
 		//! Load another script into the lua state.
 		const void LoadScript(const char* filename);

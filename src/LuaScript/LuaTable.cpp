@@ -42,7 +42,7 @@ namespace MPE
 		return _keys;
 	}
 
-	LuaTable * LuaTable::GetTable(const char * tableName)
+	LuaTable & LuaTable::GetTable(const char * tableName)
 	{
 		StartProfile;
 		auto find = _tables.find(tableName);

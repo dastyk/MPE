@@ -37,11 +37,11 @@ namespace MPE
 		lua_close(_state);
 		StopProfile;
 	}
-	LuaTable * LuaScript::GetTable(const char * tableName)
+	LuaTable & LuaScript::GetTable(const char * tableName)
 	{
 		StartProfile;
-		if (!_data) _data = new LuaScript(_state, tableName);
-		ProfileReturn(_data);
+		if (!_data) _data = new LuaTable(_state, tableName);
+		ProfileReturn(*_data);
 	}
 	const void LuaScript::LoadScript(const char * filename)
 	{

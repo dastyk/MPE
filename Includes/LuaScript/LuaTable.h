@@ -21,6 +21,6 @@ namespace MPE
 		~LuaTable();
 
 		const std::vector<std::string>& GetKeys()const;
-		LuaTable* GetTable(const char* tableName);
+		LuaTable& GetTable(const char* tableName);
 	};
 }
