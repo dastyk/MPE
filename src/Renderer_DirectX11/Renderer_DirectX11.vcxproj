@@ -19,9 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Direct3D11.cpp" />
     <ClCompile Include="Renderer_DirectX11.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Includes\Renderer_DirectX11\Direct3D11.h" />
     <ClInclude Include="..\..\Includes\Renderer_DirectX11\Renderer_DirectX11.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

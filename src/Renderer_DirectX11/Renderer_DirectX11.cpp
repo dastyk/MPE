@@ -13,7 +13,7 @@ namespace MPE
 	Renderer_DirectX11::Renderer_DirectX11(threadIdentifier identifier, uint8_t frameSyncTime) : Renderer(identifier, frameSyncTime)
 	{
 		StartProfile;
-
+		
 		StopProfile;
 	}
 

@@ -3,6 +3,7 @@
 
 #pragma once
 #include <Renderer\Renderer.h>
+#include <d3d11_2.h>
 
 namespace MPE
 {

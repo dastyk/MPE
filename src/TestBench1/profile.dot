@@ -1,0 +1,120 @@
+digraph "12672" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000028D6107A650"[
+label = "<f0> MPE::DataManager::Start | <f1> Times Called: 664 | <f2> Time Spent(IC): 10649 | Time Spent(EC): 10649"];
+"0000028D61089C40"[
+label = "<f0> MPE::DataManager::_CreateData | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000028D61089CE0"[
+label = "<f0> MPE::DataManager::DataBuffer::AllocateAndResizeHeader | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000028D61089C40":f0 -> "0000028D61089CE0":f0
+
+"0000028D6107A650":f0 -> "0000028D61089C40":f0
+"0000028D61077C00"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 664 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000028D6107A650":f0 -> "0000028D61077C00":f0
+
+
+}
+
+digraph "3524" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000028D6107D2C0"[
+label = "<f0> MPE::Renderer_DirectX11::Start | <f1> Times Called: 664 | <f2> Time Spent(IC): 10644 | Time Spent(EC): 10644"];
+"0000028D6107A870"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 664 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000028D6107D2C0":f0 -> "0000028D6107A870":f0
+
+
+}
+
+digraph "23340" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000028D61065310"[
+label = "<f0> main | <f1> Times Called: 2 | <f2> Time Spent(IC): 10888 | Time Spent(EC): 10852"];
+"0000028D6107F560"[
+label = "<f0> MPE::LuaScript::LuaScript | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000028D6107F600"[
+label = "<f0> MPE::LuaHelpers::LoadScript | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents. | Time Spent(EC): 0"];
+"0000028D61085A50"[
+label = "<f0> MPE::LuaHelpers::LoadDataExtendFunction | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000028D6107F600":f0 -> "0000028D61085A50":f0
+
+"0000028D6107F560":f0 -> "0000028D6107F600":f0
+
+"0000028D61065310":f0 -> "0000028D6107F560":f0
+"0000028D610899C0"[
+label = "<f0> MPE::LuaTable::~LuaTable | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000028D61065310":f0 -> "0000028D610899C0":f0
+"0000028D6108A140"[
+label = "<f0> MPE::LuaScript::LoadScript | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000028D6108A5A0"[
+label = "<f0> MPE::LuaHelpers::LoadScript | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000028D6108A140":f0 -> "0000028D6108A5A0":f0
+
+"0000028D61065310":f0 -> "0000028D6108A140":f0
+"0000028D61076130"[
+label = "<f0> MPE::DataManager::_Allocate | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000028D61065310":f0 -> "0000028D61076130":f0
+"0000028D6107E410"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000028D6107E4B0"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000028D6107E410":f0 -> "0000028D6107E4B0":f0
+
+"0000028D61065310":f0 -> "0000028D6107E410":f0
+"0000028D61089920"[
+label = "<f0> MPE::ThreadMessageController::~ThreadMessageController | <f1> Times Called: 1 | <f2> Time Spent(IC): 35, 0.00321455 % of parents. | Time Spent(EC): 35"];
+"0000028D61089D80"[
+label = "<f0> MPE::ThreadMessageController::BroadC | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000028D6108A500"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 2 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000028D61089D80":f0 -> "0000028D6108A500":f0
+
+"0000028D61089920":f0 -> "0000028D61089D80":f0
+
+"0000028D61065310":f0 -> "0000028D61089920":f0
+"0000028D61077950"[
+label = "<f0> MPE::Renderer_DirectX11::Renderer_DirectX11 | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000028D61065310":f0 -> "0000028D61077950":f0
+"0000028D61077B60"[
+label = "<f0> MPE::ThreadMessageController::StartThread | <f1> Times Called: 2 | <f2> Time Spent(IC): 1, 9.18442e-05 % of parents."];
+
+"0000028D61065310":f0 -> "0000028D61077B60":f0
+"0000028D6107D360"[
+label = "<f0> MPE::Entity::GenerateID | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000028D61065310":f0 -> "0000028D6107D360":f0
+"0000028D61089B00"[
+label = "<f0> MPE::LuaScript::GetTable | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000028D61089EC0"[
+label = "<f0> MPE::LuaTable::LuaTable | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents. | Time Spent(EC): 0"];
+"0000028D61089BA0"[
+label = "<f0> MPE::LuaHelpers::GetTableKeys | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents. | Time Spent(EC): 0"];
+"0000028D6108A640"[
+label = "<f0> MPE::LuaHelpers::GetToStack | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000028D61089BA0":f0 -> "0000028D6108A640":f0
+"0000028D6108A000"[
+label = "<f0> MPE::LuaHelpers::LoadGetKeysFunction | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000028D61089BA0":f0 -> "0000028D6108A000":f0
+
+"0000028D61089EC0":f0 -> "0000028D61089BA0":f0
+
+"0000028D61089B00":f0 -> "0000028D61089EC0":f0
+
+"0000028D61065310":f0 -> "0000028D61089B00":f0
+
+
+}
+
