@@ -9,6 +9,11 @@ namespace MPE
 {
 	class ScriptManager : public Manager
 	{
+		class EntityProxy
+		{
+
+		};
+
 	public:
 		ScriptManager(threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		~ScriptManager();
