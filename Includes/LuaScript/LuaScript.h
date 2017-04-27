@@ -1,32 +1,32 @@
-#ifndef _LUA_SCRIPT_H_
-#define  _LUA_SCRIPT_H_
 #pragma once
 
+#include "LuaHelpers.h"
 #include "LuaTable.h"
 
 namespace MPE
 {
-	//! A pure virtual class, so we can avoid including the base lua and luabridge src into the whole thing.
+	//! A wrapper for some lua functionallity
 	/*!
-	This class hides the actual lua and luabridge implementation found in LuaScript_Back
-	\sa LuaScript_Back
 	*/
 	class LuaScript
 	{
-	protected:
-		//! Protected Constructor
-		LuaScript();
+		std::string _filename;
+		luabridge::lua_State* _state;
 
+
+		LuaTable* _data;
 	public:
-		//! Creates the actual LuaScript_Back object.
-		static LuaScript* Create(const char* filename);
-		virtual ~LuaScript();
+		LuaScript(const char* filename);
+		~LuaScript();
 
 		//! Get the specified table
-		virtual LuaTable* GetTable(const char* tableName = "data") = 0;
+		/*!
+		\param name The table name, default is data. (Can be ex. data.item)
+		*/		
+		LuaTable* GetTable(const char* name = "data");
 
-		//! Load another script into the current state.
-		virtual const void LoadScript(const char* filename) = 0;
+		//! Load another script into the lua state.
+		const void LoadScript(const char* filename);
 	};
+
 }
-#endif

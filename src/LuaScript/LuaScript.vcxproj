@@ -176,15 +176,12 @@
     <ClCompile Include="lua-5.3.4\src\lzio.c" />
     <ClCompile Include="LuaHelpers.cpp" />
     <ClCompile Include="LuaScript.cpp" />
-    <ClCompile Include="LuaScript_Back.cpp" />
     <ClCompile Include="LuaTable.cpp" />
-    <ClCompile Include="LuaTable_Back.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Includes\LuaScript\LuaHelpers.h" />
     <ClInclude Include="..\..\Includes\LuaScript\LuaScript.h" />
-    <ClInclude Include="..\..\Includes\LuaScript\LuaScript_Back.h" />
     <ClInclude Include="..\..\Includes\LuaScript\LuaTable.h" />
-    <ClInclude Include="..\..\Includes\LuaScript\LuaTable_Back.h" />
     <ClInclude Include="lua-5.3.4\src\lapi.h" />
     <ClInclude Include="lua-5.3.4\src\lauxlib.h" />
     <ClInclude Include="lua-5.3.4\src\lcode.h" />
@@ -228,7 +225,6 @@
     <ClInclude Include="LuaBridge\LuaBridge.h" />
     <ClInclude Include="LuaBridge\RefCountedObject.h" />
     <ClInclude Include="LuaBridge\RefCountedPtr.h" />
-    <ClInclude Include="LuaHelpers.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="lua-5.3.4\src\Makefile" />

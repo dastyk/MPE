@@ -21,9 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LuaScript.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="lua-5.3.4\src\lapi.c">
       <Filter>Lua</Filter>
     </ClCompile>
@@ -129,23 +126,17 @@
     <ClCompile Include="lua-5.3.4\src\lzio.c">
       <Filter>Lua</Filter>
     </ClCompile>
-    <ClCompile Include="LuaTable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LuaTable_Back.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LuaScript_Back.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="LuaHelpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaScript.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Includes\LuaScript\LuaScript.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="lua-5.3.4\src\lapi.h">
       <Filter>Lua</Filter>
     </ClInclude>
@@ -275,16 +266,13 @@
     <ClInclude Include="LuaBridge\detail\Userdata.h">
       <Filter>LuaBridge</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Includes\LuaScript\LuaScript_Back.h">
+    <ClInclude Include="..\..\Includes\LuaScript\LuaHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Includes\LuaScript\LuaScript.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Includes\LuaScript\LuaTable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Includes\LuaScript\LuaTable_Back.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LuaHelpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

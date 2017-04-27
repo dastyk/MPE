@@ -1,22 +1,26 @@
 #pragma once
+
+#include <LuaHelpers.h>
 #include <vector>
+#include <unordered_map>
+
 namespace MPE
 {
-	//! A pure virtual class, so we can avoid including the base lua and luabridge src into the whole thing.
-	/*!
-	This class hides the actual lua and luabridge implementation found in LuaTable_Back
-	\sa LuaTable_Back
-	*/
 	class LuaTable
 	{
-	protected:
-		LuaTable();
+		luabridge::lua_State* _state;
+
+		std::string _key;
+		std::string _parentKey;
+		std::unordered_map<std::string, LuaTable*> _tables;
+		std::vector<std::string> _keys;
+		luabridge::LuaRef* _ref;
 	public:
+		LuaTable(luabridge::lua_State* L, const char* key, const char* parentKey = "");
+		LuaTable(luabridge::lua_State* L, luabridge::LuaRef* ref, const char* key, const char* parentKey);
+		~LuaTable();
 
-		virtual ~LuaTable();
-
-		virtual const std::vector<std::string>& GetKeys()const = 0;
-		virtual LuaTable* GetTable(const char* tableName) = 0;
+		const std::vector<std::string>& GetKeys()const;
+		LuaTable* GetTable(const char* tableName);
 	};
-
 }
