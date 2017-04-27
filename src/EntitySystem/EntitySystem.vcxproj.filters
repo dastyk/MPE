@@ -24,18 +24,24 @@
     <ClCompile Include="Manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ScriptManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Includes\EntitySystem\Entity.h">
+    <ClInclude Include="..\..\Includes\EntitySystem\ScriptManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\EntitySystem\DataManager.h">
+    <ClInclude Include="..\..\Includes\EntitySystem\DataManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\EntitySystem\Manager.h">
+    <ClInclude Include="..\..\Includes\EntitySystem\DataMangagerMessages.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Includes\EntitySystem\DataMangagerMessages.h">
+    <ClInclude Include="..\..\Includes\EntitySystem\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Includes\EntitySystem\Manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

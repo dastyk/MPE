@@ -27,6 +27,8 @@ namespace MPE
 
 		//! Load another script into the lua state.
 		const void LoadScript(const char* filename);
+
+		luabridge::lua_State*& GetState();
 	};
 
 }

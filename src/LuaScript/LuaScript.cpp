@@ -49,4 +49,8 @@ namespace MPE
 		LuaHelpers::LoadScript(_state, filename);
 		StopProfile;
 	}
+	luabridge::lua_State *& LuaScript::GetState() 
+	{
+		return _state;
+	}
 }
