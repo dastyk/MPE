@@ -3,7 +3,7 @@
 
 #pragma once
 #include <Renderer\Renderer.h>
-#include <d3d11_2.h>
+#include "Direct3D11.h"
 
 namespace MPE
 {
@@ -15,6 +15,9 @@ namespace MPE
 
 
 		const void Start();
+
+	private:
+		Direct3D11 _d3d;
 	};
 }
 #endif

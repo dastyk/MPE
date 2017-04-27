@@ -10,11 +10,12 @@
 
 namespace MPE
 {
-	Renderer_DirectX11::Renderer_DirectX11(threadIdentifier identifier, uint8_t frameSyncTime) : Renderer(identifier, frameSyncTime)
+	Renderer_DirectX11::Renderer_DirectX11(threadIdentifier identifier, uint8_t frameSyncTime) : Renderer(identifier, frameSyncTime), _d3d()
 	{
-		StartProfile;
-		
-		StopProfile;
+		auto hwnd = GetActiveWindow();
+		RECT r;
+		GetClientRect(hwnd, &r);
+		_d3d.Start(hwnd, r.right, r.bottom);
 	}
 
 
