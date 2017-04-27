@@ -52,12 +52,15 @@
 #include <EntitySystem\DataMangagerMessages.h>
 #include <ThreadMessageControl\ThreadMessageController.h>
 #include <LuaScript\LuaScript.h>
+#include <Renderer\Renderer.h>
 
 #ifdef _DEBUG
 #pragma comment(lib, "EntitySystemD.lib")
+#pragma comment(lib, "RendererD.lib")
 #pragma comment(lib, "LuaScriptD.lib")
 #else
 #pragma comment(lib, "EntitySystem.lib")
+#pragma comment(lib, "Renderer.lib")
 #pragma comment(lib, "LuaScript.lib")
 #endif
 
@@ -71,10 +74,12 @@ int main()
 		#endif
 
 	StartProfile;
-	MPE::DataManager* dm = new MPE::DataManager(1);
+	MPE::DataManager* dm = new MPE::DataManager(MPE::Destination::DataManager);
+	MPE::Renderer* r = MPE::Renderer::CreateBackend(MPE::Renderer::Backend::DirectX11, MPE::Destination::Renderer);
 	MPE::ThreadMessageController::Init();
 
 	MPE::ThreadMessageController::StartThread(dm);
+	MPE::ThreadMessageController::StartThread(r);
 
 	MPE::Entity test;
 	MPE::ThreadMessageController::Send(&test, MPE::Destination::ThreadMessageController, MPE::Destination::DataManager, MPE::Tag::DataManager::RegisterEntity);
@@ -83,18 +88,18 @@ int main()
 	s.LoadScript("testext.lua");
 
 	
-	auto data = s.GetTable("data");
+	auto& data = s.GetTable("data");
 	
 	auto keys = data.GetKeys();
 
-	for (auto& k : keys)
-	{
-		printf("%s\n", k.c_str());
-		auto d = data.GetTable(k.c_str());
-		auto dk = d.GetKeys();
-		for (auto& kdk : dk)
-			printf("\t%s\n", kdk.c_str());
-	}
+	//for (auto& k : keys)
+	//{
+	//	printf("%s\n", k.c_str());
+	//	auto d = data.GetTable(k.c_str());
+	//	auto dk = d.GetKeys();
+	//	for (auto& kdk : dk)
+	//		printf("\t%s\n", kdk.c_str());
+	//}
 	
 
 	auto i = 1;
@@ -103,6 +108,7 @@ int main()
 
 
 	MPE::ThreadMessageController::Shutdown();
+	delete r;
 	delete dm;
 
 	ProfileReturnConst(0);
