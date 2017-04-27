@@ -13,7 +13,7 @@
 
 namespace MPE
 {
-	
+	//! A virtual class intended to hide the implementation of the renderer. The class also creates the backend instance.
 	class Renderer : public Thread
 	{
 	public:
@@ -25,6 +25,7 @@ namespace MPE
 	protected:
 		Renderer(threadIdentifier identifier, uint8_t frameSyncTime = 16);
 	public:
+		//! Creates the specified Backend
 		static Renderer* CreateBackend(Backend backend, threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		~Renderer();
 	};

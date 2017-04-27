@@ -99,7 +99,7 @@ namespace MPE
 		DataManager(threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		~DataManager();
 
-
+		//! The main entry point for the thread.
 		const void Start();
 
 

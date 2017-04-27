@@ -7,13 +7,14 @@
 
 namespace MPE
 {
+	//! The directx11 implemenation renderer
 	class Renderer_DirectX11 : public Renderer
 	{
 	public:
 		Renderer_DirectX11(threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		~Renderer_DirectX11();
 
-
+		//! The main entry point for the thread.
 		const void Start();
 
 	private:
