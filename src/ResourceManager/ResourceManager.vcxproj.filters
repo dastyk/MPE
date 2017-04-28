@@ -23,5 +23,8 @@
     <ClInclude Include="..\..\Includes\ResourceManager\ResourceManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Includes\ResourceManager\ResoureManagerMessageStructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -15,10 +15,19 @@
 #pragma comment(lib, "ThreadMessageControl.lib")
 #pragma comment(lib, "EntitySystem.lib")
 #endif
+
+#include <stack>
+
 namespace MPE
 {
 	class ResourceManager : public Thread
 	{
+		struct DiskResourceLoader
+		{
+			uint8_t priority;
+			std::thread thread;		
+		};
+
 	public:
 		ResourceManager(threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		~ResourceManager();
@@ -26,6 +35,10 @@ namespace MPE
 
 		//! The main entry point for the thread.
 		const void Start();
+
+
+	private:
+		std::stack<DiskResourceLoader> _diskResourceLoaderStack;
 	};
 }
 #endif
