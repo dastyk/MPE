@@ -27,20 +27,14 @@ namespace MPE
 
 	//! The manager base class
 	/*!
-	This is a virtual class and is intended to be inherited by classes are to be used as component managers for entities.
+	This is a virtual class and is intended to be inherited by classes that are to be used for managing entities
 	*/
 	class Manager : public Thread
 	{
 	protected:
-		Manager(BaseManagerEntityEntryBlock* entires, threadIdentifier identifier, uint8_t frameSyncTime = 16);
+		Manager(threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		virtual ~Manager();
 
-	private:
-		BaseManagerEntityEntryBlock* _baseEntityEntires;
-	protected:
-		
-		std::unordered_map<Entity, uint32_t, EntityHasher> _entityToIndex;
-	public:
 
 	};
 }

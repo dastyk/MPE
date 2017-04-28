@@ -95,6 +95,8 @@ namespace MPE
 
 		EntityData _entityEntires; /*!< A reference pointer to avoid having to cast the basic datapointer all the time. */
 
+		std::unordered_map<Entity, uint32_t, EntityHasher> _entityToIndex;
+
 	public:
 		DataManager(threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		~DataManager();
