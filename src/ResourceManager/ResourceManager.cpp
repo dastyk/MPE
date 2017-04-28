@@ -43,9 +43,11 @@ namespace MPE
 		{
 			StartProfile;
 
-
+			// Decode messages. // Only do this if we had time over from the previous frame.
 			while (timer.Total<std::chrono::milliseconds>().count() < _frameSyncTime && PeekMsg(msg, Destination::Any, Tag::Any))
 			{
+
+			
 				if (msg.tag == Tag::Shutdown)
 					running = false;
 				else if (msg.tag == Tag::ResourceManager::LoadResource)
@@ -84,10 +86,20 @@ namespace MPE
 
 				}
 			}
+
+			// Sync with frametime. // TOD: Make sure everything work even if frame took more than frametime.
 			auto time = timer.Total<std::chrono::milliseconds>();
 
 			std::this_thread::sleep_for(std::chrono::milliseconds(_frameSyncTime) - time);
 			timer.Reset();
+
+
+
+
+			// Do the work.
+
+
+
 			StopProfile;
 		}
 	}

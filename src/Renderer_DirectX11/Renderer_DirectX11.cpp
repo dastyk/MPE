@@ -7,7 +7,7 @@
 #else
 #pragma comment(lib, "Profiler.lib")
 #endif
-
+#include <Timer.h>
 namespace MPE
 {
 	Renderer_DirectX11::Renderer_DirectX11(threadIdentifier identifier, uint8_t frameSyncTime) : Renderer(identifier, frameSyncTime), _window(), _d3d()
@@ -24,20 +24,25 @@ namespace MPE
 	}
 	const void Renderer_DirectX11::Start()
 	{
+		Timer timer;
 		Msg msg;
 		bool running = true;
+		timer.Start();
 		while (running)
 		{
 			StartProfile;
 
 
-			if (PeekMsg(msg, Destination::Any, Tag::Any))
+			while (timer.Total<std::chrono::milliseconds>().count() < _frameSyncTime && PeekMsg(msg, Destination::Any, Tag::Any))
 			{
 				if (msg.tag == Tag::Shutdown)
 					running = false;
 			}
 
-			std::this_thread::sleep_for(std::chrono::milliseconds(_frameSyncTime));
+			auto time = timer.Total<std::chrono::milliseconds>();
+
+			std::this_thread::sleep_for(std::chrono::milliseconds(_frameSyncTime) - time);
+			timer.Reset();
 
 			StopProfile;
 		}
