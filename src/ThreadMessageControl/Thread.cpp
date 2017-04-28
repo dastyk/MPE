@@ -19,7 +19,7 @@ namespace MPE
 	Thread::~Thread()
 	{
 	}
-	const uint32_t Thread::PeekMsg(Msg & msg, const Msg::Destination& src, const Msg::Tag& tag)
+	const uint32_t Thread::PeekMsg(Msg & msg, const Destination& src, const Tag& tag)
 	{
 		StartProfile;
 		
@@ -38,7 +38,7 @@ namespace MPE
 		_writeLock.unlock();
 		ProfileReturn(ret);
 	}
-	const void Thread::Send(void * data, const Msg::Destination& src, const Msg::Tag& tag, uint8_t prio)
+	const void Thread::Send(void * data, const Destination& src, const Tag& tag, uint8_t prio)
 	{
 		StartProfile;
 		_writeLock.lock();

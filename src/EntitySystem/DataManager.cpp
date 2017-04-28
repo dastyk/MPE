@@ -35,11 +35,11 @@ namespace MPE
 			StartProfile;
 			
 
-			if (PeekMsg(msg, Msg::Destination::Any, Msg::Tag::Any))
+			if (PeekMsg(msg, Destination::Any, Tag::Any))
 			{
-				if (msg.tag == Msg::Tag::Shutdown)
+				if (msg.tag == Tag::Shutdown)
 					running = false;
-				if (msg.tag == Msg::Tag::DataManager::RegisterEntity)
+				if (msg.tag == Tag::DataManager::RegisterEntity)
 				{
 					auto& entity = *(Entity*)msg.data;
 					_CreateData(entity);

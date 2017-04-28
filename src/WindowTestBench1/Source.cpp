@@ -54,7 +54,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 		nullptr,
 		[](void* userData, int argc, char** argv)
 	{
-		MPE::ThreadMessageController::Send(nullptr, MPE::Msg::Destination::ThreadMessageController, MPE::Msg::Destination::ThreadMessageController, MPE::Msg::Tag::Shutdown);
+		MPE::ThreadMessageController::Send(nullptr, MPE::Destination::ThreadMessageController, MPE::Destination::ThreadMessageController, MPE::Tag::Shutdown);
 	},
 		"exit",
 		"Send an exit message."
@@ -64,9 +64,9 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	StartProfile;
 	std::vector<MPE::Thread*> threads;
-	threads.push_back(new MPE::ResourceManager(MPE::Msg::Destination::ResourceManager));
-	threads.push_back(new MPE::DataManager(MPE::Msg::Destination::DataManager));
-	threads.push_back(MPE::Renderer::CreateBackend(MPE::Renderer::Backend::DirectX11, MPE::Msg::Destination::Renderer));
+	threads.push_back(new MPE::ResourceManager(MPE::Destination::ResourceManager));
+	threads.push_back(new MPE::DataManager(MPE::Destination::DataManager));
+	threads.push_back(MPE::Renderer::CreateBackend(MPE::Renderer::Backend::DirectX11, MPE::Destination::Renderer));
 	MPE::ThreadMessageController::Start(threads);
 
 	DebugUtils::ConsoleThread::Shutdown();

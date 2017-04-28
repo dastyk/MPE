@@ -42,7 +42,7 @@ namespace MPE
 		 \param tag: An identifier for the recviever.
 		 \sa Tag
 		 */
-		static const void Send(void* data, const Msg::Destination&  src, const Msg::Destination& dest, const Msg::Tag& tag, uint8_t prio = 0);
+		static const void Send(void* data, const Destination&  src, const Destination& dest, const Tag& tag, uint8_t prio = 0);
 
 		//! Send a Broadcast to all threads. 
 		/*!
@@ -53,7 +53,7 @@ namespace MPE
 		\param prio: Priority of the message, 0 is lowest.
 		\sa Tag
 		*/
-		static const void BroadC(void* data, const Msg::Destination& src, const Msg::Tag& tag, uint8_t prio = UINT8_MAX);
+		static const void BroadC(void* data, const Destination& src, const Tag& tag, uint8_t prio = UINT8_MAX);
 	};
 }
 

@@ -19,23 +19,27 @@ namespace MPE
 		thread->Start();
 	}
 
-	ThreadMessageController::ThreadMessageController(const std::vector<Thread*>& threadsToStart, uint8_t frameSyncTime) : Thread(Msg::Destination::ThreadMessageController, frameSyncTime)
+	ThreadMessageController::ThreadMessageController(const std::vector<Thread*>& threadsToStart, uint8_t frameSyncTime) : Thread(Destination::ThreadMessageController, frameSyncTime)
 	{
-		_threads[Msg::Destination::ThreadMessageController] = this;
+		_threads[Destination::ThreadMessageController] = this;
 		for (auto& t : threadsToStart)
 		{
 			_threads[t->GetIdentity()] = t;
-			_stdThreads.push_back(std::move(std::thread(ThreadEntry, t)));
+			
 		}
+		for (auto& t : threadsToStart)
+		{
+			_stdThreads.push_back(std::move(std::thread(ThreadEntry, t)));
 
-
+		}
+		
 	}
 
 
 	ThreadMessageController::~ThreadMessageController()
 	{
 		StartProfile;
-		BroadC(nullptr, Msg::Destination::ThreadMessageController, Msg::Tag::Shutdown);
+		BroadC(nullptr, Destination::ThreadMessageController, Tag::Shutdown);
 		for (auto& t : _stdThreads)	
 			t.join();
 
@@ -61,21 +65,21 @@ namespace MPE
 			StartProfile;
 
 
-			if (PeekMsg(msg, Msg::Destination::Any, Msg::Tag::Any))
+			if (PeekMsg(msg, Destination::Any, Tag::Any))
 			{
-				if (msg.tag == Msg::Tag::Shutdown)
+				if (msg.tag == Tag::Shutdown)
 					running = false;
 			}
 
 			std::this_thread::sleep_for(std::chrono::milliseconds(_frameSyncTime));
 			StopProfile;
 		}
-		_threads.erase(Msg::Destination::ThreadMessageController);
+		_threads.erase(Destination::ThreadMessageController);
 		delete this;
 	}
 
 
-	const void ThreadMessageController::Send(void * data, const Msg::Destination& src, const Msg::Destination& dest, const Msg::Tag& tag, uint8_t prio)
+	const void ThreadMessageController::Send(void * data, const Destination& src, const Destination& dest, const Tag& tag, uint8_t prio)
 	{
 		StartProfile;
 		auto& find = _instance->_threads.find(dest);
@@ -85,7 +89,7 @@ namespace MPE
 		ProfileReturnVoid;
 	}
 
-	const void ThreadMessageController::BroadC(void * data, const Msg::Destination& src, const Msg::Tag& tag, uint8_t prio)
+	const void ThreadMessageController::BroadC(void * data, const Destination& src, const Tag& tag, uint8_t prio)
 	{
 		StartProfile;
 		for (auto& t : _instance->_threads)

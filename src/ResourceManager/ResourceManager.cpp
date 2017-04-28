@@ -30,10 +30,14 @@ namespace MPE
 			StartProfile;
 
 
-			if (PeekMsg(msg, Msg::Destination::Any, Msg::Tag::Any))
+			if (PeekMsg(msg, Destination::Any, Tag::Any))
 			{
-				if (msg.tag == Msg::Tag::Shutdown)
+				if (msg.tag == Tag::Shutdown)
 					running = false;
+				else if (msg.tag == Tag::ResourceManager::LoadResource)
+				{
+
+				}
 			}
 
 			std::this_thread::sleep_for(std::chrono::milliseconds(_frameSyncTime));

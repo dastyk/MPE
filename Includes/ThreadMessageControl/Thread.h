@@ -47,7 +47,7 @@ namespace MPE
 		\sa Tag
 		\sa Destination
 		*/
-		const void Recv(Msg& msg, const Msg::Destination& src, const Msg::Tag& tag);
+		const void Recv(Msg& msg, const Destination& src, const Tag& tag);
 
 		//! Peek message queue 
 		/*!
@@ -59,7 +59,7 @@ namespace MPE
 		\sa Tag
 		\sa Destination
 		*/
-		const uint32_t PeekMsg(Msg& msg, const Msg::Destination& src, const Msg::Tag& tag);
+		const uint32_t PeekMsg(Msg& msg, const Destination& src, const Tag& tag);
 	public:
 
 		virtual ~Thread();
@@ -81,7 +81,7 @@ namespace MPE
 		\sa Tag
 		\sa Destination
 		*/
-		const void Send(void* data, const Msg::Destination& src, const Msg::Tag& tag, uint8_t prio);
+		const void Send(void* data, const Destination& src, const Tag& tag, uint8_t prio);
 
 	};
 }
