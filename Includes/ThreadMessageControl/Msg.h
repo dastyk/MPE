@@ -16,7 +16,8 @@ namespace MPE
 				Any = UINT32_MAX,/**< Specify to allow messages from any source. */
 				DataManager = 1 << 0,
 				ScriptManager = 1 << 1,
-				Renderer = 1 << 2
+				Renderer = 1 << 2,
+				ResourceManager = 1 << 3
 			};
 			Destination() { destination = ThreadMessageController; }
 			Destination(const Destination& other) { destination = other.destination; }
@@ -45,7 +46,23 @@ namespace MPE
 					RegisterEntity = CreateTag(Destination::DataManager, 0),
 				};
 			};
-
+			struct ResourceManager
+			{
+				enum : uint64_t
+				{
+					LoadResource = CreateTag(Destination::ResourceManager, 0),
+					LoadResourceAndForward = CreateTag(Destination::ResourceManager, 1),
+				};
+			};
+			struct Renderer
+			{
+				enum : uint64_t
+				{
+					RegisterScene = CreateTag(Destination::Renderer, 0),
+					RegisterEntity = CreateTag(Destination::Renderer, 1),
+					SetRenderScene = CreateTag(Destination::Renderer, 2)
+				};
+			};
 			Tag() { tag = Any; }
 			Tag(const Tag& other) { tag = other.tag; }
 			Tag(const uint32_t& other) { tag = other; }

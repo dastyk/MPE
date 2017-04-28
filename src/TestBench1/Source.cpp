@@ -54,15 +54,18 @@
 #include <ThreadMessageControl\ThreadMessageController.h>
 #include <LuaScript\LuaScript.h>
 #include <Renderer\Renderer.h>
+#include <ResourceManager\ResourceManager.h>
 
 #ifdef _DEBUG
 #pragma comment(lib, "EntitySystemD.lib")
 #pragma comment(lib, "RendererD.lib")
 #pragma comment(lib, "LuaScriptD.lib")
+#pragma comment(lib, "ResourceManagerD.lib")
 #else
 #pragma comment(lib, "EntitySystem.lib")
 #pragma comment(lib, "Renderer.lib")
 #pragma comment(lib, "LuaScript.lib")
+#pragma comment(lib, "ResourceManager.lib")
 #endif
 
 int main()

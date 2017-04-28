@@ -18,21 +18,9 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="DataManager.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="Manager.cpp" />
-    <ClCompile Include="ScriptManager.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Includes\EntitySystem\DataManager.h" />
-    <ClInclude Include="..\..\Includes\EntitySystem\Entity.h" />
-    <ClInclude Include="..\..\Includes\EntitySystem\Manager.h" />
-    <ClInclude Include="..\..\Includes\EntitySystem\ScriptManager.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{67975378-8F41-4B08-8D12-8192B2EC4A20}</ProjectGuid>
-    <RootNamespace>EntitySystem</RootNamespace>
+    <ProjectGuid>{2C832F20-6703-4EF4-83A2-F484DC55D35E}</ProjectGuid>
+    <RootNamespace>ResourceManager</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -83,27 +71,27 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
-    <IncludePath>$(SolutionDir)..\Includes\LuaScript;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
     <TargetName>$(ProjectName)D</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
-    <IncludePath>$(SolutionDir)..\Includes\LuaScript;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
-    <IncludePath>$(SolutionDir)..\Includes\LuaScript;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
     <TargetName>$(ProjectName)D</TargetName>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
+    <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)..\Intermediate\$(Platform)\</IntDir>
-    <IncludePath>$(SolutionDir)..\Includes\LuaScript;$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)..\Build\Lib\$(Platform)\</OutDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)..\Includes\$(ProjectName);$(SolutionDir)..\Includes;</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(SolutionDir)..\Build\Lib\$(Platform);</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -150,6 +138,12 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ResourceManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Includes\ResourceManager\ResourceManager.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

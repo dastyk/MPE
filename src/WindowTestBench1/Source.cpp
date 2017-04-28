@@ -21,13 +21,16 @@
 #include <EntitySystem\DataManager.h>
 #include <ThreadMessageControl\ThreadMessageController.h>
 #include <Renderer\Renderer.h>
+#include <ResourceManager\ResourceManager.h>
 
 #ifdef _DEBUG
 #pragma comment(lib, "EntitySystemD.lib")
 #pragma comment(lib, "RendererD.lib")
+#pragma comment(lib, "ResourceManagerD.lib")
 #else
 #pragma comment(lib, "EntitySystem.lib")
 #pragma comment(lib, "Renderer.lib")
+#pragma comment(lib, "ResourceManager.lib")
 #endif
 
 
@@ -61,6 +64,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	StartProfile;
 	std::vector<MPE::Thread*> threads;
+	threads.push_back(new MPE::ResourceManager(MPE::Msg::Destination::ResourceManager));
 	threads.push_back(new MPE::DataManager(MPE::Msg::Destination::DataManager));
 	threads.push_back(MPE::Renderer::CreateBackend(MPE::Renderer::Backend::DirectX11, MPE::Msg::Destination::Renderer));
 	MPE::ThreadMessageController::Start(threads);
