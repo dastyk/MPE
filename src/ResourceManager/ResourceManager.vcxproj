@@ -143,7 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Includes\ResourceManager\ResourceManager.h" />
-    <ClInclude Include="..\..\Includes\ResourceManager\ResoureManagerMessageStructs.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Includes\ResourceManager\ResoureManagerMessages.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

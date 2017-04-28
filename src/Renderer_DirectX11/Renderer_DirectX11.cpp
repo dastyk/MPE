@@ -8,6 +8,9 @@
 #pragma comment(lib, "Profiler.lib")
 #endif
 #include <Timer.h>
+
+#include <Renderer\RendererMessages.h>
+
 namespace MPE
 {
 	Renderer_DirectX11::Renderer_DirectX11(threadIdentifier identifier, uint8_t frameSyncTime) : Renderer(identifier, frameSyncTime), _window(), _d3d()

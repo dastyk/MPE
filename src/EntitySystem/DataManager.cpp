@@ -8,7 +8,7 @@
 #pragma comment(lib, "Profiler.lib")
 #endif
 
-
+#include <DataManagerMessages.h>
 
 namespace MPE
 {
@@ -62,8 +62,6 @@ namespace MPE
 
 		if (_entityEntires.used >= _entityEntires.allocated)
 			_Allocate(static_cast<uint32_t>(_entityEntires.allocated * 1.5f) + 10);
-
-		//Utils::ConsoleLog::DumpToConsole("Creating Datacomponent for Entity: %d", entity.ID);
 
 		uint32_t index = _entityToIndex[entity] = static_cast<uint32_t>(_entityToIndex.size());
 		_entityEntires.entity[index] = entity;

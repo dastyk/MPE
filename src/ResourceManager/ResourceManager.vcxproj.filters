@@ -23,8 +23,10 @@
     <ClInclude Include="..\..\Includes\ResourceManager\ResourceManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Includes\ResourceManager\ResoureManagerMessageStructs.h">
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Includes\ResourceManager\ResoureManagerMessages.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
+    </None>
   </ItemGroup>
 </Project>

@@ -79,7 +79,7 @@ namespace MPE
 	}
 
 
-	const void ThreadMessageController::Send(void * data, const Destination& src, const Destination& dest, const Tag& tag, uint8_t prio)
+	const void ThreadMessageController::Send(void * data, uint32_t src, uint32_t dest, uint64_t tag, uint8_t prio)
 	{
 		StartProfile;
 		auto& find = _instance->_threads.find(dest);
@@ -89,7 +89,7 @@ namespace MPE
 		ProfileReturnVoid;
 	}
 
-	const void ThreadMessageController::BroadC(void * data, const Destination& src, const Tag& tag, uint8_t prio)
+	const void ThreadMessageController::BroadC(void * data, uint32_t src, uint64_t tag, uint8_t prio)
 	{
 		StartProfile;
 		for (auto& t : _instance->_threads)

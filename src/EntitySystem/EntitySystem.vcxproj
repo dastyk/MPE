@@ -26,6 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Includes\EntitySystem\DataManager.h" />
+    <ClInclude Include="..\..\Includes\EntitySystem\DataManagerMessages.h" />
     <ClInclude Include="..\..\Includes\EntitySystem\Entity.h" />
     <ClInclude Include="..\..\Includes\EntitySystem\Manager.h" />
     <ClInclude Include="..\..\Includes\EntitySystem\ScriptManager.h" />

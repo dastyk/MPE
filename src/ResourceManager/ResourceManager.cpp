@@ -9,7 +9,7 @@
 #endif
 
 #include "ResourceManager.h"
-#include <ResourceManager\ResoureManagerMessageStructs.h>
+#include <ResourceManager\ResoureManagerMessages.h>
 #include <Windows.h>
 #include <Timer.h>
 

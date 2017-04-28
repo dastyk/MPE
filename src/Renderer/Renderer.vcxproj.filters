@@ -23,5 +23,8 @@
     <ClInclude Include="..\..\Includes\Renderer\Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Includes\Renderer\RendererMessages.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
