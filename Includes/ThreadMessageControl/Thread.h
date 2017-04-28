@@ -13,7 +13,9 @@ namespace MPE
 	//! The thread base class
 	/*!
 		This is a virtual class and is intended to be inherited by classes that wishes to use the ThreadMessageController.
-		\sa ThreadMessageController
+		The typical Thread follows a basic pattern. The pattern concists of three steps. 1. Decode messages, 2. Sync frametime, 3. Do work.
+		This is repeated until the shutdown message is recieved.
+ 		\sa ThreadMessageController
 	*/
 	class Thread
 	{
