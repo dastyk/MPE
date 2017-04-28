@@ -85,6 +85,8 @@ namespace MPE
 				{
 
 				}
+
+				msg.Clean();
 			}
 
 			// Sync with frametime. // TOD: Make sure everything work even if frame took more than frametime.

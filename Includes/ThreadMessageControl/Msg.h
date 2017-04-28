@@ -9,10 +9,16 @@ namespace MPE
 {
 	struct Msg
 	{
-		void* data;
+		void* data = nullptr; /**< Must be created with new */
 		uint32_t src; /**< Who the message if from. */
 		uint64_t tag; /**< Tag, if Tag::Any was specified. */
 		uint8_t prio;
+
+		const void Clean()
+		{
+			delete data;
+			data = nullptr;
+		}
 	};
 	struct MsgComp
 	{
