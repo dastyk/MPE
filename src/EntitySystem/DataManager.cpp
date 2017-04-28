@@ -13,7 +13,7 @@
 namespace MPE
 {
 	DataManager::DataManager(threadIdentifier identifier, uint8_t frameSyncTime) :
-		Manager(&_entityEntires, identifier, frameSyncTime)
+		Manager(identifier, frameSyncTime)
 	{
 		_Allocate(10);
 	}
