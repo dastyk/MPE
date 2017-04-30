@@ -9,11 +9,11 @@
 #endif
 
 #include <DataManagerMessages.h>
+#include <ScriptManager.h>
 
 namespace MPE
 {
-	DataManager::DataManager(threadIdentifier identifier, uint8_t frameSyncTime) :
-		Manager(identifier, frameSyncTime)
+	DataManager::DataManager() : Manager()
 	{
 		_Allocate(10);
 	}
@@ -26,33 +26,8 @@ namespace MPE
 		}
 		operator delete(_entityEntires.buffer);
 	}
-	const void DataManager::Start()
-	{
-		Msg msg;
-		bool running = true;
-		while (running)
-		{
-			StartProfile;
-			
 
-			if (PeekMsg(msg, Destination::Any, Tag::Any))
-			{
-				if (msg.tag == Tag::Shutdown)
-					running = false;
-				if (msg.tag == Tag::DataManager::RegisterEntity)
-				{
-					auto& entity = *(Entity*)msg.data;
-					_CreateData(entity);
-				}
-			}
 
-			std::this_thread::sleep_for(std::chrono::milliseconds(_frameSyncTime));
-
-			StopProfile;
-		}
-
-		return void();
-	}
 	const void DataManager::_CreateData(const Entity & entity)
 	{
 		StartProfile;
@@ -133,6 +108,11 @@ namespace MPE
 	//		header.entryCount++;
 	//	}
 	//}
+
+	const void DataManager::AddStringValue(const Entity & entity, const std::string & key, const std::string & val)
+	{
+
+	}
 	//const void DataManager::AddStringValue(const Entity & entity, const string & key, const string & val)
 	//{
 	//	auto& find = _entityToIndex->find(entity);

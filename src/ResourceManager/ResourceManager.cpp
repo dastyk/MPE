@@ -16,7 +16,7 @@
 namespace MPE
 {
 
-	const void LoadResource(uint64_t GUID)
+	const void T_LoadResource(uint64_t GUID)
 	{
 		while (true)
 		{
@@ -25,8 +25,9 @@ namespace MPE
 	}
 
 
-	ResourceManager::ResourceManager(threadIdentifier identifier, uint8_t frameSyncTime) : Thread(identifier, frameSyncTime)
+	ResourceManager::ResourceManager(AssetLoader* diskAssetLoader, threadIdentifier identifier, uint8_t frameSyncTime) : Thread(identifier, frameSyncTime), _diskAssetLoader(diskAssetLoader)
 	{
+	//	_ASSERT(diskAssetLoader != nullptr);
 	}
 
 
@@ -52,33 +53,7 @@ namespace MPE
 					running = false;
 				else if (msg.tag == Tag::ResourceManager::LoadResource)
 				{
-					auto& lrs = *(LoadResourceStruct*)msg.data;
-					DiskResourceLoader drl;
-					drl.priority = lrs.priority;
-					if (_diskResourceLoaderStack.size())
-					{
-						auto& top = _diskResourceLoaderStack.top();
-
-						if (top.priority < lrs.priority)
-						{
-							HANDLE h = top.thread.native_handle();
-							SuspendThread(h);
-							drl.thread = std::move(std::thread(LoadResource, 1234));
-							_diskResourceLoaderStack.push(std::move(drl));
-						}
-						else
-						{
-							auto temp = std::move(top);
-							_diskResourceLoaderStack.pop();
-							_diskResourceLoaderStack.push(std::move(drl));
-							_diskResourceLoaderStack.push(std::move(temp));
-						}
-					}
-					else
-					{
-						drl.thread = std::move(std::thread(LoadResource, 1234));
-						_diskResourceLoaderStack.push(std::move(drl));
-					}
+					
 					
 				}
 				else if (msg.tag == Tag::ResourceManager::LoadResourceAndForward)
@@ -103,6 +78,36 @@ namespace MPE
 
 
 			StopProfile;
+		}
+	}
+	const void ResourceManager::LoadResource(const Msg& msg)
+	{
+		auto& lrs = *(LoadResourceStruct*)msg.data;
+		auto& drl = *new DiskResourceLoader;
+		drl.priority = lrs.priority;
+		if (_diskResourceLoaderStack.size())
+		{
+			auto& top = *_diskResourceLoaderStack.top();
+
+			if (top.priority < lrs.priority)
+			{
+				HANDLE h = top.thread.native_handle();
+				SuspendThread(h);
+				drl.thread = std::move(std::thread(T_LoadResource, 1234));
+				_diskResourceLoaderStack.push(&drl);
+			}
+			else
+			{
+				auto temp = &top;
+				_diskResourceLoaderStack.pop();
+				_diskResourceLoaderStack.push(&drl);
+				_diskResourceLoaderStack.push(temp);
+			}
+		}
+		else
+		{
+			drl.thread = std::move(std::thread(T_LoadResource, 1234));
+			_diskResourceLoaderStack.push(&drl);
 		}
 	}
 }

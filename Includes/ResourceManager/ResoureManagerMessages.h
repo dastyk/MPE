@@ -3,6 +3,8 @@
 #pragma once
 #include <stdint.h>
 #include <ThreadMessageControl\Tag.h>
+#include <GUID.h>
+
 namespace MPE
 {
 	namespace Tag
@@ -18,6 +20,7 @@ namespace MPE
 	}
 	struct LoadResourceStruct
 	{
+		GUID guid;
 		uint8_t priority;
 	};
 }

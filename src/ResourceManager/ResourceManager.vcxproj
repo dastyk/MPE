@@ -139,9 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="RawAssetLoader.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Includes\ResourceManager\AssetLoader.h" />
+    <ClInclude Include="..\..\Includes\ResourceManager\GUID.h" />
+    <ClInclude Include="..\..\Includes\ResourceManager\RawAssetLoader.h" />
     <ClInclude Include="..\..\Includes\ResourceManager\ResourceManager.h" />
   </ItemGroup>
   <ItemGroup>

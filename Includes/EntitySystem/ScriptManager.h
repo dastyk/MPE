@@ -2,12 +2,21 @@
 #define _SCRIPTMANAGER_H_
 
 #pragma once
-#include "Manager.h"
-#include <LuaScript\LuaScript.h>
+#include <ThreadMessageControl\Thread.h>
+#include <selene.h>
+
+#ifdef _DEBUG
+#pragma comment(lib, "ThreadMessageControlD.lib")
+#pragma comment(lib, "LuaWrapperD.lib")
+#else
+#pragma comment(lib, "ThreadMessageControl.lib")
+#pragma comment(lib, "LuaWrapper.lib")
+#endif
+#include <map>
 
 namespace MPE
 {
-	class ScriptManager : public Manager
+	class ScriptManager : public Thread
 	{
 		class EntityProxy
 		{
@@ -18,9 +27,12 @@ namespace MPE
 		ScriptManager(threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		~ScriptManager();
 
-	private:
-		LuaScript* _script;
-	};
+		//! The main entry point for the thread.
+		const void Start();
 
+
+	private:
+		sel::State _state;
+	};
 }
 #endif

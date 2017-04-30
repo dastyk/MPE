@@ -1,14 +1,8 @@
-#include <ThreadMessageControl\Thread.h>
 
 #pragma once
 #include "Entity.h"
 #include <unordered_map>
 
-#ifdef _DEBUG
-#pragma comment(lib, "ThreadMessageControlD.lib")
-#else
-#pragma comment(lib, "ThreadMessageControl.lib")
-#endif
 
 namespace MPE
 {
@@ -29,10 +23,10 @@ namespace MPE
 	/*!
 	This is a virtual class and is intended to be inherited by classes that are to be used for managing entities
 	*/
-	class Manager : public Thread
+	class Manager
 	{
 	protected:
-		Manager(threadIdentifier identifier, uint8_t frameSyncTime = 16);
+		Manager();
 		virtual ~Manager();
 
 

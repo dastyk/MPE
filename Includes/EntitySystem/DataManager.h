@@ -3,6 +3,7 @@
 #pragma once
 #include "Manager.h"
 
+
 namespace MPE
 {
 	//! The DataManager is used to associate basic datatypes to an entity.
@@ -12,6 +13,7 @@ namespace MPE
 	\sa DataType
 	\sa Tag::DataManager
 	*/
+	class ScriptManager;
 	class DataManager : public Manager
 	{
 	private:
@@ -98,14 +100,13 @@ namespace MPE
 		std::unordered_map<Entity, uint32_t, EntityHasher> _entityToIndex;
 
 	public:
-		DataManager(threadIdentifier identifier, uint8_t frameSyncTime = 16);
+		DataManager();
 		~DataManager();
-
-		//! The main entry point for the thread.
-		const void Start();
 
 
 	private:
+		const void AddStringValue(const Entity & entity, const std::string & key, const std::string & val);
+
 		//! Register an Entity entry
 		/*!
 		An Entity need to be registered before any data can be associated with the Entity.

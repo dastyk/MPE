@@ -1,20 +1,48 @@
 #include "ScriptManager.h"
 
+#include <Profiler.h>
+#include <DataManager.h>
+
+#ifdef _DEBUG
+#pragma comment(lib, "ProfilerD.lib")
+#else
+#pragma comment(lib, "Profiler.lib")
+#endif
 
 namespace MPE
 {
-	using namespace luabridge;
-	ScriptManager::ScriptManager(threadIdentifier identifier, uint8_t frameSyncTime) : Manager(identifier, frameSyncTime)
+	ScriptManager::ScriptManager(threadIdentifier identifier, uint8_t frameSyncTime) : Thread(identifier, frameSyncTime)
 	{
-		_script = new LuaScript("data.lua"); // For now we will read from a lua file. Should probably just dump the lua state to a binary file or something.
 
-		getGlobalNamespace(_script->GetState())
-			.beginClass<EntityProxy>("EntityProxy")
-			.endClass();
 	}
 
 
 	ScriptManager::~ScriptManager()
 	{
+	}
+
+	const void ScriptManager::Start()
+	{
+		_state.Load("data.lua");
+		Msg msg;
+		bool running = true;
+		while (running)
+		{
+			StartProfile;
+
+
+			if (PeekMsg(msg, Destination::Any, Tag::Any))
+			{
+				if (msg.tag == Tag::Shutdown)
+					running = false;
+
+
+				std::this_thread::sleep_for(std::chrono::milliseconds(_frameSyncTime));
+
+				StopProfile;
+			}
+
+			return void();
+		}
 	}
 }

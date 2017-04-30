@@ -17,6 +17,7 @@
 #endif
 
 #include <stack>
+#include "AssetLoader.h"
 
 namespace MPE
 {
@@ -29,16 +30,19 @@ namespace MPE
 		};
 
 	public:
-		ResourceManager(threadIdentifier identifier, uint8_t frameSyncTime = 16);
+		ResourceManager(AssetLoader* diskAssetLoader, threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		~ResourceManager();
 
 
 		//! The main entry point for the thread.
 		const void Start();
-
+	private:
+		const void LoadResource(const Msg& msg);
 
 	private:
-		std::stack<DiskResourceLoader> _diskResourceLoaderStack;
+		std::stack<DiskResourceLoader*> _diskResourceLoaderStack;
+
+		AssetLoader* _diskAssetLoader;
 	};
 }
 #endif

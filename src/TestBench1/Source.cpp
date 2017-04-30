@@ -79,7 +79,7 @@ int main()
 
 	StartProfile;
 	std::vector<MPE::Thread*> threads;
-	threads.push_back(new MPE::DataManager(MPE::Destination::DataManager));
+//	threads.push_back(new MPE::DataManager(MPE::Destination::DataManager));
 	//threads.push_back(MPE::Renderer::CreateBackend(MPE::Renderer::Backend::DirectX11, MPE::Destination::Renderer));
 	MPE::ThreadMessageController::Start(threads);
 

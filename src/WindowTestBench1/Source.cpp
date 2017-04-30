@@ -18,7 +18,7 @@
 #pragma comment(lib, "DebugConsole.lib")
 #endif
 
-#include <EntitySystem\DataManager.h>
+#include <EntitySystem\ScriptManager.h>
 #include <ThreadMessageControl\ThreadMessageController.h>
 #include <Renderer\Renderer.h>
 #include <ResourceManager\ResourceManager.h>
@@ -64,8 +64,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	StartProfile;
 	std::vector<MPE::Thread*> threads;
-	threads.push_back(new MPE::ResourceManager(MPE::Destination::ResourceManager));
-	threads.push_back(new MPE::DataManager(MPE::Destination::DataManager));
+	threads.push_back(new MPE::ResourceManager(nullptr, MPE::Destination::ResourceManager));
+	threads.push_back(new MPE::ScriptManager(MPE::Destination::ScriptManager));
 	threads.push_back(MPE::Renderer::CreateBackend(MPE::Renderer::Backend::DirectX11, MPE::Destination::Renderer));
 	MPE::ThreadMessageController::Start(threads);
 
