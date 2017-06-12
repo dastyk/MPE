@@ -20,7 +20,7 @@ namespace MPE
 	RawAssetLoader::~RawAssetLoader()
 	{
 	}
-	Resource RawAssetLoader::LoadResource(GUID guid)
+	const void RawAssetLoader::LoadResource(GUID guid, Resource* r)
 	{
 		auto&& find = _assets.find(guid);
 		if (find == _assets.end())
@@ -40,19 +40,16 @@ namespace MPE
 			else
 				i = 0;
 		}
-		FileExt ext(fileend);
+		r->ext = FileExt(fileend);
 
 
 		std::streampos filesize = file.tellg();
 		file.seekg(0, std::ios::end);
 		filesize = file.tellg() - filesize;
 		file.seekg(0, std::ios::beg);
-		size_t size = filesize;
+		r->size = filesize;
 
-		void* data = operator new(size);
-		file.read((char*)data, filesize);
-
-
-		return { data, size, ext };
+		r->data = operator new(r->size);
+		file.read((char*)r->data, filesize);
 	}
 }

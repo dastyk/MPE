@@ -2,15 +2,21 @@
 #define _GUID_H_
 #pragma once
 #include <string>
+#include <functional>
 namespace MPE
 {
 	struct GUID
 	{
 		GUID(const char* name)
 		{
-			data = std::hash<std::string>{} (name);
+			data = std::hash<std::string>{} (std::string(name));
 		}
+		GUID(const GUID& other) { data = other.data; }
 		GUID(const GUID&& other) { data = other.data; }
+		void operator=(const GUID& rhs)
+		{
+			this->data = rhs.data;
+		}
 		void operator=(const GUID&& rhs)
 		{
 			this->data = rhs.data;

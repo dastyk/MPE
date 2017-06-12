@@ -3,7 +3,10 @@
 
 #pragma once
 #include <ThreadMessageControl\Thread.h>
+#include "Manager.h"
 #include <selene.h>
+#include "Entity.h"
+#include "ScriptProxy.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "ThreadMessageControlD.lib")
@@ -16,12 +19,9 @@
 
 namespace MPE
 {
+
 	class ScriptManager : public Thread
 	{
-		class EntityProxy
-		{
-
-		};
 
 	public:
 		ScriptManager(threadIdentifier identifier, uint8_t frameSyncTime = 16);
@@ -30,9 +30,24 @@ namespace MPE
 		//! The main entry point for the thread.
 		const void Start();
 
+		//! Registers a manager
+		const void RegisterManager(Manager* manager);
+
+		//! Register many manager as once
+		const void RegisterManager(const std::vector <Manager*>& managers);
+
+
+		//! 
+		void CreateScene(sel::Reference<SceneProxy> scene);
+
+
+	private:
 
 	private:
 		sel::State _state;
+
+		std::vector<Manager*> _entityManagers;
+
 	};
 }
 #endif

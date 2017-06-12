@@ -95,7 +95,7 @@ namespace MPE
 			DataBuffer** dataBuff;/*!< Stores a pointer to the data entries for the Entity entry */  
 		};
 
-		EntityData _entityEntires; /*!< A reference pointer to avoid having to cast the basic datapointer all the time. */
+		EntityData _entityEntires; 
 
 		std::unordered_map<Entity, uint32_t, EntityHasher> _entityToIndex;
 

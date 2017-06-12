@@ -6,6 +6,7 @@
 
 #pragma once
 #include <EntitySystem\Entity.h>
+#include "ResoureManagerMessages.h"
 #include <unordered_map>
 
 #ifdef _DEBUG
@@ -16,7 +17,7 @@
 #pragma comment(lib, "EntitySystem.lib")
 #endif
 
-#include <stack>
+#include <queue>
 #include "AssetLoader.h"
 
 namespace MPE
@@ -28,7 +29,14 @@ namespace MPE
 			uint8_t priority;
 			std::thread thread;		
 		};
-
+		class DiskResourceLoaderCompare
+		{
+		public:
+			bool operator() (DiskResourceLoader* l, DiskResourceLoader* r)
+			{
+				return l->priority < r->priority;
+			}
+		};
 	public:
 		ResourceManager(AssetLoader* diskAssetLoader, threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		~ResourceManager();
@@ -40,7 +48,9 @@ namespace MPE
 		const void LoadResource(const Msg& msg);
 
 	private:
-		std::stack<DiskResourceLoader*> _diskResourceLoaderStack;
+		std::unordered_map<uint64_t, Resource*> _resourceRegister;
+
+		std::priority_queue<DiskResourceLoader*, std::vector<DiskResourceLoader*>, DiskResourceLoaderCompare> _diskResourceLoaderQueue;
 
 		AssetLoader* _diskAssetLoader;
 	};

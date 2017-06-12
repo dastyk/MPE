@@ -2,7 +2,13 @@
 #pragma once
 #include "Entity.h"
 #include <unordered_map>
+#include <selene.h>
 
+#ifdef _DEBUG
+#pragma comment(lib, "LuaWrapperD.lib")
+#else
+#pragma comment(lib, "LuaWrapper.lib")
+#endif
 
 namespace MPE
 {
@@ -29,7 +35,9 @@ namespace MPE
 		Manager();
 		virtual ~Manager();
 
-
+	public:
+		//! Registers all the lua functions, etc. for the manager.
+		virtual const void RegisterScriptStuff(sel::State& _state) = 0;
 	};
 }
 

@@ -146,6 +146,7 @@
     <ClInclude Include="..\..\Includes\ResourceManager\AssetLoader.h" />
     <ClInclude Include="..\..\Includes\ResourceManager\GUID.h" />
     <ClInclude Include="..\..\Includes\ResourceManager\RawAssetLoader.h" />
+    <ClInclude Include="..\..\Includes\ResourceManager\Resource.h" />
     <ClInclude Include="..\..\Includes\ResourceManager\ResourceManager.h" />
   </ItemGroup>
   <ItemGroup>

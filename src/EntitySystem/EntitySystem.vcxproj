@@ -23,6 +23,7 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="ScriptManager.cpp" />
+    <ClCompile Include="TransformManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Includes\EntitySystem\DataManager.h" />
@@ -30,6 +31,8 @@
     <ClInclude Include="..\..\Includes\EntitySystem\Entity.h" />
     <ClInclude Include="..\..\Includes\EntitySystem\Manager.h" />
     <ClInclude Include="..\..\Includes\EntitySystem\ScriptManager.h" />
+    <ClInclude Include="..\..\Includes\EntitySystem\ScriptProxy.h" />
+    <ClInclude Include="..\..\Includes\EntitySystem\TransformManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{67975378-8F41-4B08-8D12-8192B2EC4A20}</ProjectGuid>

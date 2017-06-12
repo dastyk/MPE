@@ -27,6 +27,9 @@
     <ClCompile Include="ScriptManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TransformManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Includes\EntitySystem\ScriptManager.h">
@@ -42,6 +45,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Includes\EntitySystem\DataManagerMessages.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Includes\EntitySystem\TransformManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Includes\EntitySystem\ScriptProxy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

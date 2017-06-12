@@ -35,6 +35,9 @@
     <ClInclude Include="..\..\Includes\ResourceManager\RawAssetLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Includes\ResourceManager\Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Includes\ResourceManager\ResoureManagerMessages.h">

@@ -16,7 +16,7 @@ namespace MPE
 
 		const void Clean()
 		{
-			delete data;
+			operator delete(data);
 			data = nullptr;
 		}
 	};

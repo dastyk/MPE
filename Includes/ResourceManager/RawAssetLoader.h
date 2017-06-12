@@ -14,7 +14,7 @@ namespace MPE
 		RawAssetLoader(const char* assetFile);
 		~RawAssetLoader();
 
-		Resource LoadResource(GUID guid);
+		const void LoadResource(GUID guid, Resource* r);
 	private:
 		std::map<GUID, std::string> _assets;
 	};

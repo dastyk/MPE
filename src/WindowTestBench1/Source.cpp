@@ -22,7 +22,7 @@
 #include <ThreadMessageControl\ThreadMessageController.h>
 #include <Renderer\Renderer.h>
 #include <ResourceManager\ResourceManager.h>
-
+#include <ResourceManager\ResoureManagerMessages.h>
 #ifdef _DEBUG
 #pragma comment(lib, "EntitySystemD.lib")
 #pragma comment(lib, "RendererD.lib")
@@ -60,6 +60,44 @@ int WINAPI WinMain(HINSTANCE hInstance,
 		"Send an exit message."
 	};
 	DebugUtils::ConsoleThread::AddCommand(&exit);
+
+	DebugUtils::DebugConsole::Command_Structure msg =
+	{
+		nullptr,
+		[](void* userData, int argc, char** argv)
+	{
+		auto help = [](){
+			printf("msg [target, message] \t --- \t Send a message to a thread.\n");
+			for (int i = 0;i < 20; i++) printf("****");
+			printf("\n\t Target: ResourceManager\n");
+			printf("\t\t LoadResource [filename]\n");
+		};
+		if (argc < 3)
+		{
+			help();
+			return;
+		}
+
+		std::string target = argv[1];
+		std::string message = argv[2];
+		if (target == "ResourceManager")
+		{
+			if (message == "LoadResource")
+			{
+				if (argc < 4)
+				{
+					help();
+					return;
+				}
+				MPE::ThreadMessageController::Send(MPE::Tag::ResourceManager::LoadResourceStruct::Create(MPE::GUID(argv[3])), MPE::Destination::ThreadMessageController, MPE::Destination::ResourceManager, MPE::Tag::ResourceManager::LoadResource);
+			}
+		}
+
+	},
+		"msg",
+		"Send a message."
+	};
+	DebugUtils::ConsoleThread::AddCommand(&msg);
 	DebugUtils::ConsoleThread::ShowConsole();
 
 	StartProfile;

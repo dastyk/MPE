@@ -3,7 +3,7 @@
 #pragma once
 #include <stdint.h>
 #include <ThreadMessageControl\Tag.h>
-#include <GUID.h>
+#include "GUID.h"
 
 namespace MPE
 {
@@ -16,12 +16,28 @@ namespace MPE
 				LoadResource = CreateTag(Destination::ResourceManager, 0),
 				LoadResourceAndForward = CreateTag(Destination::ResourceManager, 1),
 			};
-		};	
+
+			struct LoadResourceStruct
+			{
+				static LoadResourceStruct* Create(GUID guid, uint8_t priority = 0)
+				{
+					auto r = (LoadResourceStruct*)operator new(sizeof(LoadResourceStruct));
+					r->guid = guid;
+					r->priority = priority;
+
+					return r;
+				}
+				GUID guid;
+				uint8_t priority;
+			private:
+				LoadResourceStruct() = delete;
+			};
+		};
+		
+		
 	}
-	struct LoadResourceStruct
-	{
-		GUID guid;
-		uint8_t priority;
-	};
+
+
+	
 }
 #endif

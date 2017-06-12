@@ -11,9 +11,9 @@
 
 namespace MPE
 {
-	ScriptManager::ScriptManager(threadIdentifier identifier, uint8_t frameSyncTime) : Thread(identifier, frameSyncTime)
+	ScriptManager::ScriptManager(threadIdentifier identifier, uint8_t frameSyncTime) : Thread(identifier, frameSyncTime), _state()
 	{
-
+		_state.HandleExceptionsPrintingToStdOut();
 	}
 
 
@@ -23,7 +23,20 @@ namespace MPE
 
 	const void ScriptManager::Start()
 	{
-		_state.Load("data.lua");
+	
+		if (!_state.Load("data.lua"))
+		{
+			printf("Script error\n");
+			return;
+		}
+
+		_state["Entity"].SetClass<EntityProxy>("Test2", &EntityProxy::Test2);
+		//_state["Scene"].SetClass<SceneProxy>("AddEntity", &SceneProxy::AddEntity);//,"Clear", &SceneProxy::Clear);
+		//_state["Scene"].SetClass<SceneProxy>("Clear", &SceneProxy::Clear);
+
+		_state["AddScene"] = [this](sel::Reference<SceneProxy> scene) {this->CreateScene(scene);};
+		_state["main"]();
+
 		Msg msg;
 		bool running = true;
 		while (running)
@@ -44,5 +57,20 @@ namespace MPE
 
 			return void();
 		}
+	}
+	const void ScriptManager::RegisterManager(Manager * manager)
+	{
+		_entityManagers.push_back(manager);
+	}
+	const void ScriptManager::RegisterManager(const std::vector<Manager*>& managers)
+	{
+		_entityManagers.insert(_entityManagers.end(), managers.begin(), managers.end());
+		return void();
+	}
+	void ScriptManager::CreateScene(sel::Reference<SceneProxy> scene)
+	{
+		SceneProxy s = scene;
+		int i = 0;
+		return void();
 	}
 }

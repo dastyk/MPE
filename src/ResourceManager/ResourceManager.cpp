@@ -15,19 +15,18 @@
 
 namespace MPE
 {
-
-	const void T_LoadResource(uint64_t GUID)
+	const void T_LoadResource(Resource* resource)
 	{
 		while (true)
 		{
-
+			printf("Loading Resource...\n");
 		}
 	}
 
 
 	ResourceManager::ResourceManager(AssetLoader* diskAssetLoader, threadIdentifier identifier, uint8_t frameSyncTime) : Thread(identifier, frameSyncTime), _diskAssetLoader(diskAssetLoader)
 	{
-	//	_ASSERT(diskAssetLoader != nullptr);
+		//	_ASSERT(diskAssetLoader != nullptr);
 	}
 
 
@@ -48,13 +47,13 @@ namespace MPE
 			while (timer.Total<std::chrono::milliseconds>().count() < _frameSyncTime && PeekMsg(msg, Destination::Any, Tag::Any))
 			{
 
-			
+
 				if (msg.tag == Tag::Shutdown)
 					running = false;
 				else if (msg.tag == Tag::ResourceManager::LoadResource)
 				{
-					
-					
+
+					LoadResource(msg);
 				}
 				else if (msg.tag == Tag::ResourceManager::LoadResourceAndForward)
 				{
@@ -82,32 +81,38 @@ namespace MPE
 	}
 	const void ResourceManager::LoadResource(const Msg& msg)
 	{
-		auto& lrs = *(LoadResourceStruct*)msg.data;
-		auto& drl = *new DiskResourceLoader;
-		drl.priority = lrs.priority;
-		if (_diskResourceLoaderStack.size())
-		{
-			auto& top = *_diskResourceLoaderStack.top();
 
-			if (top.priority < lrs.priority)
+		auto& lrs = *(Tag::ResourceManager::LoadResourceStruct*)msg.data;
+		auto load = [this, lrs](){
+			auto drl = new DiskResourceLoader;
+			drl->priority = lrs.priority;
+			if (_diskResourceLoaderQueue.size())
 			{
-				HANDLE h = top.thread.native_handle();
-				SuspendThread(h);
-				drl.thread = std::move(std::thread(T_LoadResource, 1234));
-				_diskResourceLoaderStack.push(&drl);
+				
+				auto top = _diskResourceLoaderQueue.top();
+				_diskResourceLoaderQueue.push(drl);
+				auto top2 = _diskResourceLoaderQueue.top();
+				if (top2 != top)
+					top2->thread = std::move(std::thread(T_LoadResource, _resourceRegister[lrs.guid.data]));
 			}
 			else
 			{
-				auto temp = &top;
-				_diskResourceLoaderStack.pop();
-				_diskResourceLoaderStack.push(&drl);
-				_diskResourceLoaderStack.push(temp);
+				_diskResourceLoaderQueue.push(drl);
+				drl->thread = std::move(std::thread(T_LoadResource, _resourceRegister[lrs.guid.data]));
 			}
-		}
+		};
+
+
+		
+		auto& find = _resourceRegister.find(lrs.guid.data); // Look for the resource in the register
+		if (find == _resourceRegister.end()) // If the resource is not in the register, we need to load it.
+			load();
+		else if (find->second->state != Resource::IN_MEMORY && find->second->state != Resource::CURRENTLY_READING) // Or if the resource has been dumped to spare memory we also need to load it.
+			load();
 		else
 		{
-			drl.thread = std::move(std::thread(T_LoadResource, 1234));
-			_diskResourceLoaderStack.push(&drl);
+			// Send response now.
 		}
 	}
+
 }
