@@ -894,3 +894,495 @@ label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 300 | <f2> Time Spent(IC
 
 }
 
+digraph "9224" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"000001CA63249A30"[
+label = "<f0> MPE::ResourceManager::Start | <f1> Times Called: 750 | <f2> Time Spent(IC): 12037 | Time Spent(EC): 12037"];
+"000001CA63248770"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"000001CA63249670"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"000001CA63248770":f0 -> "000001CA63249670":f0
+
+"000001CA63249A30":f0 -> "000001CA63248770":f0
+"000001CA632497B0"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 752 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"000001CA63249A30":f0 -> "000001CA632497B0":f0
+
+
+}
+
+digraph "19184" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"000001CA632481D0"[
+label = "<f0> MPE::ScriptManager::Start | <f1> Times Called: 749 | <f2> Time Spent(IC): 12025 | Time Spent(EC): 12025"];
+"000001CA632495D0"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"000001CA63249710"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"000001CA632495D0":f0 -> "000001CA63249710":f0
+
+"000001CA632481D0":f0 -> "000001CA632495D0":f0
+"000001CA63249490"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 751 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"000001CA632481D0":f0 -> "000001CA63249490":f0
+
+
+}
+
+digraph "6644" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"000001CA632486D0"[
+label = "<f0> MPE::Renderer_DirectX11::Start | <f1> Times Called: 750 | <f2> Time Spent(IC): 12037 | Time Spent(EC): 12037"];
+"000001CA63249530"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 751 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"000001CA632486D0":f0 -> "000001CA63249530":f0
+
+
+}
+
+digraph "21784" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000020F556A5A10"[
+label = "<f0> MPE::ScriptManager::Start | <f1> Times Called: 165 | <f2> Time Spent(IC): 2650 | Time Spent(EC): 2650"];
+"0000020F556A6AF0"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000020F556A6690"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000020F556A6AF0":f0 -> "0000020F556A6690":f0
+
+"0000020F556A5A10":f0 -> "0000020F556A6AF0":f0
+"0000020F556A64B0"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 167 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000020F556A5A10":f0 -> "0000020F556A64B0":f0
+
+
+}
+
+digraph "20884" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000020F556A6550"[
+label = "<f0> MPE::Renderer_DirectX11::Start | <f1> Times Called: 165 | <f2> Time Spent(IC): 2651 | Time Spent(EC): 2651"];
+"0000020F556A65F0"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 166 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000020F556A6550":f0 -> "0000020F556A65F0":f0
+
+
+}
+
+digraph "21512" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000020F556A55B0"[
+label = "<f0> MPE::ResourceManager::Start | <f1> Times Called: 165 | <f2> Time Spent(IC): 2654 | Time Spent(EC): 2654"];
+"0000020F556A5970"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000020F556A6730"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000020F556A5970":f0 -> "0000020F556A6730":f0
+
+"0000020F556A55B0":f0 -> "0000020F556A5970":f0
+"0000020F556A5830"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 167 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000020F556A55B0":f0 -> "0000020F556A5830":f0
+
+
+}
+
+digraph "22780" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000020F556A67D0"[
+label = "<f0> MPE::ThreadMessageController::BroadCast | <f1> Times Called: 1 | <f2> Time Spent(IC): 0 | Time Spent(EC): 0"];
+"0000020F556A6910"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 4 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000020F556A67D0":f0 -> "0000020F556A6910":f0
+
+
+}
+
+digraph "20832" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000020F55640E00"[
+label = "<f0> WinMain | <f1> Times Called: 1 | <f2> Time Spent(IC): 8862 | Time Spent(EC): 5416"];
+"0000020F5563F340"[
+label = "<f0> MPE::Window::Window | <f1> Times Called: 1 | <f2> Time Spent(IC): 88, 0.00993004 % of parents."];
+
+"0000020F55640E00":f0 -> "0000020F5563F340":f0
+"0000020F556A5790"[
+label = "<f0> MPE::ThreadMessageController::Start | <f1> Times Called: 165 | <f2> Time Spent(IC): 2653, 0.299368 % of parents. | Time Spent(EC): 2653"];
+"0000020F556A6A50"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 165 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000020F556A5790":f0 -> "0000020F556A6A50":f0
+
+"0000020F55640E00":f0 -> "0000020F556A5790":f0
+"0000020F556A6B90"[
+label = "<f0> MPE::ThreadMessageController::~ThreadMessageController | <f1> Times Called: 1 | <f2> Time Spent(IC): 40, 0.00451365 % of parents. | Time Spent(EC): 40"];
+"0000020F556A6C30"[
+label = "<f0> MPE::ThreadMessageController::BroadCast | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000020F5B8FD530"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 3 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000020F556A6C30":f0 -> "0000020F5B8FD530":f0
+
+"0000020F556A6B90":f0 -> "0000020F556A6C30":f0
+
+"0000020F55640E00":f0 -> "0000020F556A6B90":f0
+"0000020F55669F10"[
+label = "<f0> MPE::Renderer_DirectX11::Renderer_DirectX11 | <f1> Times Called: 1 | <f2> Time Spent(IC): 665, 0.0750395 % of parents."];
+
+"0000020F55640E00":f0 -> "0000020F55669F10":f0
+
+
+}
+
+digraph "20756" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000015DBF69CDF0"[
+label = "<f0> MPE::ResourceManager::Start | <f1> Times Called: 163 | <f2> Time Spent(IC): 2620 | Time Spent(EC): 2620"];
+"0000015DBF69BDB0"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000015DBF69B450"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000015DBF69BDB0":f0 -> "0000015DBF69B450":f0
+
+"0000015DBF69CDF0":f0 -> "0000015DBF69BDB0":f0
+"0000015DBF69C2B0"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 165 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000015DBF69CDF0":f0 -> "0000015DBF69C2B0":f0
+
+
+}
+
+digraph "20724" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000015DBF69C350"[
+label = "<f0> MPE::Renderer_DirectX11::Start | <f1> Times Called: 164 | <f2> Time Spent(IC): 2633 | Time Spent(EC): 2633"];
+"0000015DBF69BBD0"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 165 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000015DBF69C350":f0 -> "0000015DBF69BBD0":f0
+
+
+}
+
+digraph "1996" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000015DBF69CB70"[
+label = "<f0> MPE::ScriptManager::Start | <f1> Times Called: 164 | <f2> Time Spent(IC): 2634 | Time Spent(EC): 2634"];
+"0000015DBF69B9F0"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000015DBF69BF90"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000015DBF69B9F0":f0 -> "0000015DBF69BF90":f0
+
+"0000015DBF69CB70":f0 -> "0000015DBF69B9F0":f0
+"0000015DBF69CC10"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 166 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000015DBF69CB70":f0 -> "0000015DBF69CC10":f0
+
+
+}
+
+digraph "16208" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000015DBF69BEF0"[
+label = "<f0> MPE::ThreadMessageController::BroadCast | <f1> Times Called: 1 | <f2> Time Spent(IC): 0 | Time Spent(EC): 0"];
+"0000015DBF69C3F0"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 4 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000015DBF69BEF0":f0 -> "0000015DBF69C3F0":f0
+
+
+}
+
+digraph "3488" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000015DB92F5440"[
+label = "<f0> WinMain | <f1> Times Called: 1 | <f2> Time Spent(IC): 3856 | Time Spent(EC): 449"];
+"0000015DB92F84E0"[
+label = "<f0> MPE::Window::Window | <f1> Times Called: 1 | <f2> Time Spent(IC): 64, 0.0165975 % of parents."];
+
+"0000015DB92F5440":f0 -> "0000015DB92F84E0":f0
+"0000015DBF69BC70"[
+label = "<f0> MPE::ThreadMessageController::Start | <f1> Times Called: 163 | <f2> Time Spent(IC): 2618, 0.678942 % of parents. | Time Spent(EC): 2618"];
+"0000015DBF69CD50"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 163 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000015DBF69BC70":f0 -> "0000015DBF69CD50":f0
+
+"0000015DB92F5440":f0 -> "0000015DBF69BC70":f0
+"0000015DBF69C490"[
+label = "<f0> MPE::ThreadMessageController::~ThreadMessageController | <f1> Times Called: 1 | <f2> Time Spent(IC): 42, 0.0108921 % of parents. | Time Spent(EC): 42"];
+"0000015DBF69C030"[
+label = "<f0> MPE::ThreadMessageController::BroadCast | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000015DBF69B090"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 3 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000015DBF69C030":f0 -> "0000015DBF69B090":f0
+
+"0000015DBF69C490":f0 -> "0000015DBF69C030":f0
+
+"0000015DB92F5440":f0 -> "0000015DBF69C490":f0
+"0000015DB934FCE0"[
+label = "<f0> MPE::Renderer_DirectX11::Renderer_DirectX11 | <f1> Times Called: 1 | <f2> Time Spent(IC): 683, 0.177127 % of parents."];
+
+"0000015DB92F5440":f0 -> "0000015DB934FCE0":f0
+
+
+}
+
+digraph "15372" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"000002169E51D620"[
+label = "<f0> MPE::ResourceManager::Start | <f1> Times Called: 152 | <f2> Time Spent(IC): 2443 | Time Spent(EC): 2443"];
+"000002169E51E480"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"000002169E51DE40"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"000002169E51E480":f0 -> "000002169E51DE40":f0
+
+"000002169E51D620":f0 -> "000002169E51E480":f0
+"000002169E51CAE0"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 154 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"000002169E51D620":f0 -> "000002169E51CAE0":f0
+
+
+}
+
+digraph "6268" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"000002169E51E2A0"[
+label = "<f0> MPE::ScriptManager::Start | <f1> Times Called: 152 | <f2> Time Spent(IC): 2441 | Time Spent(EC): 2441"];
+"000002169E51DDA0"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"000002169E51D6C0"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"000002169E51DDA0":f0 -> "000002169E51D6C0":f0
+
+"000002169E51E2A0":f0 -> "000002169E51DDA0":f0
+"000002169E51D8A0"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 154 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"000002169E51E2A0":f0 -> "000002169E51D8A0":f0
+
+
+}
+
+digraph "944" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"000002169E51E340"[
+label = "<f0> MPE::Renderer_DirectX11::Start | <f1> Times Called: 152 | <f2> Time Spent(IC): 2442 | Time Spent(EC): 2442"];
+"000002169E51D940"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 153 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"000002169E51E340":f0 -> "000002169E51D940":f0
+
+
+}
+
+digraph "13252" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"00000253B763E6C0"[
+label = "<f0> MPE::Renderer_DirectX11::Start | <f1> Times Called: 337 | <f2> Time Spent(IC): 5410 | Time Spent(EC): 5410"];
+"00000253B763D040"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 338 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"00000253B763E6C0":f0 -> "00000253B763D040":f0
+
+
+}
+
+digraph "21824" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"00000253B763D4A0"[
+label = "<f0> MPE::ScriptManager::Start | <f1> Times Called: 337 | <f2> Time Spent(IC): 5413 | Time Spent(EC): 5413"];
+"00000253B763D0E0"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"00000253B763E120"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"00000253B763D0E0":f0 -> "00000253B763E120":f0
+
+"00000253B763D4A0":f0 -> "00000253B763D0E0":f0
+"00000253B763CFA0"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 339 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"00000253B763D4A0":f0 -> "00000253B763CFA0":f0
+
+
+}
+
+digraph "23120" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"00000253B763D540"[
+label = "<f0> MPE::ResourceManager::Start | <f1> Times Called: 337 | <f2> Time Spent(IC): 5411 | Time Spent(EC): 5411"];
+"00000253B763D220"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"00000253B763D180"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"00000253B763D220":f0 -> "00000253B763D180":f0
+
+"00000253B763D540":f0 -> "00000253B763D220":f0
+"00000253B763DD60"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 339 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"00000253B763D540":f0 -> "00000253B763DD60":f0
+
+
+}
+
+digraph "2892" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000023AC485FEF0"[
+label = "<f0> MPE::Renderer_DirectX11::Start | <f1> Times Called: 177 | <f2> Time Spent(IC): 2844 | Time Spent(EC): 2844"];
+"0000023AC485F450"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 178 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000023AC485FEF0":f0 -> "0000023AC485F450":f0
+
+
+}
+
+digraph "6044" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000023AC485FE50"[
+label = "<f0> MPE::ScriptManager::Start | <f1> Times Called: 177 | <f2> Time Spent(IC): 2842 | Time Spent(EC): 2842"];
+"0000023AC485F130"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000023AC485F4F0"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000023AC485F130":f0 -> "0000023AC485F4F0":f0
+
+"0000023AC485FE50":f0 -> "0000023AC485F130":f0
+"0000023AC485F3B0"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 179 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000023AC485FE50":f0 -> "0000023AC485F3B0":f0
+
+
+}
+
+digraph "21640" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000023AC48605D0"[
+label = "<f0> MPE::ResourceManager::Start | <f1> Times Called: 178 | <f2> Time Spent(IC): 2859 | Time Spent(EC): 2859"];
+"0000023AC485EEB0"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000023AC485F9F0"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000023AC485EEB0":f0 -> "0000023AC485F9F0":f0
+
+"0000023AC48605D0":f0 -> "0000023AC485EEB0":f0
+"0000023AC485F950"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 180 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000023AC48605D0":f0 -> "0000023AC485F950":f0
+
+
+}
+
+digraph "4340" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000011FEDED6D60"[
+label = "<f0> MPE::ResourceManager::Start | <f1> Times Called: 294 | <f2> Time Spent(IC): 4725 | Time Spent(EC): 4725"];
+"0000011FEDED7DA0"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000011FEDED7300"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000011FEDED7DA0":f0 -> "0000011FEDED7300":f0
+
+"0000011FEDED6D60":f0 -> "0000011FEDED7DA0":f0
+"0000011FEDED7D00"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 296 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000011FEDED6D60":f0 -> "0000011FEDED7D00":f0
+
+
+}
+
+digraph "19516" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000011FEDED6E00"[
+label = "<f0> MPE::Renderer_DirectX11::Start | <f1> Times Called: 294 | <f2> Time Spent(IC): 4725 | Time Spent(EC): 4725"];
+"0000011FEDED7620"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 295 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000011FEDED6E00":f0 -> "0000011FEDED7620":f0
+
+
+}
+
+digraph "8924" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000011FEDED74E0"[
+label = "<f0> MPE::ScriptManager::Start | <f1> Times Called: 294 | <f2> Time Spent(IC): 4720 | Time Spent(EC): 4720"];
+"0000011FEDED76C0"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000011FEDED6EA0"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000011FEDED76C0":f0 -> "0000011FEDED6EA0":f0
+
+"0000011FEDED74E0":f0 -> "0000011FEDED76C0":f0
+"0000011FEDED7580"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 296 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000011FEDED74E0":f0 -> "0000011FEDED7580":f0
+
+
+}
+
+digraph "8436" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"00000258484658C0"[
+label = "<f0> MPE::ScriptManager::Start | <f1> Times Called: 312 | <f2> Time Spent(IC): 5010 | Time Spent(EC): 5010"];
+"0000025848465FA0"[
+label = "<f0> MPE::ThreadMessageController::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, 0 % of parents. | Time Spent(EC): 0"];
+"0000025848466400"[
+label = "<f0> MPE::Thread::Send | <f1> Times Called: 1 | <f2> Time Spent(IC): 0, -nan(ind) % of parents."];
+
+"0000025848465FA0":f0 -> "0000025848466400":f0
+
+"00000258484658C0":f0 -> "0000025848465FA0":f0
+"00000258484669A0"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 314 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"00000258484658C0":f0 -> "00000258484669A0":f0
+
+
+}
+
+digraph "22632" { node[shape = "record"];
+graph [ rankdir = "LR"];
+"0000025848465960"[
+label = "<f0> MPE::Renderer_DirectX11::Start | <f1> Times Called: 312 | <f2> Time Spent(IC): 5009 | Time Spent(EC): 5009"];
+"0000025848466A40"[
+label = "<f0> MPE::Thread::PeekMsg | <f1> Times Called: 313 | <f2> Time Spent(IC): 0, 0 % of parents."];
+
+"0000025848465960":f0 -> "0000025848466A40":f0
+
+
+}
+

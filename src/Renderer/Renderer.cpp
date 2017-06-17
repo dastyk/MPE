@@ -1,6 +1,6 @@
 #include "Renderer.h"
 #include <Renderer_DirectX11\Renderer_DirectX11.h>
-
+#include <MemoryLeakDetection.h>
 #ifdef _DEBUG
 #pragma comment(lib, "Renderer_DirectX11D.lib")
 #else
@@ -17,7 +17,7 @@ namespace MPE
 		switch (backend)
 		{
 		case Backend::DirectX11:
-			return new Renderer_DirectX11(identifier, frameSyncTime);
+			return DBG_NEW Renderer_DirectX11(identifier, frameSyncTime);
 			break;
 		default:
 			break;

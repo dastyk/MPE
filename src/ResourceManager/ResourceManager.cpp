@@ -1,9 +1,6 @@
 
-#if defined( DEBUG ) || defined( _DEBUG )
-#define _CRTDBG_MAP_ALLOC  
-#include <stdlib.h>  
-#include <crtdbg.h>  
-#endif
+#include <MemoryLeakDetection.h>
+
 #include <Profiler.h>
 
 #ifdef _DEBUG
@@ -35,23 +32,11 @@ namespace MPE
 
 	ResourceManager::~ResourceManager()
 	{
-		delete _diskAssetLoader;
-		for (auto& r : _resourceRegister)
-		{
-			r.second->data;
-			delete r.second;
-		}
-		_resourceRegister.clear();
+	
 	}
 	const void ResourceManager::Start()
 	{
-#if defined( DEBUG ) || defined( _DEBUG )
-		_CrtDumpMemoryLeaks();
-		_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-		_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_DEBUG);
-		//	_crtBreakAlloc = 220;
-#endif
-		_diskAssetLoader = new RawAssetLoader("data.dat");
+		_diskAssetLoader = DBG_NEW RawAssetLoader("data.dat");
 		Timer timer;
 		Msg msg;
 		bool running = true;
@@ -89,13 +74,22 @@ namespace MPE
 
 			StopProfile;
 		}
+
+
+		delete _diskAssetLoader;
+		for (auto& r : _resourceRegister)
+		{
+			delete r.second->data;
+			delete r.second;
+		}
+		_resourceRegister.clear();
 	}
 	const void ResourceManager::LoadResource(const Msg& msg)
 	{
 
 		auto& lrs = *(Tag::ResourceManager::LoadResourceStruct*)msg.data;
 		auto load = [this, &lrs, &msg](){
-			auto drl = new DiskResourceLoader(lrs.guid, msg.prio);
+			auto drl = DBG_NEW DiskResourceLoader(lrs.guid, msg.prio);
 			if (_diskResourceLoaderQueue.size()) // If there are other resources in the queue we need to resolve priority.
 			{
 				
@@ -127,7 +121,7 @@ namespace MPE
 		auto& find = _resourceRegister.find(lrs.guid.data); // Look for the resource in the register
 		if (find == _resourceRegister.end()) // If the resource is not in the register, we need to load it.
 		{
-			_resourceRegister[lrs.guid.data] = new Resource(lrs.guid);
+			_resourceRegister[lrs.guid.data] = DBG_NEW Resource(lrs.guid);
 			addNotify(*_resourceRegister[lrs.guid.data]);
 			load();
 		}

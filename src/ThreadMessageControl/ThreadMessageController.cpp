@@ -1,5 +1,5 @@
 #include "ThreadMessageController.h"
-
+#include <MemoryLeakDetection.h>
 #include <Profiler.h>
 
 #ifdef _DEBUG
@@ -47,7 +47,7 @@ namespace MPE
 	const void ThreadMessageController::Start(const std::vector<Thread*>& threadsToStart, uint8_t frameSyncTime)
 	{
 		if (!_instance)
-			_instance = new ThreadMessageController(threadsToStart, frameSyncTime);
+			_instance = DBG_NEW ThreadMessageController(threadsToStart, frameSyncTime);
 
 		_instance->Start();
 		return void();

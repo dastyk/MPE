@@ -1,7 +1,7 @@
 #include "DataManager.h"
 
 #include <Profiler.h>
-
+#include <MemoryLeakDetection.h>
 #ifdef _DEBUG
 #pragma comment(lib, "ProfilerD.lib")
 #else
@@ -40,7 +40,7 @@ namespace MPE
 
 		uint32_t index = _entityToIndex[entity] = static_cast<uint32_t>(_entityToIndex.size());
 		_entityEntires.entity[index] = entity;
-		_entityEntires.dataBuff[index] = new DataBuffer();
+		_entityEntires.dataBuff[index] = DBG_NEW DataBuffer();
 		_entityEntires.used++;
 
 		ProfileReturnVoid;

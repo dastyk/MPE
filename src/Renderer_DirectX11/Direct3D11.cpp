@@ -1,6 +1,6 @@
 #include "Direct3D11.h"
 #include <iostream>
-
+#include <MemoryLeakDetection.h>
 #include <string>
 // Initializes Direct3D11 by creating the device, context, and swap chain
 // with back buffer.
@@ -273,9 +273,9 @@ RenderTarget Direct3D11::CreateRenderTarget(
 	renderTarget.SRV = _CreateSRV( renderTarget.Texture );
 	renderTarget.UAV = _CreateUAV( renderTarget.Texture );
 
-	renderTarget.RTVSlices = new ID3D11RenderTargetView *[renderTarget.SliceCount];
-	renderTarget.SRVSlices = new ID3D11ShaderResourceView *[renderTarget.SliceCount];
-	renderTarget.UAVSlices = new ID3D11UnorderedAccessView *[renderTarget.SliceCount];
+	renderTarget.RTVSlices = DBG_NEW ID3D11RenderTargetView *[renderTarget.SliceCount];
+	renderTarget.SRVSlices = DBG_NEW ID3D11ShaderResourceView *[renderTarget.SliceCount];
+	renderTarget.UAVSlices = DBG_NEW ID3D11UnorderedAccessView *[renderTarget.SliceCount];
 	for ( unsigned i = 0; i < renderTarget.SliceCount; ++i )
 	{
 		renderTarget.RTVSlices[i] = _CreateRTV( renderTarget.Texture, format, i );
@@ -435,9 +435,9 @@ DepthBuffer Direct3D11::CreateDepthBuffer(
 	depthBuffer.DSVReadOnly = _CreateDSV( depthBuffer.Texture, depthBuffer.FormatDSV, true );
 	depthBuffer.SRV = _CreateSRV( depthBuffer.Texture, depthBuffer.FormatSRV );
 
-	depthBuffer.DSVSlices = new ID3D11DepthStencilView *[depthBuffer.SliceCount];
-	depthBuffer.DSVReadOnlySlices = new ID3D11DepthStencilView *[depthBuffer.SliceCount];
-	depthBuffer.SRVSlices = new ID3D11ShaderResourceView *[depthBuffer.SliceCount];
+	depthBuffer.DSVSlices = DBG_NEW ID3D11DepthStencilView *[depthBuffer.SliceCount];
+	depthBuffer.DSVReadOnlySlices = DBG_NEW ID3D11DepthStencilView *[depthBuffer.SliceCount];
+	depthBuffer.SRVSlices = DBG_NEW ID3D11ShaderResourceView *[depthBuffer.SliceCount];
 	for ( unsigned i = 0; i < depthBuffer.SliceCount; ++i )
 	{
 		depthBuffer.DSVSlices[i] = _CreateDSV( depthBuffer.Texture, depthBuffer.FormatDSV, false, i );

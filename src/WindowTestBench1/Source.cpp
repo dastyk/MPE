@@ -1,10 +1,5 @@
 
-#if defined( DEBUG ) || defined( _DEBUG )
-#define _CRTDBG_MAP_ALLOC  
-#include <stdlib.h>  
-#include <crtdbg.h>  
-#endif
-
+#include <MemoryLeakDetection.h>
 #define _P_MS
 
 #include <Profiler.h>
@@ -44,12 +39,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	LPSTR lpCmdLine,
 	int nCmdShow)
 {
-#if defined( DEBUG ) || defined( _DEBUG )
-	_CrtDumpMemoryLeaks();
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_DEBUG);
-	//	_crtBreakAlloc = 220;
-#endif
+	MLD_INIT;
 	DebugUtils::ConsoleThread::Init();
 	DebugUtils::DebugConsole::Command_Structure exit =
 	{
@@ -107,8 +97,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	StartProfile;
 	std::vector<MPE::Thread*> threads;
-	threads.push_back(new MPE::ResourceManager(MPE::Destination::ResourceManager));
-	threads.push_back(new MPE::ScriptManager(MPE::Destination::ScriptManager));
+	threads.push_back(DBG_NEW MPE::ResourceManager(MPE::Destination::ResourceManager));
+	threads.push_back(DBG_NEW MPE::ScriptManager(MPE::Destination::ScriptManager));
 	threads.push_back(MPE::Renderer::CreateBackend(MPE::Renderer::Backend::DirectX11, MPE::Destination::Renderer));
 	MPE::ThreadMessageController::Start(threads);
 
