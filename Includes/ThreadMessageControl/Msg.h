@@ -9,7 +9,7 @@ namespace MPE
 {
 	struct Msg
 	{
-		void* data; /**< Must be created with new */
+		void* data; /**< Must be created with operator new, and is cleaned by the reciever*/
 		uint32_t src; /**< Who the message if from. */
 		uint64_t tag; /**< Tag, if Tag::Any was specified. */
 		uint8_t prio;
@@ -18,13 +18,16 @@ namespace MPE
 		{
 			operator delete(data);
 			data = nullptr;
+			src = -1;
+			tag = -1;
+			prio = 0;
 		}
 	};
 	struct MsgComp
 	{
 		bool operator()(const Msg& lhs, const Msg& rhs) const
 		{
-			return lhs.prio >= rhs.prio;
+			return lhs.prio < rhs.prio;
 		}
 	};
 }

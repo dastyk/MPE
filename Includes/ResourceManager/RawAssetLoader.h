@@ -2,7 +2,6 @@
 #define _RAW_ASSET_LOADER_H_
 #pragma once
 
-#include "GUID.h"
 #include <map>
 #include "AssetLoader.h"
 namespace MPE
@@ -14,7 +13,7 @@ namespace MPE
 		RawAssetLoader(const char* assetFile);
 		~RawAssetLoader();
 
-		const void LoadResource(GUID guid, Resource* r);
+		const bool LoadResource(Resource* r);
 	private:
 		std::map<GUID, std::string> _assets;
 	};

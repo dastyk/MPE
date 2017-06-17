@@ -1,7 +1,6 @@
 #ifndef _ASSET_LOADER_H_
 #define _ASSET_LOADER_H_
 #pragma once
-#include "GUID.h"
 #include "Resource.h"
 namespace MPE
 {
@@ -17,7 +16,7 @@ namespace MPE
 	public:
 		~AssetLoader() {}
 
-		virtual Resource LoadResource(GUID guid) = 0;
+		virtual const bool LoadResource(Resource* resource) = 0;
 	};
 }
 #endif

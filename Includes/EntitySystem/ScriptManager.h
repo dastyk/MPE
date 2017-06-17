@@ -9,11 +9,9 @@
 #include "ScriptProxy.h"
 
 #ifdef _DEBUG
-#pragma comment(lib, "ThreadMessageControlD.lib")
-#pragma comment(lib, "LuaWrapperD.lib")
+#pragma comment(lib, "LuaD.lib")
 #else
-#pragma comment(lib, "ThreadMessageControl.lib")
-#pragma comment(lib, "LuaWrapper.lib")
+#pragma comment(lib, "Lua.lib")
 #endif
 #include <map>
 

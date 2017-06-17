@@ -53,7 +53,7 @@ namespace MPE
 		\param prio: Priority of the message, 0 is lowest.
 		\sa Tag
 		*/
-		static const void BroadC(void* data, uint32_t src, uint64_t tag, uint8_t prio = UINT8_MAX);
+		static const void BroadCast(void* data, uint32_t src, uint64_t tag, uint8_t prio = 0);
 	};
 }
 

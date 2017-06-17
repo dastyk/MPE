@@ -21,26 +21,22 @@ namespace MPE
 
 	ThreadMessageController::ThreadMessageController(const std::vector<Thread*>& threadsToStart, uint8_t frameSyncTime) : Thread(Destination::ThreadMessageController, frameSyncTime)
 	{
-		_threads[Destination::ThreadMessageController] = this;
+
 		for (auto& t : threadsToStart)
 		{
 			_threads[t->GetIdentity()] = t;
-			
-		}
-		for (auto& t : threadsToStart)
-		{
-			_stdThreads.push_back(std::move(std::thread(ThreadEntry, t)));
 
 		}
 		
+
 	}
 
 
 	ThreadMessageController::~ThreadMessageController()
 	{
 		StartProfile;
-		BroadC(nullptr, Destination::ThreadMessageController, Tag::Shutdown);
-		for (auto& t : _stdThreads)	
+		BroadCast(nullptr, Destination::ThreadMessageController, Tag::Shutdown);
+		for (auto& t : _stdThreads)
 			t.join();
 
 
@@ -60,12 +56,19 @@ namespace MPE
 	{
 		Msg msg;
 		bool running = true;
+
+		for (auto& t : _threads)
+		{
+			_stdThreads.push_back(std::move(std::thread(ThreadEntry, t.second)));
+
+		}
+		_threads[Destination::ThreadMessageController] = this;
 		while (running)
 		{
 			StartProfile;
 
 
-			if (PeekMsg(msg, Destination::Any, Tag::Any))
+			if (PeekMsg(msg))
 			{
 				if (msg.tag == Tag::Shutdown)
 					running = false;
@@ -82,14 +85,27 @@ namespace MPE
 	const void ThreadMessageController::Send(void * data, uint32_t src, uint32_t dest, uint64_t tag, uint8_t prio)
 	{
 		StartProfile;
-		auto& find = _instance->_threads.find(dest);
-		if (find != _instance->_threads.end())
-			find->second->Send(data, dest, tag, prio);
+		//if (dest == 0)
+		//{
+		//	_instance->_threads[0]->Send(data, src, tag, prio);
+		//	return;
+		//}
+		for (uint8_t i = 0; i < 32; i++)
+		{
+			auto d = dest & 1 << i;
+			if (d)
+			{
+				auto& find = _instance->_threads.find(d);
+				if (find != _instance->_threads.end())
+					find->second->Send(data, src, tag, prio);
+			}
+		}
+		
 
 		ProfileReturnVoid;
 	}
 
-	const void ThreadMessageController::BroadC(void * data, uint32_t src, uint64_t tag, uint8_t prio)
+	const void ThreadMessageController::BroadCast(void * data, uint32_t src, uint64_t tag, uint8_t prio)
 	{
 		StartProfile;
 		for (auto& t : _instance->_threads)

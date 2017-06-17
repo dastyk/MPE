@@ -9,28 +9,70 @@ namespace MPE
 {
 	namespace Tag
 	{
+
 		namespace ResourceManager
 		{
+			//! The tags used in the ResourceManager
 			enum : uint64_t
 			{
 				LoadResource = CreateTag(Destination::ResourceManager, 0),
 				LoadResourceAndForward = CreateTag(Destination::ResourceManager, 1),
+				LoadResourceResponse = CreateTag(Destination::ResourceManager, 2),
+				UnloadResource = CreateTag(Destination::ResourceManager, 3)
 			};
 
+			//! Struct used when requesting a resource to be loaded.
 			struct LoadResourceStruct
 			{
-				static LoadResourceStruct* Create(GUID guid, uint8_t priority = 0)
+				//! Create an instance of LoadResourceStruct
+				/*!
+				This is used since the data in a msg needs to be cleaned when the message has been read.
+				\param guid The GUID of the resource to load.
+				\param tag The message the resource manager should respond with.
+				\param dest Specify who should recieve the data of the loaded resource, this option is only used when LoadResourceAndForward is used, otherwise it is ignored.
+				\param priority The priority the response message should have.
+				*/
+				static LoadResourceStruct* Create(GUID guid, uint64_t tag, uint32_t dest = 0, uint8_t priority = 0)
 				{
 					auto r = (LoadResourceStruct*)operator new(sizeof(LoadResourceStruct));
 					r->guid = guid;
-					r->priority = priority;
-
+					r->tag = tag;
+					r->dest = dest;
+					r->prio = priority;
 					return r;
 				}
+
 				GUID guid;
-				uint8_t priority;
+				uint64_t tag;
+				uint32_t dest;
+				uint8_t prio;
 			private:
 				LoadResourceStruct() = delete;
+			};
+
+			//! Struct that contains resource data. Used when sending the LoadResourceResponse message.
+			struct ResouceData
+			{
+				//! Create an instance of ResouceData
+				/*!
+				This is used since the data in a msg needs to be cleaned when the message has been read.
+				\param data A pointer to the resource data.
+				\param size The size of the data.
+				\param tag The message specified when requesting a resource.(The same as LoadResourceStruct::tag)
+				*/
+				static ResouceData* Create(void*data, size_t size, uint64_t tag)
+				{
+					auto r = (ResouceData*)operator new(sizeof(ResouceData));
+					r->data = data;
+					r->size = size;
+					r->tag = tag;
+					return r;
+				}
+				void* data;
+				size_t size;
+				uint64_t tag;
+			private:
+				ResouceData() = delete;
 			};
 		};
 		

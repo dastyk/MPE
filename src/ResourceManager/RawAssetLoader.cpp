@@ -6,30 +6,40 @@ namespace MPE
 	RawAssetLoader::RawAssetLoader(const char * assetFile) 
 	{
 		std::ifstream assetF(assetFile, std::ios::in);
-		if (!assetF.is_open())
-			throw std::runtime_error((std::string("Could not open asset file: ") + assetFile).c_str());
-
-		char buff[256];
-		while (assetF.getline(buff, 256))
+		if (assetF.is_open())
 		{
-			_assets.insert({ GUID(buff), buff });
+			char buff[256];
+			while (assetF.getline(buff, 256))
+			{
+				_assets.insert({ GUID(buff), buff });
+			}
+			assetF.close();
 		}
-		assetF.close();
+		else
+		{
+			printf("***Assetfile %s failed to load***\n\n", assetFile);
+		}
+		
 	}
 
 	RawAssetLoader::~RawAssetLoader()
 	{
 	}
-	const void RawAssetLoader::LoadResource(GUID guid, Resource* r)
+	const bool RawAssetLoader::LoadResource(Resource* r)
 	{
-		auto&& find = _assets.find(guid);
+		auto&& find = _assets.find(r->guid);
 		if (find == _assets.end())
 		{
-			throw std::runtime_error("Asset not found, GUID: " + std::to_string(guid.data));
+			r->state = Resource::ASSET_NOT_FOUND;
+			return false;
 		}
+			
 		std::ifstream file(find->second, std::ios::in | std::ios::binary);
-		if(!file.is_open())
-			throw std::runtime_error("Asset not found, GUID: " + std::to_string(guid.data));
+		if (!file.is_open())
+		{
+			r->state = Resource::READ_FAILED;
+			return false;
+		}
 
 		std::string filename = find->second;
 		std::string fileend;
@@ -51,5 +61,7 @@ namespace MPE
 
 		r->data = operator new(r->size);
 		file.read((char*)r->data, filesize);
+		r->state = Resource::IN_MEMORY;
+		return true;
 	}
 }

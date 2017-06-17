@@ -23,6 +23,8 @@
 #include <Renderer\Renderer.h>
 #include <ResourceManager\ResourceManager.h>
 #include <ResourceManager\ResoureManagerMessages.h>
+#include <ResourceManager\RawAssetLoader.h>
+
 #ifdef _DEBUG
 #pragma comment(lib, "EntitySystemD.lib")
 #pragma comment(lib, "RendererD.lib")
@@ -54,7 +56,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 		nullptr,
 		[](void* userData, int argc, char** argv)
 	{
-		MPE::ThreadMessageController::Send(nullptr, MPE::Destination::ThreadMessageController, MPE::Destination::ThreadMessageController, MPE::Tag::Shutdown);
+		MPE::ThreadMessageController::BroadCast(nullptr, MPE::Destination::ThreadMessageController, MPE::Tag::Shutdown);
 	},
 		"exit",
 		"Send an exit message."
@@ -68,9 +70,9 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	{
 		auto help = [](){
 			printf("msg [target, message] \t --- \t Send a message to a thread.\n");
-			for (int i = 0;i < 20; i++) printf("****");
+			for (int i = 0;i < 40; i++) printf("*");
 			printf("\n\t Target: ResourceManager\n");
-			printf("\t\t LoadResource [filename]\n");
+			printf("\t\t LoadResource [filename, <priority>]\n");
 		};
 		if (argc < 3)
 		{
@@ -89,7 +91,10 @@ int WINAPI WinMain(HINSTANCE hInstance,
 					help();
 					return;
 				}
-				MPE::ThreadMessageController::Send(MPE::Tag::ResourceManager::LoadResourceStruct::Create(MPE::GUID(argv[3])), MPE::Destination::ThreadMessageController, MPE::Destination::ResourceManager, MPE::Tag::ResourceManager::LoadResource);
+				uint8_t prio = 0;
+				if (argc > 4)
+					prio = std::stoi(argv[4]);
+				MPE::ThreadMessageController::Send(MPE::Tag::ResourceManager::LoadResourceStruct::Create(MPE::GUID(argv[3]),0), MPE::Destination::ThreadMessageController, MPE::Destination::ResourceManager, MPE::Tag::ResourceManager::LoadResource, prio);
 			}
 		}
 
@@ -102,7 +107,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	StartProfile;
 	std::vector<MPE::Thread*> threads;
-	threads.push_back(new MPE::ResourceManager(nullptr, MPE::Destination::ResourceManager));
+	threads.push_back(new MPE::ResourceManager(MPE::Destination::ResourceManager));
 	threads.push_back(new MPE::ScriptManager(MPE::Destination::ScriptManager));
 	threads.push_back(MPE::Renderer::CreateBackend(MPE::Renderer::Backend::DirectX11, MPE::Destination::Renderer));
 	MPE::ThreadMessageController::Start(threads);

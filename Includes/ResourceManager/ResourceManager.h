@@ -10,15 +10,13 @@
 #include <unordered_map>
 
 #ifdef _DEBUG
-#pragma comment(lib, "ThreadMessageControlD.lib")
 #pragma comment(lib, "EntitySystemD.lib")
 #else
-#pragma comment(lib, "ThreadMessageControl.lib")
 #pragma comment(lib, "EntitySystem.lib")
 #endif
 
 #include <queue>
-#include "AssetLoader.h"
+#include "RawAssetLoader.h"
 
 namespace MPE
 {
@@ -26,8 +24,10 @@ namespace MPE
 	{
 		struct DiskResourceLoader
 		{
+			DiskResourceLoader(const GUID& guid, uint8_t prio = 0) : guid(guid), priority(prio){}
+			GUID guid;
 			uint8_t priority;
-			std::thread thread;		
+			std::thread thread;				
 		};
 		class DiskResourceLoaderCompare
 		{
@@ -38,21 +38,28 @@ namespace MPE
 			}
 		};
 	public:
-		ResourceManager(AssetLoader* diskAssetLoader, threadIdentifier identifier, uint8_t frameSyncTime = 16);
+		ResourceManager(threadIdentifier identifier, uint8_t frameSyncTime = 16);
 		~ResourceManager();
 
 
 		//! The main entry point for the thread.
 		const void Start();
 	private:
+
+		//! Resolve the LoadResource message.
+		/*!
+		It creates a new loading thread if the resourse is not loaded, otherwise a response is sent.
+		*/
 		const void LoadResource(const Msg& msg);
 
+		//! Checks to see if the resource has finished loading.
+		const void CheckForResourceFinishedLoading();
 	private:
 		std::unordered_map<uint64_t, Resource*> _resourceRegister;
 
 		std::priority_queue<DiskResourceLoader*, std::vector<DiskResourceLoader*>, DiskResourceLoaderCompare> _diskResourceLoaderQueue;
 
-		AssetLoader* _diskAssetLoader;
+		RawAssetLoader* _diskAssetLoader;
 	};
 }
 #endif

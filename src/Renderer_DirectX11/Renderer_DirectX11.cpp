@@ -36,7 +36,7 @@ namespace MPE
 			StartProfile;
 
 
-			while (timer.Total<std::chrono::milliseconds>().count() < _frameSyncTime && PeekMsg(msg, Destination::Any, Tag::Any))
+			while (timer.Total<std::chrono::milliseconds>().count() < _frameSyncTime && PeekMsg(msg))
 			{
 				if (msg.tag == Tag::Shutdown)
 					running = false;

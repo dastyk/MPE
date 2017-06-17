@@ -19,7 +19,7 @@ namespace MPE
 	Thread::~Thread()
 	{
 	}
-	const uint32_t Thread::PeekMsg(Msg & msg, uint32_t src, uint64_t tag)
+	const uint32_t Thread::PeekMsg(Msg & msg)
 	{
 		StartProfile;
 		

@@ -61,7 +61,7 @@ namespace MPE
 		\sa Tag
 		\sa Destination
 		*/
-		const uint32_t PeekMsg(Msg& msg, uint32_t src, uint64_t tag);
+		const uint32_t PeekMsg(Msg& msg);
 	public:
 
 		virtual ~Thread();

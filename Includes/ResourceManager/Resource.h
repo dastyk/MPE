@@ -3,7 +3,8 @@
 
 #pragma once
 #include <string>
-
+#include <stack>
+#include "GUID.h"
 namespace MPE
 {
 	struct FileExt
@@ -36,19 +37,36 @@ namespace MPE
 
 	struct Resource
 	{
+		struct Response
+		{
+			uint32_t dest;
+			uint64_t tag;
+			uint8_t prio;
+		};
 		enum : uint8_t
 		{
 			UNDEFINED,
 			IN_MEMORY,
 			CURRENTLY_READING,
-			NOT_IN_MEMORY
+			NOT_IN_MEMORY,
+			ASSET_NOT_FOUND,
+			READ_FAILED
 			
 		};
-		Resource() : data(nullptr), size(0), ext(0), state(CURRENTLY_READING){}
+		Resource(const GUID& guid, uint8_t state = CURRENTLY_READING) : data(nullptr), size(0), ext(0), state(state), guid(guid), usageCount(0){}
+		~Resource()
+		{
+			//operator delete(data);
+		}
 		void* data;
 		size_t size;
 		FileExt ext;
 		uint8_t state;
+		uint32_t usageCount;
+		GUID guid;
+		std::stack<Response> toNotify;
+
+		
 	};
 
 }
