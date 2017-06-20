@@ -67,6 +67,10 @@ namespace MPE
 		virtual ~Thread();
 
 		//! The main entry point for the thread.
+		/*!
+		Ïnitiations and shutdown is also done in this function.
+		Do not use constructor and destructor for any memory related stuff.
+		*/
 		virtual const void Start() = 0;
 
 		//! Get the identity of the thread.

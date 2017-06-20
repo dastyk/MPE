@@ -6,6 +6,7 @@
 
 #define CreateTag(destination, tag) ( (uint64_t(destination) << 32) | uint64_t(tag) )
 #define GetDestination(tag) (uint32_t(uint64_t(tag) >> 32))
+#define CreateNew(type) (type*)operator new(sizeof(type));
 namespace MPE
 {
 	namespace Tag

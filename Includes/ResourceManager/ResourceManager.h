@@ -17,7 +17,7 @@
 
 #include <queue>
 #include "RawAssetLoader.h"
-
+#include <map>
 namespace MPE
 {
 	class ResourceManager : public Thread
@@ -46,11 +46,16 @@ namespace MPE
 		const void Start();
 	private:
 
-		//! Resolve the LoadResource message.
+		//! Resolve the LoadResource and LoadResourceAndForward message.
 		/*!
 		It creates a new loading thread if the resourse is not loaded, otherwise a response is sent.
 		*/
 		const void LoadResource(const Msg& msg);
+		//! Resolve the UnloadResource message.
+		/*!
+		Decreses the usageCount of the given resource.
+		*/
+		const void UnloadResource(const Tag::ResourceManager::UnloadResourceStruct& urs);
 
 		//! Checks to see if the resource has finished loading.
 		const void CheckForResourceFinishedLoading();
@@ -59,7 +64,7 @@ namespace MPE
 
 		std::priority_queue<DiskResourceLoader*, std::vector<DiskResourceLoader*>, DiskResourceLoaderCompare> _diskResourceLoaderQueue;
 
-		RawAssetLoader* _diskAssetLoader;
+		std::map<uint8_t, AssetLoader*> _assetLoaders;
 	};
 }
 #endif

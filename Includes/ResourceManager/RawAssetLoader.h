@@ -13,6 +13,8 @@ namespace MPE
 		RawAssetLoader(const char* assetFile);
 		~RawAssetLoader();
 
+		const bool IsResourceInRegister(const GUID& guid);
+		const void AddResourceToRegister(Resource* resource);
 		const bool LoadResource(Resource* r);
 	private:
 		std::map<GUID, std::string> _assets;

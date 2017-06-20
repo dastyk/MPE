@@ -68,7 +68,7 @@ namespace MPE
 				{
 					auto& r = *(Tag::ResourceManager::ResouceData*)msg.data;
 					int i = r.tag;
-					printf("data.lua contains: %s", r.data);
+					printf("data.lua contains: stuff");
 				}
 
 				msg.Clean();

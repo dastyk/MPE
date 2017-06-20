@@ -25,7 +25,7 @@ namespace MPE
 	}
 
 
-	ResourceManager::ResourceManager(threadIdentifier identifier, uint8_t frameSyncTime) : Thread(identifier, frameSyncTime), _diskAssetLoader(nullptr)
+	ResourceManager::ResourceManager(threadIdentifier identifier, uint8_t frameSyncTime) : Thread(identifier, frameSyncTime)
 	{
 	}
 
@@ -36,7 +36,7 @@ namespace MPE
 	}
 	const void ResourceManager::Start()
 	{
-		_diskAssetLoader = DBG_NEW RawAssetLoader("data.dat");
+		_assetLoaders[0] = DBG_NEW RawAssetLoader("data.dat");
 		Timer timer;
 		Msg msg;
 		bool running = true;
@@ -50,12 +50,13 @@ namespace MPE
 			{
 				if (msg.tag == Tag::Shutdown)
 					running = false;
-				else if (msg.tag == Tag::ResourceManager::LoadResource)
+				else if (msg.tag == Tag::ResourceManager::LoadResource || msg.tag == Tag::ResourceManager::LoadResourceAndForward)
 				{
 					LoadResource(msg);
 				}
-				else if (msg.tag == Tag::ResourceManager::LoadResourceAndForward)
+				else if (msg.tag == Tag::ResourceManager::UnloadResource)
 				{
+					UnloadResource(*(Tag::ResourceManager::UnloadResourceStruct*)msg.data);
 
 				}
 
@@ -76,7 +77,8 @@ namespace MPE
 		}
 
 
-		delete _diskAssetLoader;
+		for (auto& a : _assetLoaders)
+			delete a.second;
 		for (auto& r : _resourceRegister)
 		{
 			delete r.second->data;
@@ -88,7 +90,7 @@ namespace MPE
 	{
 
 		auto& lrs = *(Tag::ResourceManager::LoadResourceStruct*)msg.data;
-		auto load = [this, &lrs, &msg](){
+		auto load = [this, &lrs, &msg](AssetLoader* loader){
 			auto drl = DBG_NEW DiskResourceLoader(lrs.guid, msg.prio);
 			if (_diskResourceLoaderQueue.size()) // If there are other resources in the queue we need to resolve priority.
 			{
@@ -97,12 +99,12 @@ namespace MPE
 				_diskResourceLoaderQueue.push(drl);
 				auto top2 = _diskResourceLoaderQueue.top();
 				if (top2 != top)
-					top2->thread = std::move(std::thread(T_LoadResource, _diskAssetLoader, _resourceRegister[lrs.guid.data]));
+					top2->thread = std::move(std::thread(T_LoadResource, loader, _resourceRegister[lrs.guid.data]));
 			}
 			else // Otherwise just push it on the queue and start the thread.
 			{
 				_diskResourceLoaderQueue.push(drl);
-				drl->thread = std::move(std::thread(T_LoadResource, _diskAssetLoader, _resourceRegister[lrs.guid.data]));
+				drl->thread = std::move(std::thread(T_LoadResource, loader, _resourceRegister[lrs.guid.data]));
 			}
 		};
 
@@ -118,29 +120,79 @@ namespace MPE
 				r.toNotify.push({ lrs.dest, lrs.tag, lrs.prio });
 			}
 		};
+
 		auto& find = _resourceRegister.find(lrs.guid.data); // Look for the resource in the register
 		if (find == _resourceRegister.end()) // If the resource is not in the register, we need to load it.
 		{
 			_resourceRegister[lrs.guid.data] = DBG_NEW Resource(lrs.guid);
-			addNotify(*_resourceRegister[lrs.guid.data]);
-			load();
+			auto& r = _resourceRegister[lrs.guid.data];
+
+			// Check to see if any of the asset loaders can load this resource. // Should be done in a priority order.
+			AssetLoader* loader = nullptr;
+			for (auto& a : _assetLoaders)
+			{
+				if (a.second->IsResourceInRegister(r->guid))
+				{
+					loader = a.second;
+					break;
+				}
+			}
+
+			if (loader)
+			{
+				addNotify(*_resourceRegister[lrs.guid.data]);
+				load(loader);
+			}
+			else
+			{
+				r->state = Resource::ASSET_NOT_FOUND;
+			}
+		
 		}
 		else if (find->second->state != Resource::IN_MEMORY && find->second->state != Resource::CURRENTLY_READING) // Or if the resource has been dumped to spare memory we also need to load it.
 		{
-			addNotify(*_resourceRegister[lrs.guid.data]);
-			load();
+			
+			// Check to see if any of the asset loaders can load this resource. // Should be done in a priority order.
+			AssetLoader* loader = nullptr;
+			for (auto& a : _assetLoaders)
+			{
+				if (a.second->IsResourceInRegister(find->second->guid))
+				{
+					loader = a.second;
+					break;
+				}
+			}
+
+			if (loader)
+			{
+				addNotify(*_resourceRegister[lrs.guid.data]);
+				load(loader);
+			}
+			else
+			{
+				find->second->state = Resource::ASSET_NOT_FOUND;
+			}
 		}
 
 		else	// Send response now.
 		{
 			auto& r = *_resourceRegister[lrs.guid.data];
 			r.usageCount++;
-			ThreadMessageController::Send(Tag::ResourceManager::ResouceData::Create(r.data, r.size, lrs.tag), Destination::ResourceManager, lrs.dest, Tag::ResourceManager::LoadResourceResponse, lrs.prio);
+			ThreadMessageController::Send(Tag::ResourceManager::ResouceData::Create(lrs.guid, r.data, r.size, lrs.tag), Destination::ResourceManager, lrs.dest, Tag::ResourceManager::LoadResourceResponse, lrs.prio);
 		}
 
 
 
 	
+	}
+
+	const void ResourceManager::UnloadResource(const Tag::ResourceManager::UnloadResourceStruct & urs)
+	{
+		auto& find = _resourceRegister.find(urs.guid.data);
+		if (find != _resourceRegister.end())
+		{
+			find->second->usageCount--;
+		}
 	}
 
 	const void ResourceManager::CheckForResourceFinishedLoading()
@@ -178,7 +230,7 @@ namespace MPE
 				{
 					auto& top = resource.toNotify.top();
 
-					ThreadMessageController::Send(Tag::ResourceManager::ResouceData::Create(resource.data, resource.size, top.tag), Destination::ResourceManager, top.dest, Tag::ResourceManager::LoadResourceResponse, top.prio);
+					ThreadMessageController::Send(Tag::ResourceManager::ResouceData::Create(drl->guid, resource.data, resource.size, top.tag), Destination::ResourceManager, top.dest, Tag::ResourceManager::LoadResourceResponse, top.prio);
 					delete&top;
 					resource.toNotify.pop();
 				}

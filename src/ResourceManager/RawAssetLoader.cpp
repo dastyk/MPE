@@ -25,28 +25,33 @@ namespace MPE
 	RawAssetLoader::~RawAssetLoader()
 	{
 	}
+	const bool RawAssetLoader::IsResourceInRegister(const GUID& guid)
+	{
+		auto&& find = _assets.find(guid);
+		if (find == _assets.end())
+			return false;
+		return true;
+	}
+	const void RawAssetLoader::AddResourceToRegister(Resource * resource)
+	{
+		return void();
+	}
 	const bool RawAssetLoader::LoadResource(Resource* r)
 	{
-		auto&& find = _assets.find(r->guid);
-		if (find == _assets.end())
-		{
-			r->state = Resource::ASSET_NOT_FOUND;
-			return false;
-		}
+		const auto& assetFileName = _assets[r->guid];
 			
-		std::ifstream file(find->second, std::ios::in | std::ios::binary);
+		std::ifstream file(assetFileName, std::ios::in | std::ios::binary);
 		if (!file.is_open())
 		{
 			r->state = Resource::READ_FAILED;
 			return false;
 		}
 
-		std::string filename = find->second;
 		std::string fileend;
-		for (int i = filename.size() - 1; i > 0; i--)
+		for (int i = assetFileName.size() - 1; i > 0; i--)
 		{
-			if (filename[i] != '.')
-				fileend.insert(0, 1, filename[i]);
+			if (assetFileName[i] != '.')
+				fileend.insert(0, 1, assetFileName[i]);
 			else
 				i = 0;
 		}

@@ -16,6 +16,13 @@ namespace MPE
 	public:
 		~AssetLoader() {}
 
+		//! Checks to see if the resource can be loaded by this asset loader.
+		virtual const bool IsResourceInRegister(const GUID& guid) = 0;
+
+		//! Adds the resource to this asset loaders.
+		virtual const void AddResourceToRegister(Resource* resource) = 0;
+
+		//! Loads the specified resource.
 		virtual const bool LoadResource(Resource* resource) = 0;
 	};
 }
