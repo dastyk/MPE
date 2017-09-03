@@ -82,13 +82,13 @@ namespace MPE
 
 
 
-			// Do general work.
-			static bool f = true;
-			if (f)
-			{
-				ThreadMessageController::Send(Tag::ResourceManager::LoadResourceStruct::Create("data.lua", 1), Destination::ScriptManager, Destination::ResourceManager, Tag::ResourceManager::LoadResource);
-				f = false;
-			}
+			//// Do general work.
+			//static bool f = true;
+			//if (f)
+			//{
+			//	ThreadMessageController::Send(Tag::ResourceManager::LoadResourceStruct::Create("data.lua", 1), Destination::ScriptManager, Destination::ResourceManager, Tag::ResourceManager::LoadResource);
+			//	f = false;
+			//}
 
 
 
